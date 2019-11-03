@@ -1,0 +1,24 @@
+.wd-pretty-hint,
+.wd-pretty-hint__icon,
+.wd-pretty-hint__text
+{
+    display: flex;
+
+    padding: 5px 10px;
+}
+
+.wd-pretty-hint
+{
+    line-height: 26px;
+
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    transition: border 200ms ease 0s;
+
+    border: rgb(230, 236, 241) 1px solid;
+    border-radius: 3px;
+    box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
+    outline: none;
+}

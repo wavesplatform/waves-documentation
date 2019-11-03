@@ -1,0 +1,19 @@
+{% extends template.self %}
+
+{% block header %}
+  {{ super() }}
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic,latin-ext" rel="stylesheet">
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75283398-4"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-75283398-4');
+</script>
+{% endblock %}

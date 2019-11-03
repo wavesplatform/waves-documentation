@@ -1,0 +1,10 @@
+.wd-pretty-link
+{
+    display: flex;
+    flex-direction: row;
+    transition: border 200ms ease 0s;
+
+    border: rgb(230, 236, 241) 1px solid;
+    box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
+}
+

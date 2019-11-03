@@ -1,0 +1,18 @@
+# Waves官网资源
+
+* [**官方网站**](https://wavesplatform.com)
+* [**新的在线客户端**](https://beta.wavesplatform.com)
+* [**远程桌面客户端**](https://wavesplatform.com/product)
+* [**在线钱包**](https://beta.wavesplatform.com/wallet)
+* [**iOS移动应用程序**](https://itunes.apple.com/us/app/waves-wallet/id1233158971?mt=8)
+* [**安卓移动应用程序**](https://play.google.com/store/apps/details?id=com.wavesplatform.wallet)
+* [**GitHub上打开源代码**](https://github.com/wavesplatform/)
+* [**测试网**](https://testnet.wavesexplorer.com)
+* [**主网**](http://wavesexplorer.com)
+* [**客服**](https://support.wavesplatform.com/)
+* [**Waves desk**](https://wavesdesk.com)
+* [**WavesGo**](http://wavesgo.com)
+* [**官方Facebook社区**](https://www.facebook.com/wavesplatform)
+* [**推特**](https://twitter.com/wavesplatform?lang=en)
+* [**博客**](https://blog.wavesplatform.com)
+* [**社区网站**](https://wavescommunity.com)

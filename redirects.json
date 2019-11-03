@@ -1,0 +1,605 @@
+{
+  "redirects": [
+    {
+      "===============================  Getting started  =====================================": null,
+      "to": "/en/getting-started/getting-started-for-developers.html",
+      "from": "/en/getting-started/as-a-developer.html"
+    },
+    {
+      "===============================  Blockchain  =====================================": null,
+      "to": "/en/blockchain/account/address.md",
+      "from": "/en/blockchain/account/address.md",
+      "to": "/ru/blockchain/account/address.md",
+      "from": "/ru/blockchain/account/address.md",      
+      "to": "/en/blockchain/transaction-type/data-transaction.html",
+      "from": "/en/waves-environment/waves-protocol/data-transaction.html"
+    },
+    {
+      "to": "/en/blockchain/blockchain/blockchain-height.html",
+      "from": "/en/blockchain/blockchain-height.html"
+    },
+    {
+      "to": "/en/blockchain/transaction/transaction-validation.html",
+      "from": "/en/blockchain/transaction-validation.html"
+    },
+    {
+      "to": "/ru/blockchain/transaction/transaction-validation.html",
+      "from": "/ru/blockchain/transaction-validation.html"
+    },
+    {
+      "to": "/en/blockchain/blockchain/blockchain-height.html",
+      "from": "/en/blockchain/blockchain-height.html"
+    },
+    {
+      "to": "/en/blockchain/account/account-data-storage.html",
+      "from": "/en/blockchain/account-data-storage.html"
+    },
+    {
+      "to": "/ru/blockchain/account/account-data-storage.html",
+      "from": "/ru/blockchain/account-data-storage.html"
+    },
+    {
+      "to": "/en/blockchain/account/dapp.html",
+      "from": "/en/blockchain/dapp.html"
+    },
+    {
+      "to": "/ru/blockchain/account/dapp.html",
+      "from": "/ru/blockchain/dapp.html"
+    },
+    {
+      "to": "/en/blockchain/account/smart-account.html",
+      "from": "/en/blockchain/smart-account.html"
+    },
+    {
+      "to": "/ru/blockchain/account/smart-account.html",
+      "from": "/ru/blockchain/smart-account.html"
+    },
+    {
+      "to": "/en/blockchain/token/smart-asset.html",
+      "from": "/en/blockchain/smart-asset.html"
+    },
+    {
+      "to": "/ru/blockchain/token/smart-asset.html",
+      "from": "/ru/blockchain/smart-asset.html"
+    },
+    {
+      "to": "/en/blockchain/binary-format/transaction-binary-format.html",
+      "from": "/en/blockchain/transaction-data-structure.html"
+    },
+    {
+      "to": "/ru/blockchain/binary-format/transaction-binary-format.html",
+      "from": "/ru/blockchain/transaction-data-structure.html"
+    },
+    {
+      "to": "/en/blockchain/transaction/transaction-fee.html",
+      "from": "/en/blockchain/transaction-fee.html"
+    },
+    {
+      "to": "/ru/blockchain/transaction/transaction-fee.html",
+      "from": "/ru/blockchain/transaction-fee.html"
+    },
+    {
+      "to": "/en/blockchain/transaction/transaction-signature.html",
+      "from": "/en/blockchain/transaction-signature.html"
+    },
+    {
+      "to": "/ru/blockchain/transaction/transaction-signature.html",
+      "from": "/ru/blockchain/transaction-signature.html"
+    },
+    {
+      "to": "/en/blockchain/transaction/transaction-proof.html",
+      "from": "/en/blockchain/transaction-proof.html"
+    },
+    {
+      "to": "/ru/blockchain/transaction/transaction-proof.html",
+      "from": "/ru/blockchain/transaction-proof.html"
+    },
+    {
+      "to": "/en/blockchain/binary-format.html",
+      "from": "/en/blockchain/waves-protocol/data-structures.html"
+    },
+    {
+      "to": "/en/blockchain/block/block-height.html",
+      "from": "/en/blockchain/block-height.html"
+    },
+    {
+      "to": "/ru/blockchain/block/block-height.html",
+      "from": "/ru/blockchain/block-height.html"
+    },
+    {
+      "to": "/en/blockchain/blockchain-network/main-network.html",
+      "from": "/en/blockchain/mainnet.html"
+    },
+    {
+      "to": "/en/blockchain/blockchain-network/test-network.html",
+      "from": "/en/blockchain/test-network.html"
+    },
+    {
+      "to": "/ru/blockchain/blockchain-network/test-network.html",
+      "from": "/ru/blockchain/test-network.html"
+    },
+    {
+      "to": "/en/blockchain/blockchain-network/main-network.html",
+      "from": "/en/waves-environment/waves-mainnet.html"
+    },
+    {
+      "to": "/en/blockchain/binary-format.html",
+      "from": "/en/waves-environment/waves-protocol/transactions-structure.html"
+    },
+    {
+      "to": "/en/blockchain/binary-format.html",
+      "from": "/en/technical-details/transactions-structure.html"
+    },
+    {
+      "to": "/en/blockchain/binary-format.html",
+      "from": "/en/blockchain/waves-protocol/transactions-structure.html"
+    },
+    {
+      "to": "/en/blockchain/transaction-data-structure.html",
+      "from": "/en/blockchain/transaction-type-data-structure.html"
+    },
+    {
+      "to": "/en/blockchain/waves-protocol/leased-proof-of-stake-lpos.html",
+      "from": "/en/waves-environment/waves-protocol/leased-proof-of-stake-lpos.html"
+    },
+    {
+      "to": "/en/blockchain/transaction/transaction-body-bytes.html",
+      "from": "/en/blockchain/waves-protocol/versioned-transactions.html"
+    },
+    {
+      "to": "/en/blockchain/transaction/transaction-body-bytes.html",
+      "from": "/en/blockchain/transaction-body-bytes.html"
+    },
+    {
+      "to": "/ru/blockchain/transaction/transaction-body-bytes.html",
+      "from": "/ru/blockchain/transaction-body-bytes.html"
+    },
+    {
+      "to" :"/en/blockchain/token.html",
+      "from": "/en/blockchain/custom-tokens.html"
+    },
+    {
+      "to" :"/en/blockchain/token.html",
+      "from": "/en/blockchain/asset.html"
+    },
+    {
+      "to" :"/ru/blockchain/token.html",
+      "from": "/ru/blockchain/asset.html"
+    },
+    {
+      "to": "/en/blockchain/token.html",
+      "from": "/en/blockchain/token/custom-tokens.html"
+    },
+    {
+      "to": "/en/blockchain/token/waves.html",
+      "from": "/en/blockchain/waves-tokens.html"
+    },
+    {
+      "to": "/ru/blockchain/token/waves.html",
+      "from": "/ru/overview/waves-tokens.html"
+    },
+    {
+      "to": "/en/blockchain/test-network.html",
+      "from": "/en/blockchain/testnet.html"
+    },
+    {
+      "to": "/en/blockchain/test-network.html",
+      "from": "/en/blockchain/waves-testnet.html"
+    },
+    {
+      "to": "/en/blockchain/transaction-fee.html",
+      "from": "/en/blockchain/transaction/transactions-fees.html"
+    },
+    {
+      "to": "/en/blockchain/transaction-type/data-transaction.html",
+      "from": "/en/blockchain/waves-protocol/data-transaction.html"
+    },
+    {
+      "to": "/en/blockchain/transaction-type/data-transaction.html",
+      "from": "/en/technical-details/data-transaction.html"
+    },
+    {
+      "===============================  Client  =====================================": null,
+      "to": "/ru/waves-dex/start-trading-on-the-waves-dex.html",
+      "from": "/ru/waves-client/waves-dex/start-trading-on-the-waves-dex.html"
+    },
+    {
+      "to": "/en/waves-client/mobile-apps/android/account-management/restore-an-account.html",
+      "from": "/en/mobile-apps/android/account-managment/restore-an-account.html"
+    },
+    {
+      "to": "/en/waves-client/transfers-and-gateways/waves-transfers.html",
+      "from": "/en/waves-client/transfers-and-gateways/transfers-and-gateways/waves-transfers.html"
+    },
+    {
+      "to": "/en/waves-client/security-notes.html",
+      "from": "/en/waves-client/security/safe-place.html"
+    },
+    {
+      "to": "/en/waves-client/security-notes.html",
+      "from": "/en/overview/security-notes.html"
+    },
+    {
+      "to": "/en/waves-client/frequently-asked-questions-faq/waves-dex/asset-id.html",
+      "from": "/en/frequently-asked-questions-faq/waves-dex/asset-id.html"
+    },
+    {
+      "to": "/ru/waves-client/security-notes.html",
+      "from": "/ru/waves-client/security/safe-place.html"
+    },
+    {
+      "to": "/en/waves-client/transfers-and-gateways/buying-waves-using-card.html",
+      "from": "/en/waves-client/transfers-and-gateways/buying-bitcoin-using-card.html"
+    },
+    {
+      "to": "/en/waves-client/transfers-and-gateways/litecoin-transfers.html",
+      "from": "/en/waves-client/transfers-and-gateways/transfers-and-gateways/litecoin-transfers.html"
+    },
+    {
+      "to": "/en/waves-client/account-management/restore-an-account.html",
+      "from": "/en/waves-clientx7f5zp0e/account-management/restore-an-account.html"
+    },
+    {
+      "to": "/en/waves-client/frequently-asked-questions-faq/waves-dex/asset-id.html",
+      "from": "/en/waves-dex/how-can-i-find-asset-on-the-dex-using-asset-id.html"
+    },
+    {
+      "to": "/en/waves-client/account-management.html",
+      "from": "/en/waves-client/account-management/account-migration.html"
+    },
+    {
+      "to": "/en/waves-client/account-management/creating-an-account.html",
+      "from": "/en/getting-started/waves-api-and-sdk/waves-api-and-sdk/waves-client/account-management/creating-an-account.html"
+    },
+    {
+      "to": "/en/waves-client/account-management.html",
+      "from": "/en/getting-started/waves-api-and-sdk/waves-api-and-sdk/waves-client/account-management.html"
+    },
+    {
+      "to": "/en/waves-client/onlinedesktop-apps.html",
+      "from": "/en/getting-started/waves-api-and-sdk/waves-api-and-sdk/waves-client/onlinedesktop-apps.html"
+    },
+    {
+      "to": "/en/waves-client/mobile-apps/android.html",
+      "from": "/en/waves-client/mobile-apps/android/android.html"
+    },
+    {
+      "to": "/en/waves-client/faq.html",
+      "from": "/en/waves-client/frequently-asked-questions-faq/account-management-faq.html"
+    },
+    {
+      "===============================  DEX  =====================================": null,
+      "to": "/ru/waves-dex/start-trading-on-the-waves-dex.html",
+      "from": "/ru/waves-client/waves-dex/start-trading-on-the-waves-dex.html"
+    },
+    {
+      "to": "/en/waves-dex/start-trading-on-the-waves-dex.html",
+      "from": "/en/waves-client/waves-dex/start-trading-on-the-waves-dex.html"
+    },
+    {
+      "to": "/ru/waves-dex/start-trading-on-the-waves-dex.html",
+      "from": "/ru/waves-client/waves-dex/start-trading-using-the-waves-dex.html"
+    },
+    {
+      "===============================  Keeper  =====================================": null,
+      "to": "/en/waves-keeper/how-to-use-waves-keeper.html",
+      "from": "/en/waves-client/account-management/waves-keeper.html"
+    },
+    {
+      "to": "/en/waves-keeper/about-waves-keeper.html",
+      "from": "/en/development-and-api/waves-keeper-api/overview.html"
+    },
+    {
+      "===============================  RIDE  =====================================": null,
+      "to": "/en/ride/about-ride.html",
+      "from": "/en/smart-contracts/ride-language/ride-language.html"
+    },
+    {
+      "to": "en/ride/functions/annotations.html",
+      "from": "en/ride/annotations.html"
+    },
+    {
+      "to": "ru/ride/functions/annotations.html",
+      "from": "ru/ride/annotations.html"
+    },
+    {
+      "to": "en/ride/structures.html",
+      "from": "en/ride/structures/built-in-structures.html"
+    },
+    {
+      "to": "ru/ride/base-concepts/expression.html",
+      "from": "ru/ride/expression.html"
+    },
+    {
+      "to": "ru/ride/base-concepts/definition.html",
+      "from": "ru/ride/definition.html"
+    },
+    {
+      "to": "ru/ride/base-concepts/complexity.html",
+      "from": "ru/ride/ride-script-complexity.html"
+    },
+    {
+      "to": "en/ride/base-concepts/expression.html",
+      "from": "en/ride/expression.html"
+    },
+    {
+      "to": "en/ride/base-concepts/definition.html",
+      "from": "en/ride/definition.html"
+    },
+    {
+      "to": "en/ride/base-concepts/complexity.html",
+      "from": "en/ride/ride-script-complexity.html"
+    },
+    {
+      "to": "/en/ride/about-ride.html",
+      "from": "/en/technical-details/ride-language.html"
+    },
+    {
+      "to": "/en/ride/about-ride.html",
+      "from": "/en/technical-details/waves-contracts-language-description.html"
+    },
+    {
+      "to": "/en/ride/about-ride.html",
+      "from": "/en/technical-details/waves-contracts-language-description/approach-and-capabilities.html"
+    },
+    {
+      "to": "/en/ride/about-ride.html",
+      "from": "/en/ride/effective-ride-examples.html"
+    },
+    {
+      "to": "/en/ride/about-ride.html",
+      "from": "/en/technical-details/waves-contracts-language-description/language-description.html"
+    },
+    {
+      "to": "/en/ride/about-ride.html",
+      "from":"/en/technical-details/waves-contracts-language-description/standard-library.html"
+    },
+    {
+      "to": "/en/ride/ride-script.html",
+      "from": "/en/blockchain/script.html"
+    },
+    {
+      "to": "/en/ride/functions.html",
+      "from": "/en/blockchain-functions.html"
+    },
+    {
+      "to": "/en/ride/functions/built-in-functions/converting-functions.html",
+      "from":"/en/converting-functions.html"
+    },
+    {
+      "to": "/ru/ride/functions/built-in-functions/math-functions.html",
+      "from": "/ru/ride/functions/math-functions.html"
+    },
+    {
+      "to": "/ru/ride/variables.html",
+      "from": "/ru/ride/immutable-variables.html"
+    },
+    {
+      "to": "/en/ride/variables.html",
+      "from": "/en/ride/immutable-variables.html"
+    },
+    {
+      "to":"/en/ride/functions/built-in-functions/math-functions.html",
+      "from": "/en/ride/math-functions.html"
+    },
+    {
+      "to": "/en/ride/functions/built-in-functions/encoding-functions.html",
+      "from": "/en/ride/built-in-functions/encoding-and-decoding-functions.html"
+    },
+    {
+      "to": "/ru/ride/functions/built-in-functions/encoding-functions.html",
+      "from": "/ru/ride/built-in-functions/encoding-and-decoding-functions.html"
+    },
+    {
+      "to": "/ru/ride/functions/built-in-functions.html",
+      "from": "/ru/ride/built-in-functions.html"
+    },
+    {
+      "to": "/en/ride/functions/built-in-functions.html",
+      "from": "/en/ride/built-in-functions.html"
+    },
+    {
+      "to": "/ru/ride/script.html",
+      "from": "/ru/ride/ride-script.html"
+    },
+    {
+      "to": "/en/ride/script.html",
+      "from": "/en/ride/ride-script.html"
+    },
+    {
+      "to": "/en/ride/script/script-types/dapp-script.md",
+      "from": "/en/ride/dapp-script.md"
+    },
+    {
+      "to": "/ru/ride/script/script-types/dapp-script.md",
+      "from": "/ru/ride/ride-script/dapp-script.md"
+    },
+    {
+      "to": "/en/ride/script/script-types/account-script.md",
+      "from": "/en/ride/ride-script/account-script.md"
+    },
+    {
+      "to": "/ru/ride/script/script-types/account-script.md",
+      "from": "/ru/ride/ride-script/account-script.md"
+    },
+    {
+      "to": "/ru/ride/script/script-types/asset-script.md",
+      "from": "/ru/ride/ride-script/asset-script.md"
+    },
+    {
+      "to": "/en/ride/script/script-types/asset-script.md",
+      "from": "/en/ride/ride-script/asset-script.md"
+    },
+    {
+      "===============================  Smart contracts  =====================================": null,
+      "to":"/en/smart-contracts/what-is-a-dapp.html",
+      "from": "/en/smart-contracts/ride4dapps/overview.html"
+    },
+    {
+      "to": "/en/smart-contracts/writing-dapps.html",
+      "from": "/en/blockchain/writing-dapps.html"
+    },
+    {
+      "to": "/en/smart-contracts/waves-smart-contracts-overview.html",
+      "from": "/en/blockchain/waves-protocol/smart-contracts.html"
+    },
+    {
+       "to": "/en/smart-contracts/smart-assets",
+      "from": "/en/technical-details/smart-assets.html"
+    },
+    {
+      "===============================  Node  =====================================": null,
+      "to": "/en/waves-node/what-is-a-full-node.html",
+      "from": "/en/waves-full-node/what-is-a-full-node.html"
+    },
+    {
+      "to": "/en/waves-node/what-is-a-full-node.html",
+      "from": "/en/waves-environment/waves-node/what-is-a-full-node.html"
+    },
+    {
+      "to": "/en/waves-node/how-to-install-a-node/how-to-install-a-node.html",
+      "from": "/en/waves-full-node/how-to-install-a-node/how-to-install-a-node.html"
+    },
+    {
+      "to": "/en/waves-node/how-to-install-a-node/on-windows.html",
+      "from": "/en/waves-full-node/how-to-install-a-node/on-windows.html"
+    },
+    {
+      "to": "/en/waves-node/how-to-install-a-node/on-ubuntu.html",
+      "from": "/en/waves-full-node/how-to-install-a-node/on-ubuntu.html"
+    },
+    {
+      "to": "/en/waves-node/upgrading.html",
+      "from": "/en/waves-full-node/upgrading.html"
+    },
+    {
+      "to": "/en/waves-node/node-api/example-transactions.html",
+      "from": "/en/waves-api-and-sdk/waves-node-rest-api/example-transactions.html"
+    },
+    {
+      "to": "/en/waves-node/node-api/example-transactions.html",
+      "from": "/en/development-and-api/waves-node-rest-api/example-transactions.html"
+    },
+    {
+      "to": "/en/waves-node/options-for-getting-actual-blockchain.html",
+      "from": "/en/waves-full-node/options-for-getting-actual-blockchain.html"
+    },
+    {
+      "to": "/en/waves-node/options-for-getting-actual-blockchain/state-downloading-and-applying.html",
+      "from": "/en/waves-full-node/options-for-getting-actual-blockchain/state-downloading-and-applying.html"
+    },
+    {
+      "to": "/en/waves-node/joining-testnet.html",
+      "from": "/en/waves-full-node/joining-testnet.html"
+    },
+    {
+      "to": "/en/waves-node/how-to-rollback-a-node.html",
+      "from": "/en/waves-full-node/how-to-rollback-a-node.html"
+    },
+    {
+      "to": "/en/waves-node/configuration-parameters.html",
+      "from": "/en/waves-full-node/configuration-parameters.html"
+    },
+    {
+      "to": "/en/waves-explorer/account-balance-top-up-in-the-test-network.html",
+      "from": "/en/waves-explorer/account-balance-top-up-in-testnet.html"
+    },
+    {
+      "to": "/en/waves-node/node-api/transactions.html",
+      "from": "/en/waves-api-and-sdk/waves-node-rest-api/transactions.html"
+    },
+    {
+      "to": "/en/waves-node/node-api.html",
+      "from": "/en/waves-api-and-sdk/waves-node-rest-api.html"
+    },
+    {
+      "to": "/en/waves-node/node-api/asset-transactions/public-functions.html",
+      "from": "/en/waves-api-and-sdk/waves-node-rest-api/asset-transactions/public-functions.html"
+    },
+    {
+      "to": "/en/waves-node/private-waves-network.html",
+      "from": "/en/waves-full-node/private-waves-network.html"
+    },
+    {
+      "to": "/en/waves-node/node-configuration.html",
+      "from": "/en/waves-node/configuration-parameters.html"
+    },
+    {
+      "=============================== Developer tools  =====================================": null,
+      "to": "/en/smart-contracts/tools/repl.html",
+      "from": "/en/developer-tools/waves-console/waves-console-examples.html"
+    },
+    {
+      "to": "/en/smart-contracts/tools/waves-ide.html",
+      "from": "/en/developer-tools/waves-ide.html"
+    },
+    {
+      "to": "/en/smart-contracts/tools/repl.html",
+      "from": "/en/developer-tools/repl.html"
+    },
+    {
+      "to": "/ru/smart-contracts/tools/waves-ide.html",
+      "from": "/ru/developer-tools/waves-ide.html"
+    },
+    {
+      "to": "/ru/smart-contracts/tools/waves-ide.html",
+      "from": "/ru/developer-tools/repl.html"
+    },
+    {
+      "===============================  API & SDK  =====================================": null,
+      "to": "/en/waves-api-and-sdk/dex-api/matcher.html",
+      "from": "/en/blockchain/node/matcher.html"
+    },
+    {
+      "to":"/en/waves-api-and-sdk/client-api/auth-api.html",
+      "from": "/en/development-and-api/client-api/auth-api.html"
+    },
+    {
+      "to": "/en/waves-api-and-sdk/examples/trading-bot.html",
+      "from": "/en/development-and-api/examples/trading-bot.html"
+    },
+    {
+      "to": "/en/waves-node/node-configuration.html",
+      "from": "/en/waves-node/how-to-configure-a-node.html"
+    },
+    {
+      "===============================  Oracles  =====================================": null,
+      "to": "/en/waves-oracles/about-waves-oracles.html",
+      "from": "/en/oracels-developments/what-is-a-data-oracle.html"
+    },
+    {
+      "===============================  Resources  ===================================": null,
+      "to": "/en/resources/contributing.html",
+      "from": "/en/contributing.html"
+    },
+    {
+      "===============================  Waves protocol  ===================================": null,
+      "to": "/en/blockchain/waves-protocol/cryptographic-practical-details.html",
+      "from": "/en/miscellaneous/waves-protocol/cryptographic-practical-details.html"
+    },
+    {
+      "to": "/en/blockchain/waves-protocol/validation-rules.html",
+      "from": "/en/miscellaneous/waves-protocol/validation-rules.html"
+    },
+    {
+      "to": "/en/blockchain/waves-protocol/waves-ng-solution.html",
+      "from": "/en/miscellaneous/waves-protocol/waves-ng-solution.html"
+    },
+    {
+      "to": "/en/blockchain/waves-protocol/sponsored-fee.html",
+      "from": "/en/miscellaneous/waves-protocol/sponsored-fee.html"
+    },
+    {
+      "to": "/en/blockchain/waves-protocol/fair-pos.html",
+      "from": "/en/miscellaneous/waves-protocol/fair-pos.html"
+    },
+    {
+      "to": "/en/blockchain/waves-protocol/waves-ng-protocol.html",
+      "from": "/en/miscellaneous/waves-protocol/waves-ng-protocol.html"
+    },    
+    {
+      "to": "/en/blockchain/waves-protocol/activation-protocol.html",
+      "from": "/en/miscellaneous/waves-protocol/activation-protocol.html"
+    }    
+  ]
+}

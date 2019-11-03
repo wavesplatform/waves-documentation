@@ -1,0 +1,80 @@
+{
+  "plugins": [
+    "custom-js-css",
+    "tree-shaper@git+https://github.com/KardanovIR/gitbook-plugin-tree-shaper.git",
+    "github-gist@git+https://github.com/KardanovIR/gitbook-plugin-github-gist",
+    "pretty-hint@git+https://github.com/KardanovIR/gitbook-plugin-pretty-hint.git",
+    "pretty-link@git+https://github.com/KardanovIR/gitbook-plugin-pretty-link.git",
+    "headers-with-anchors@git+https://github.com/KardanovIR/gitbook-plugin-headers-with-anchors.git",
+    "custom-favicon",
+    "flexible-alerts",
+    "anchor-navigation",
+    "youtubex",
+    "gtm",
+    "bulk-redirect",
+    "scripts",
+    "-sharing"
+  ],
+  "pluginsConfig": {
+    "bulk-redirect": {
+      "basepath": "/",
+      "redirectsFile": "redirects.json"
+    },
+    "gtm": {
+      "token": "GTM-KR7HQLF",
+      "virtualPageViews": true
+    },
+    "page-toc-optional": {
+      "selector": ".markdown-section h1, .markdown-section h2, .markdown-section h3",
+      "position": "before-first",
+      "showByDefault": true
+    },
+    "favicon": "/_theme/favicon.ico",
+    "scripts": {
+      "files": [
+        "./scripts/foldingMenu.js",
+        "./scripts/layoutModification.js",
+        "./scripts/setActivePathOnTreeMenu.js"
+      ]
+    },
+    "flexible-alerts": {
+      "style": "flat",
+      "note": {
+        "label": {
+          "de": "Hinweis",
+          "en": "NOTE"
+        }
+      },
+      "tip": {
+        "label": {
+          "de": "Tipp",
+          "en": "TIP"
+        }
+      },
+      "warning": {
+        "label": {
+          "de": "Warnung",
+          "en": "WARNING"
+        }
+      },
+      "danger": {
+        "label": {
+          "de": "Achtung",
+          "en": "ATTENTION"
+        }
+      }
+    },
+    "sharing": {
+      "facebook": false,
+      "twitter": false,
+      "google": false,
+      "weibo": false,
+      "instapaper": false,
+      "vk": false,
+      "all": [
+        "facebook", "google", "twitter",
+        "weibo", "instapaper"
+      ]
+    }
+  }
+}
