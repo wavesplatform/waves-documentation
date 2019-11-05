@@ -7,7 +7,7 @@ Waves allow you to hold and transfer Waves Enterprise on its blockchain. This wo
 Open your Waves wallet.
 In the Waves Enterprise section click on the **Receive** button.
 
-![](/_assets/vostok_transfers_01.png)
+![](/_assets/west_transfers_01.png)
 
 The following window will appear. Before proceeding please carefully read the conditions:
 
@@ -22,14 +22,14 @@ Sending any other currency to this address may result in the total loss of your 
 
 Copy the shown Waves Enterprise address or Scan QR Code and send a payment.
 
-![](/_assets/vostok_transfers_02.png)
+![](/_assets/west_transfers_02.png)
 
 ## How to send Waves Enterprise
 
 Open your Waves wallet,  
 In the Waves Enterprise section, click on the **Send** button.
 
-![](/_assets/vostok_transfers_01.png)
+![](/_assets/west_transfers_01.png)
 
 The following pop-up will appear.  
 Paste the Waves Enterprise address you want to send to as well as the amount of Waves Enterprise.  
@@ -39,27 +39,27 @@ Please note that the Waves Enterprise gateway charges **0.001 Waves** for the ne
 
 After you have filled the form, click on the **Continue** button.
 
-![](/_assets/vostok_transfers_03.png)
+![](/_assets/west_transfers_03.png)
 
 The following pop-up will appear.  
 To complete the operation, click on the **Confirm** or **Back** to repeat the process.
 
-![](/_assets/vostok_transfers_04.png)
+![](/_assets/west_transfers_04.png)
 
 ## How to transfer Waves Enterprise to another Waves account
 
 You can send Waves Enterprise directly to another Waves account. Just use the recipient **Waves** address, click on the **Send** and fill-in the sending form.
 
-![](/_assets/vostok_transfers_01.png)
+![](/_assets/west_transfers_01.png)
 
 After you have completed the form, click on the **Continue** button.
 
-![](/_assets/vostok_transfers_05.png)
+![](/_assets/west_transfers_05.png)
 
 The following pop-up will appear.  
 To complete the operation, click on the **Send** or **Back** to repeat the process.
 
-![](/_assets/vostok_transfers_06.png)
+![](/_assets/west_transfers_06.png)
 
 ## How to use sponsored fee
 
@@ -71,8 +71,6 @@ Choose an available sponsored token and click on the **Continue** button.
 ![](/_assets/transaction_fee.png)
 
 ___
-
-
 
 See more articles in the [Transfers and Gateways](/waves-client/wallet-management.md) chapter.
 
