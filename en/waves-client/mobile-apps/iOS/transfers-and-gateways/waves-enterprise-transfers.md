@@ -8,7 +8,7 @@ At the bottom of the interface, click on the ![](/waves-client/mobile-apps/_asse
 
 The following window will appear. Tap on the **Asset** and choose **Waves Enterprise** from the drop-down menu.
 
-![](/waves-client/mobile-apps/_assets/vostok_transfers_01.png)
+![](/waves-client/mobile-apps/_assets/west_transfers_01.png)
 
 Before proceeding please carefully read the conditions:
 
@@ -25,7 +25,7 @@ After that click on the **Continue**.
 
 The following window will appear.
 
-![](/waves-client/mobile-apps/_assets/vostok_transfers_02.png)
+![](/waves-client/mobile-apps/_assets/west_transfers_02.png)
 
 There you will find Waves Enterprise address of your account. Copy it by clicking on the **Copy** or **Share** with the sender. Also, there you will find **QR code** that contains your address.
 
@@ -36,7 +36,7 @@ At the bottom of the interface, click on the ![](/waves-client/mobile-apps/_asse
 
 The following window will appear. Choose **Waves Enterprise** from the drop-down menu.
 
-![](/waves-client/mobile-apps/_assets/vostok_transfers_03.png)
+![](/waves-client/mobile-apps/_assets/west_transfers_03.png)
 
 Fill in the sending form.
 
@@ -47,7 +47,7 @@ After you have entered all necessary information click on the **Continue**.
 
 Re-check entered data and click on the **Confirm** to complete the process.
 
-![](/waves-client/mobile-apps/_assets/vostok_transfers_04.png)
+![](/waves-client/mobile-apps/_assets/west_transfers_04.png)
 
 ## How to transfer Waves Enterprise to another Waves account
 
@@ -61,11 +61,11 @@ Fill in the sending form.
 **Recipient**: Put the recipient Waves address or scan QR-code or choose from Address book.
 **Amount**: Define a number of Assets you want to send or choose **Use total balance 50% 10% 5%**
 
-![](/waves-client/mobile-apps/_assets/vostok_transfers_05.png)
+![](/waves-client/mobile-apps/_assets/west_transfers_05.png)
 
 After you have completed the form, click on the **Confirm** button.
 
-![](/waves-client/mobile-apps/_assets/vostok_transfers_06.png)
+![](/waves-client/mobile-apps/_assets/west_transfers_06.png)
 
 ## How to use sponsored fee
 
