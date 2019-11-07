@@ -1,8 +1,6 @@
 ## Введение
 
-Waves приложение позволяет хранить и переводить Waves Enterprise внутри сети Waves. Это возможно благодаря шлюзу:
-Waves Enterprise поступают на Waves Enterprise адрес выданный пользователю в Waves приложении, а взамен пользователь получает ассет Waves Enterprise (WEST) в сети Waves.
-При выводе WEST из сети Waves пользователь получает Waves Enterprise из расчета 1:1.
+Waves приложение позволяет хранить и переводить Waves Enterprise внутри сети Waves. Это возможно благодаря шлюзу: Waves Enterprise поступают на Waves Enterprise адрес выданный пользователю в Waves приложении, а взамен пользователь получает ассет Waves Enterprise в сети Waves. При выводе WEST из сети Waves пользователь получает Waves Enterprise из расчета 1:1.
 
 ## Как получить Waves Enterprise
 

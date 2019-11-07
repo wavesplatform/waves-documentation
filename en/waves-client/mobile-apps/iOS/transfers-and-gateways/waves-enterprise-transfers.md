@@ -16,7 +16,7 @@ Before proceeding please carefully read the conditions:
 ```
 If you will send less than 0.1 WEST, you will lose that money.
 ```
-**Send only WE to this deposit address**
+**Send only WEST to this deposit address**
 ```
 Sending any other currency to this address may result in the total loss of your deposit.
 ```
