@@ -1,6 +1,6 @@
 ## Введение
 
-Waves client позволяет хранить и переводить Bitcoin SV внутри сети Waves. Это возможно благодаря шлюзу: Bitcoin SV поступают на Bitcoin SV адрес выданный пользователю в Waves client, а взамен пользователь получает ассет Bitcoin SV в сети Waves (wBSV).
+Waves приложение позволяет хранить и переводить Bitcoin SV внутри сети Waves. Это возможно благодаря шлюзу: Bitcoin SV поступают на Bitcoin SV адрес выданный пользователю в Waves приложение, а взамен пользователь получает ассет Bitcoin SV в сети Waves (wBSV).
 При выводе wBSV из сети Waves пользователь получает Bitcoin SV из расчета 1:1.
 
 Всю исчерпывающую информацию о работе Bitcoin SV шлюза вы найдёте в статье [Что такое платежный шлюз и как он работает?](/waves-client/frequently-asked-questions-faq/transfers-and-gateways/payment-gateway.md)

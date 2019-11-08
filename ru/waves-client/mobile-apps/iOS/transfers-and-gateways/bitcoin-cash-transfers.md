@@ -1,6 +1,6 @@
 ## Введение
 
-Waves client позволяет хранить и переводить Bitcoin Cash внутри сети Waves. Это возможно благодаря шлюзу: Bitcoin Cash поступают на Bitcoin Cash адрес выданный пользователю в Waves client, а взамен пользователь получает ассет Bitcoin Cash в сети Waves (wBCH).
+Waves приложение позволяет хранить и переводить Bitcoin Cash внутри сети Waves. Это возможно благодаря шлюзу: Bitcoin Cash поступают на Bitcoin Cash адрес выданный пользователю в Waves приложение, а взамен пользователь получает ассет Bitcoin Cash в сети Waves (wBCH).
 При выводе wBCH из сети Waves пользователь получает Bitcoin Cash из расчета 1:1.
 
 Всю исчерпывающую информацию о работе Bitcoin Cash шлюза вы найдёте в статье [Что такое платежный шлюз и как он работает?](/waves-client/frequently-asked-questions-faq/transfers-and-gateways/payment-gateway.md)

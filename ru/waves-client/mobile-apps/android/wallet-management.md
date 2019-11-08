@@ -13,6 +13,7 @@
 * [Переводы Dash (Android)](transfers-and-gateways/dash-transfers.md)
 * [Переводы Monero (Android)](transfers-and-gateways/monero-transfers.md)
 * [Переводы Bitcoin SV (Android)](transfers-and-gateways/bitcoin-sv-transfers.md)
+* [Переводы Ergo (Android)](transfers-and-gateways/ergo-transfers.md)
 
 Waves приложение также поддерживает покупку Waves за Евро и Доллары США (минимум 30 EUR/USD, максимум 3000 EUR/USD) с использованием банковской карты.
 

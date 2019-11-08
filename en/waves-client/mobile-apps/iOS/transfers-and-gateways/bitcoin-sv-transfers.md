@@ -47,7 +47,6 @@ Fill in the sending form.
 
 * **Asset**: Choose **Bitcoin SV** from the drop-down menu.
 * **Recipient**: Put the recipient address or scan QR-code or choose from Address book.
-* **Bitcoin SV Payment ID**: Use the Payment ID received on the receipt side.
 * **Amount**: Define a number of Bitcoin SV you want to send or choose **Use total balance** **50%** **10%** **5%**
 
 Please note that the gateway charges **0.01 BSV** for the gateway fee as well as **0.001 Waves** for the network fee.
