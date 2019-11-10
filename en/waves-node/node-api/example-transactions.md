@@ -1,4 +1,4 @@
-[](https://testnode1.wavesnodes.com/transactions/info/GWkdmHarT8vrYv1xQzj6tHeCbZ7gHbwUjLJrAxZYos9D)# Example Transactions
+# Example Transactions
 
 Listed below are examples of real transactions of each type found in _**testnet**_ and _**mainnet**_.
 
@@ -21,6 +21,7 @@ Listed below are examples of real transactions of each type found in _**testnet*
 | 13 | Set Script | [EXDKRNL5Apiw3K9mvLjPVNTWRhDwEvzeA9GAXSrYfQsh](https://testnode1.wavesnodes.com/transactions/info/EXDKRNL5Apiw3K9mvLjPVNTWRhDwEvzeA9GAXSrYfQsh) [345411](https://testnode1.wavesnodes.com/blocks/at/345411) |
 | 14 | Set Sponsorship | [6RpgMgrzqEUYAFrRZFNJfREwUzJaaXAenFXeLtpwmn2c](https://testnode1.wavesnodes.com/transactions/info/6RpgMgrzqEUYAFrRZFNJfREwUzJaaXAenFXeLtpwmn2c) [339514](https://testnode1.wavesnodes.com/blocks/at/339514) |
 | 15 | Set Asset Script | [GWkdmHarT8vrYv1xQzj6tHeCbZ7gHbwUjLJrAxZYos9D](https://testnode1.wavesnodes.com/transactions/info/GWkdmHarT8vrYv1xQzj6tHeCbZ7gHbwUjLJrAxZYos9D) [545881](https://testnode1.wavesnodes.com/blocks/at/545881) |
+| 16 | InvokeScript | [J5ZLBy2m9sN3oH3rHTqd1S3R9iixfhHs8JwP19H3NhCg](https://wavesexplorer.com/testnet/tx/J5ZLBy2m9sN3oH3rHTqd1S3R9iixfhHs8JwP19H3NhCg) |
 
 ### Mainnet
 
@@ -39,6 +40,7 @@ Listed below are examples of real transactions of each type found in _**testnet*
 | 13 | Set Script | [8Nwjd2tcQWff3S9WAhBa7vLRNpNnigWqrTbahvyfMVrU](https://nodes.wavesnodes.com/transactions/info/8Nwjd2tcQWff3S9WAhBa7vLRNpNnigWqrTbahvyfMVrU) [1190001](https://nodes.wavesnodes.com/blocks/at/1190001) |
 | 14 | Set Sponsorship | [7EL2XEGP1By427BeLcHPYeVnBzGsXen4egMAwQpWGBVR](http://nodes.wavesnodes.com/transactions/info/7EL2XEGP1By427BeLcHPYeVnBzGsXen4egMAwQpWGBVR) [1130205](https://nodes.wavesnodes.com/blocks/at/1130205) |
 | 15 | Set Asset Script | [FwYSpmVDbWQ2BA5NCBZ9z5GSjY39PSyfNZzBayDiMA88](http://nodes.wavesnodes.com/transactions/info/FwYSpmVDbWQ2BA5NCBZ9z5GSjY39PSyfNZzBayDiMA88) [1346345](https://nodes.wavesnodes.com/blocks/at/1346345) |
+| 16 | InvokeScript | [7CVjf5KGRRYj6UyTC2Etuu4cUxx9qQnCJox8vw9Gy9yq](https://wavesexplorer.com/tx/7CVjf5KGRRYj6UyTC2Etuu4cUxx9qQnCJox8vw9Gy9yq) |
 
 ## V2 transactions
 
