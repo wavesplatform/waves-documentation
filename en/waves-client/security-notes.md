@@ -4,7 +4,7 @@
 
 Before you create an account, you should know some important points about the Waves wallet system. In Waves wallet, there is no .dat file which keeps your private keys but a SEED which grants you access to them. The SEED is by default a string of 15 English words and basically your passphrase to your funds - **if you lose your SEED, you lose access to your account**.
 
-We strongly encourage you to additionally back up the SEED on a piece of paper and store it in a safe place. The provided string of 15 English words is cryptographically extremely secure and with the current technology unbreakable \(the chance someone can break a passphrase given by the client is 1:\(2048^15\)\). Each and every SEED is only linked to one single Waves account. Every digit, character, symbol and space counts - if there is one space too much, a different account opens up. If there is a wrong symbol, a different account opens up. If there is a spelling mistake, a different account opens up.
+We strongly encourage you to additionally back up the SEED on a piece of paper and store it in a safe place. The provided string of 15 English words is cryptographically extremely secure and with the current technology unbreakable \(the chance someone can break a passphrase given by the client is 1:\(2048^15\)\). Each and every SEED is only linked to one single Waves account. Every digit, character, symbol - if there is one symbol too much, a different account opens up. If there is a wrong symbol, a different account opens up. If there is a spelling mistake, a different account opens up.
 
 ## Do not forget to create a backup copy of the seed phrase! See how to do it:
 
