@@ -10,7 +10,7 @@ An account can be restricted with any outgoing transaction based on:
 
 ## Set Script to an Account
 
-In order to setup an Smart Account, The account needs to issue [SetScriptTransaction](https://wavesplatform.github.io/waves-transactions/globals.html#setscript) which contains the predicate. Upon success, every outgoing transaction will be validated not by the default mechanism of signature validation, but according to the predicate logic.  
+In order to setup a Smart Account, The account needs to issue [SetScriptTransaction](https://wavesplatform.github.io/waves-transactions/globals.html#setscript) which contains the predicate. Upon success, every outgoing transaction will be validated not by the default mechanism of signature validation, but according to the predicate logic.  
 `AccountScript` can be changed or cleared if the script installed allows the new [SetScriptTransaction](https://wavesplatform.github.io/waves-transactions/globals.html#setscript) to process.  
 The default account has no script, which is equivalent to this script:
 
@@ -22,7 +22,7 @@ sigVerify(tx.bodyBytes, tx.proofs[0], tx.senderPk)
 
 ## Script Costs
 
-We conducted performance tests for all aspects of our scripts. For this purpose, we developed an benchmark subproject with [JMH](http://openjdk.java.net/projects/code-tools/jmh/), that **computes a complexity of scripts** after compilation phase by AST \(Abstract Syntax Tree\) traversal in special _complexity units_. _Complexity units_ is a measure of the script's relative cost: we found out the most expensive operation in terms of computational complexity and defined it equal to **100 complexity units**. The most expensive functions:
+We conducted performance tests for all aspects of our scripts. For this purpose, we developed a benchmark subproject with [JMH](http://openjdk.java.net/projects/code-tools/jmh/), that **computes a complexity of scripts** after compilation phase by AST \(Abstract Syntax Tree\) traversal in special _complexity units_. _Complexity units_ is a measure of the script's relative cost: we found out the most expensive operation in terms of computational complexity and defined it equal to **100 complexity units**. The most expensive functions:
 
 * `fromBase58String` / `toBase58String`
 * `sigVerify`
@@ -31,7 +31,7 @@ We conducted performance tests for all aspects of our scripts. For this purpose,
 
 As a result, We define the following constraint for a _**script cost**_:
 
-* A script must have a size _**no more 8 kB**_.
+* A script must have a size _**no more than 8 kB**_.
 * The fixed cost for each scripted unit is equal to **400000 **_**wavelets**_ \(Waves coins, 100000000 wavelets = 1 Wave\).
 
 **Examples:**
