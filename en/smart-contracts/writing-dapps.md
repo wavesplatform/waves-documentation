@@ -33,7 +33,7 @@ match (tx)
         false
 }
 ```
-In the example above we are stating that if the sent transaction is a Transfer-transaction, and also the sum of the transfer is less than a 100 of tokens, than we are allowing such a transaction. We are also allowing any transaction of Issue type. All other types of transactions we are forbidding to send from the account.
+In the example above we are stating that if the sent transaction is a Transfer-transaction, and also the sum of the transfer is less than a 100 of tokens, then we are allowing such a transaction. We are also allowing any transaction of Issue type. All other types of transactions we are forbidding to send from the account.
 
 ## The structure of a decentralised application
 A decentralised application consists of the following elements:
