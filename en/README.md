@@ -1,5 +1,9 @@
 # News
 
+## November articles
+
+* [What is a Smart Account](smart-contracts/what-is-smart-account.md)
+
 ## October articles
 
 ### Programming
