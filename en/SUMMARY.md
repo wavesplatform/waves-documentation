@@ -323,6 +323,7 @@
 ## Programming
 
 * [What is a Smart Account](smart-contracts/what-is-smart-account.md)
+* [Creating smart account](smart-contracts/how-to-create-smart-account.md)
 * [What is a Smart Asset](smart-contracts/what-is-smart-asset.md)
 * [What is a dApp](smart-contracts/what-is-a-dapp.md)
 * [Writing dApps](smart-contracts/writing-dapps.md)
