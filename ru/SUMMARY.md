@@ -301,6 +301,7 @@
   * [REPL](smart-contracts/tools/repl.md)
   * [Waves IDE](smart-contracts/tools/waves-ide.md)
 * [Что такое смарт-аккаунт](smart-contracts/what-is-smart-account.md)
+* [Создание смарт-аккаунта](smart-contracts/how-to-create-smart-account.md)
 * [Что такое смарт-ассет](smart-contracts/what-is-smart-asset.md)
 * [Что такое dApp](smart-contracts/what-is-a-dapp.md)
 * [Написание dApps](smart-contracts/writing-dapps.md)

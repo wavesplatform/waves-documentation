@@ -3,6 +3,7 @@
 ## November articles
 
 * [What is a Smart Account](smart-contracts/what-is-smart-account.md)
+* [Creating smart account](smart-contracts/how-to-create-smart-account.md)
 
 ## October articles
 

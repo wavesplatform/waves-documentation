@@ -5,6 +5,8 @@
 ### Программирование
 
 * [Что такое смарт-аккаунт](smart-contracts/what-is-smart-account.md)
+* [Создание смарт-аккаунта](smart-contracts/how-to-create-smart-account.md)
+)
 
 ## Октябрьские статьи
 
