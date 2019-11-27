@@ -33,4 +33,11 @@ The key of a record cannot be rewritten.
 
 ## Deleting records
 
-A record cannot be deleted from an account data storage, it is only possible to rewrite its value.
+Deleting account data storage records is implemented by
+
+- [data transaction](/blockchain/transaction-type/data-transaction.md)
+- [deleteKey](/ride/structures/common-structures/delete-key.md) structure.
+
+Deleting a record is performed by key.
+
+The maximum number of keys to delete cannot exceed 100.
