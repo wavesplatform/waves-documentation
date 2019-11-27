@@ -200,7 +200,7 @@ Pay attention to the parameters `waves.blockchain.custom.address-scheme-charact
 
 Start your custom network node by running:
 
-```sbt "run waves-custom-network.conf"```
+```sbt "node/run waves-custom-network.conf"```
 
 Also, you can run already built release package (deb or jar) with this configuration file manually.
 
