@@ -109,7 +109,10 @@ Number `N`.
 ### Examples
 
 ``` ride
-take(base58'37BPKA', 2) # Returns the first 2 bytes of the byte array
+take(base58'37BPKA', 0) # Returns the empty byte array
+take(base58'37BPKA', 1) # Returns the byte array consisting of first byte of initial byte array
+take(base58'37BPKA', 15) # Returns whole byte array
+take(base58'37BPKA', -10) # Returns the empty byte array
 ```
 
 ## takeRight(ByteVector, Int): ByteVector<a id="take-right"></a>

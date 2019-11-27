@@ -197,7 +197,8 @@ take("Apple", 0) # Возвращает пустую строку
 take("Apple", 1) # Возвращает "A"
 take("Apple", 3) # Возвращает "App"
 take("Apple", 5) # Возвращает "Apple"
-take("Apple", 15) # Возвращает пустую строку
+take("Apple", 15) # Возвращает "Apple"
+take("Apple", -10) # Возвращает ""
 ```
 
 ## takeRight(String, Int): String<a id=take-right></a>
