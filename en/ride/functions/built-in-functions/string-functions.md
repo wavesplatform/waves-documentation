@@ -197,7 +197,8 @@ take("Apple", 0) # Returns an empty string
 take("Apple", 1) # Returns "A"
 take("Apple", 3) # Returns "App"
 take("Apple", 5) # Returns "Apple"
-take("Apple", 15) # Returns an empty string
+take("Apple", 15) # Returns "Apple"
+take("Apple", -10) # Returns an empty string
 ```
 
 ## takeRight(String, Int): String<a id="take-right"></a>

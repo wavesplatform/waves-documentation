@@ -109,7 +109,10 @@ take(xs: ByteVector, number: Int): ByteVector
 ### Примеры
 
 ``` ride
-take(base58'37BPKA', 2) # Возвращает первые 2 байта массива байтов
+take(base58'37BPKA', 0) # Возвращает пустой массив байтов
+take(base58'37BPKA', 1) # Возвращает массив байтов, состоящий из первого байта исходного массива байтов
+take(base58'37BPKA', 15) # Возвращает массив байтов целиком
+take(base58'37BPKA', -10) # Возвращает пустой массив байтов
 ```
 
 ## takeRight(ByteVector, Int): ByteVector <a id="takeright"></a>
