@@ -50,7 +50,7 @@ The elected reward size remains unchanged for 100,000 blocks following the end o
 
 Miner specifies the new desired reward size using the [waves.rewards.desired](/waves-node/node-configuration.md#rewards)` setting in the node configuration file; the setting value is specified in [WAVELET](/blockchain/token/wavelet.md)s.
 
-If the value recorded to the block is **greater than the current reward size**, then miner votes for the current reward size **increase**; if the value is smaller — for the decrease.
+If the value is **greater than the current reward size**, then miner votes for the current reward size **increase**; if the value is smaller — for the decrease. If the setting value is not specified in the configuration file, then miner votes for keeping the current reward size.
 
 When a [mining node](/blockchain/node/mining-node.md) generates a block, it writes into that block the value of the `waves.rewards.desired` setting from its own configuration file. If the setting value is not specified in the configuration file, then -1 is written to the block.
 
@@ -62,7 +62,9 @@ To count the votes, all 10,000 blocks generated during the voting period are ins
 
 If either -1 or the value that is equal to the current reward size is recorded to the block, then miner votes for keeping the current reward size.
 
-The mining reward is increased/decreased only if more than half of the 10,000 votes — i.e. 5,001 votes or more — were given for increase/decrease. The amount of the current reward is increased/decreased by 0.5 WAVES _step_.
+If the value recorded to the block is greater than the current reward size, then miner votes for the current reward size increase; if the value is smaller — for the decrease.
+
+The mining reward is increased/decreased only if more than half of the 10,000 votes — i.e. 5,001 votes or more — were given for increase/decrease. The amount of the current reward is **increased/decreased by 0.5 WAVES** _step_.
 
 ## Examples
 
