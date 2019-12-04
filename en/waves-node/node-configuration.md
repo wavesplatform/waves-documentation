@@ -222,7 +222,7 @@ In this section, you can change the size of unconfirmed transactions pool \(`max
 
 In this section, you can set the desired reward size using `desired` parameter. The setting value is specified in WAVELETs.
 
-If the value recorded to the block is greater than the current reward size, then miner votes for the current reward size increase; if the value is smaller — for the decrease.
+If the value is greater than the current reward size, then miner votes for the current reward size increase; if the value is smaller — for the decrease.
 
 Example of the setting which value is 7 WAVES:
 
