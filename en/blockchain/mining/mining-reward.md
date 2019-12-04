@@ -4,7 +4,7 @@ The **mining reward** is a blockchain feature under which [miners](/blockchain/m
 
 Mining rewards are paid due to the additional issue of the WAVES token.
 
-Miners can change the size of reward through voting.
+The community of miners can change the size of reward through [voting](#voting).
 
 ## Current reward size
 
@@ -46,9 +46,9 @@ The voting duration is 10,000 blocks. During this time, miners vote to increase,
 
 The elected reward size remains unchanged for 100,000 blocks following the end of voting.
 
-## Voting
+## <a id="voting"></a>Voting
 
-Miner specifies the new desired reward size using the [waves.rewards.desired](/waves-node/node-configuration.md#rewards)` setting in the node configuration file; the setting value is specified in [WAVELET](/blockchain/token/wavelet.md)s.
+Miner specifies the new desired reward size using the [waves.rewards.desired](/waves-node/node-configuration.md#rewards) setting in the node configuration file; the setting value is specified in [WAVELET](/blockchain/token/wavelet.md)s.
 
 If the value is **greater than the current reward size**, then miner votes for the current reward size **increase**; if the value is smaller — for the decrease. If the setting value is not specified in the configuration file, then miner votes for keeping the current reward size.
 
