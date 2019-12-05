@@ -46,7 +46,8 @@ The voting duration is 10,000 blocks. During this time, miners vote to increase,
 
 The elected reward size remains unchanged for 100,000 blocks following the end of voting.
 
-## <a id="voting"></a>Voting
+<a id="voting"></a>
+## Voting
 
 Miner specifies the new desired reward size using the [waves.rewards.desired](/waves-node/node-configuration.md#rewards) setting in the node configuration file; the setting value is specified in [WAVELET](/blockchain/token/wavelet.md)s.
 

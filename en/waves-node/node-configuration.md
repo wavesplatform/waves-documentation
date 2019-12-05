@@ -218,13 +218,14 @@ In `micro-block-synchronizer` subsection you could tune various parameters of Wa
 
 In this section, you can change the size of unconfirmed transactions pool \(`max-size` parameter\) and maximum age of transactions allowed to UTX \(`max-transaction-age`\).
 
-### <a id="rewards"></a>Rewards settings
+<a id="rewards"></a>
+### Rewards settings
 
 In this section, you can set the desired reward size using `desired` parameter. The setting value is specified in WAVELETs.
 
 If the value is greater than the current reward size, then miner votes for the current reward size increase; if the value is smaller — for the decrease.
 
-Example of the setting which value is 7 WAVES:
+Example of the setting that has the desired value of 7 WAVES:
 
 ```js
 waves {
