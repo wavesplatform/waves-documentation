@@ -4,6 +4,8 @@ The **mining reward** is a blockchain feature under which [miners](/blockchain/m
 
 Mining rewards are paid due to the additional issue of the WAVES token.
 
+The community of miners can change the size of reward through [voting](#voting).
+
 ## Current reward size
 
 You can view the current reward size by making a request to the [Node API](/waves-node/node-api.md). In response to the request, JSON is returned, the value of the `currentReward` field of which is the current mining reward size in [WAVELET](/blockchain/token/wavelet.md)s.
@@ -44,19 +46,14 @@ The voting duration is 10,000 blocks. During this time, miners vote to increase,
 
 The elected reward size remains unchanged for 100,000 blocks following the end of voting.
 
+<a id="voting"></a>
 ## Voting
 
-Miner specifies the new desired reward size using the `waves.rewards.desired` setting in the node configuration file; the setting value is specified in [WAVELET](/blockchain/token/wavelet.md)s.
+Miner specifies the new desired reward size using the [waves.rewards.desired](/waves-node/node-configuration.md#rewards) setting in the node configuration file; the setting value is specified in [WAVELET](/blockchain/token/wavelet.md)s.
 
-Example of the setting which value is 7 WAVES:
+If the value is **greater than the current reward size**, then miner votes for the current reward size **increase**; if the value is smaller — for the decrease. If the setting value is not specified in the configuration file, then miner votes for keeping the current reward size.
 
-``` console
-waves.rewards.desired = 700000000
-```
-
-The value can be any integer in the range from 0 to 9,223,372,036,854,775,807 inclusive.
-
-When a [mining node](/blockchain/node/mining-node.md) generates a block, it writes into that block the value of the `waves.rewards.desired setting` from its own configuration file. If the setting value is not specified in the configuration file, then -1 is written to the block.
+When a [mining node](/blockchain/node/mining-node.md) generates a block, it writes into that block the value of the `waves.rewards.desired` setting from its own configuration file. If the setting value is not specified in the configuration file, then -1 is written to the block.
 
 During the voting time in 10,000 blocks, a single mining node can generate several blocks, therefore one mining node can vote several times. How often a mining node generates blocks is determined by the LPoS consensus.
 
@@ -68,7 +65,7 @@ If either -1 or the value that is equal to the current reward size is recorded t
 
 If the value recorded to the block is greater than the current reward size, then miner votes for the current reward size increase; if the value is smaller — for the decrease.
 
-The mining reward is increased/decreased only if more than half of the 10,000 votes — i.e. 5,001 votes or more — were given for increase/decrease. The amount of the current reward is increased/decreased by 0.5 WAVES _step_.
+The mining reward is increased/decreased only if more than half of the 10,000 votes — i.e. 5,001 votes or more — were given for increase/decrease. The amount of the current reward is **increased/decreased by 0.5 WAVES** _step_.
 
 ## Examples
 

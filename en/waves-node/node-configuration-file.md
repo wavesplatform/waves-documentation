@@ -18,6 +18,7 @@ An example of the default node configuration file is available [on Github](https
 | 8 | Performance metrics | |
 | 9 | P2P network   | |
 | 10 | REST API | Settings of [Node API](/waves-node/node-api.md) |
-| 11 | Unverified transactions pool | |
-| 12 | Wallet | |
-| 13 | Waves | | |
+| 11 | Rewards | Settings of desired mining reward. See [Mining reward](/blockchain/mining/mining-reward.md) for more information. |
+| 12 | Unverified transactions pool | |
+| 13 | Wallet | |
+| 14 | Waves | | |
