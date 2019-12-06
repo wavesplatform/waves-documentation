@@ -21,3 +21,4 @@ Each [transaction](/blockchain/transaction.md) on the blockchain is of a specifi
 | 13 | [Set script transaction](/blockchain/transaction-type/set-script-transaction.md) | 13 |
 | 14 | Sponsorship transaction | 14 |
 | 15 | [Transfer transaction](/blockchain/transaction-type/transfer-transaction.md)  | 4 |
+| 16 | [Update Asset Info transaction](/blockchain/transaction-type/update-asset-info-transaction.md)  | 17 |

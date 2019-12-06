@@ -1,5 +1,21 @@
 # Новости
 
+## Декабрьские статьи
+
+### Блокчейн
+
+* Тип транзакции
+  * [Транзакция обновления информации ассета](blockchain/transaction-type/update-asset-info-transaction.md)
+
+* Бинарный формат
+  * Protobuf-схема транзакции
+    * [Protobuf-схема транзакции обновления информации ассета](blockchain/binary-format/transaction-protobuf-scheme/update-asset-info-transaction-protobuf-scheme.md)
+
+### Ride
+
+* Структура
+  * [UpdateAssetInfoTransaction](ride/structures/transaction-structures/update-asset-info-transaction.md)
+
 ## Ноябрьские статьи
 
 ### Программирование
