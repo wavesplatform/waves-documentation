@@ -14,7 +14,10 @@
 ### Ride
 
 * Структура
-  * [UpdateAssetInfoTransaction](ride/structures/transaction-structures/update-asset-info-transaction.md)
+  * Общие структруры
+    * [DeleteKey](ride/structures/common-structures/delete-key.md)
+  * Структуры транзакций
+    * [UpdateAssetInfoTransaction](ride/structures/transaction-structures/update-asset-info-transaction.md)
 
 ## Ноябрьские статьи
 

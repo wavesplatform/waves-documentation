@@ -14,7 +14,10 @@
 ### Ride
 
 * Structures
-  * [UpdateAssetInfoTransaction](ride/structures/transaction-structures/update-asset-info-transaction.md)
+  * Common structures
+    * [DeleteKey](ride/structures/common-structures/delete-key.md)
+  * Transaction structures
+    * [UpdateAssetInfoTransaction](ride/structures/transaction-structures/update-asset-info-transaction.md)
 
 ## November articles
 

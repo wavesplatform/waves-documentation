@@ -296,6 +296,7 @@
     * [AttachedPayment](ride/structures/common-structures/attached-payment.md)
     * [BlockInfo](ride/structures/common-structures/block-info.md)
     * [DataEntry](ride/structures/common-structures/data-entry.md)
+    * [DeleteKey](ride/structures/common-structures/delete-key.md)
     * [Invocation](ride/structures/common-structures/invocation.md)
     * [Order](ride/structures/common-structures/order.md)
     * [ScriptResult](ride/structures/common-structures/script-result.md)
