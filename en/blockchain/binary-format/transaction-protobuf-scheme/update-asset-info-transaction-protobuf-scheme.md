@@ -48,8 +48,6 @@ message Transaction {
     };
 };
   
-...
-  
 message UpdateAssetInfoTransactionData {
     bytes asset_id = 1;
     string name = 2;
