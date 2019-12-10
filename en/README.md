@@ -8,6 +8,10 @@
 
 ### Blockchain
 
+* Block
+  * Block generation
+    * [Generation signature](blockchain/block/block-generation/generation-signature.md)
+
 * Transaction type
   * [Update asset info transaction](blockchain/transaction-type/update-asset-info-transaction.md)
 
