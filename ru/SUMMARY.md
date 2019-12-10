@@ -35,6 +35,8 @@
     * [Бинарный формат транзакции спонсирования](blockchain/binary-format/transaction-binary-format/sponsor-fee-transaction-binary-format.md)
     * [Бинарный формат транзакции установки скрипта ассета](blockchain/binary-format/transaction-binary-format/set-asset-script-transaction-binary-format.md)
     * [Бинарный формат транзакции установки скрипта](blockchain/binary-format/transaction-binary-format/set-script-transaction-binary-format.md)
+  * [Protobuf-схема транзакции](blockchain/binary-format/transaction-protobuf-scheme.md)
+    * [Protobuf-схема транзакции обновления информации ассета](blockchain/binary-format/transaction-protobuf-scheme/update-asset-info-transaction-protobuf-scheme.md)
 * [Биржевая заявка](blockchain/order.md)
 * [Блок](blockchain/block.md)
   * [Блок генезиса](blockchain/block/genesis-block.md)
