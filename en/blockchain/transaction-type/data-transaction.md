@@ -20,14 +20,21 @@ The `key` field is a non-empty [UTF-8](https://en.wikipedia.org/wiki/UTF-8) stri
 
 At the stage of [transaction validation](/blockchain/transaction/transaction-validation.md), the `key` field is converted from UTF-8 to [UTF-16](https://en.wikipedia.org/wiki/UTF-16) encoding. The size of the resulting array of 16-bit words must not exceed 100 elements. Thus, the size of the `key` must be from 1 to 200 bytes inclusive.
 
+The `key` is being deleted when its `type` and `value` are not specified.
+
+> This feature is available from node version 1.2. This feature can be used after activation of the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) functionality on the node.
+Version 1.2.x is currently available on stagenet
+
+When deleting a key using the JSON representation of a transaction, null is used as the type and value of the key. In one data transaction, keys can be used both for writing and deleting records. The maximum number of keys to be deleted in one transaction cannot exceed 100.
+
 ## The `type` field
 
 The `type` field specifies the type of the `value` field:
 
-* 0 — integer
-* 1 — boolean
-* 2 — array of bytes
-* 3 — string
+* binary
+* boolean
+* integer
+* string
 
 ## The `value` field
 

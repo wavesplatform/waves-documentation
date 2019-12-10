@@ -15,9 +15,10 @@
 | 7 | [Транзакция лизинга](/blockchain/transaction-type/lease-transaction.md) | 8 |
 | 8 | [Транзакция массовой отправки](/blockchain/transaction-type/mass-transfer-transaction.md) | 11 |
 | 9 | [Транзакция обмена](/blockchain/transaction-type/exchange-transaction.md)  | 7 |
-| 10 | [Транзакция перевода](/blockchain/transaction-type/transfer-transaction.md) | 4 |
-| 11 | [Транзакция сжигания токена](/blockchain/transaction-type/burn-transaction.md) | 6 |
-| 12 | [Транзакция создания псевдонима](/blockchain/transaction-type/alias-transaction.md) | 10|
-| 13 | Транзакция спонсирования | 14 |
-| 14 | [Транзакция установки скрипта](/blockchain/transaction-type/set-script-transaction.md) | 13 |
-| 15 | [Транзакция установки скрипта ассета](/blockchain/transaction-type/set-asset-script-transaction.md) | 15 |
+| 10 | [Транзакция обновления информации ассета](/blockchain/transaction-type/update-asset-info-transaction.md) | 17 |
+| 11 | [Транзакция перевода](/blockchain/transaction-type/transfer-transaction.md) | 4 |
+| 12 | [Транзакция сжигания токена](/blockchain/transaction-type/burn-transaction.md) | 6 |
+| 13 | [Транзакция создания псевдонима](/blockchain/transaction-type/alias-transaction.md) | 10|
+| 14 | Транзакция спонсирования | 14 |
+| 15 | [Транзакция установки скрипта](/blockchain/transaction-type/set-script-transaction.md) | 13 |
+| 16 | [Транзакция установки скрипта ассета](/blockchain/transaction-type/set-asset-script-transaction.md) | 15 |

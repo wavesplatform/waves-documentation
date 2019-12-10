@@ -4,7 +4,8 @@
 | :--- | :--- | :--- | :--- |
 | 1 | [fraction(Int, Int, Int): Int](#fraction) | Конвертирует произвольно большое знаковое целое число в целое число | 1 |
 | 2 | [log(Int, Int, Int, Int, Int, Union): Int](#log)  | Находит логарифм числа | 100 |
-| 3 | [pow(Int, Int, Int, Int, Int, Union): Int](#pow) | Возводит число в степень | 100 |
+| 3 | [median(List[Int]): Int](#median) | Возвращает медиану списка целых чисел | 10 |
+| 4 | [pow(Int, Int, Int, Int, Int, Union): Int](#pow) | Возводит число в степень | 100 |
 
 ## fraction(Int, Int, Int): Int<a id="fraction"></a>
 
@@ -92,6 +93,32 @@ log(0, 0, 2, 0, 0, HalfUp()) # -Infinity
 log(1, 0, 2, 0, 0, HalfDown()) # Возвращает 0
 log(10555, 3, 2, 0, 3, HalfEven()) # Возвращает 3400
 log(1625, 2, 2, 0, 2, Up()) # Возвращает 403
+```
+
+## median(List[Int])<a id="median"></a>
+
+Возвращает медиану [списка](/ride/data-types/list.md) целых чисел. Список не может быть пустым, иначе скрипт завершится с ошибкой.
+
+> Функция `median` становится доступной с версии ноды 1.2. Возможность использовать её включается с активацией на ноде функциональности "Ride V4 and multiple attached payments for Invoke Script Transaction" (№16).
+На данный момент версии 1.2.x доступны на stagenet
+
+
+``` ride
+median(arr: List[Int]): Int
+```
+
+### Параметры
+
+#### `arr`: List[Int]
+
+Список целых чисел.
+
+### Примеры
+
+```ride
+median([1, 2, 3]) # Возвращает 2
+median([2, 4, 9, 20]) # Возвращает 6
+median([-2, -4, -9, -20]) # Возвращает -7
 ```
 
 ## pow(Int, Int, Int, Int, Int, Union): Int<a id="pow"></a>

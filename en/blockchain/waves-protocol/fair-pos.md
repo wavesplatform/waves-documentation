@@ -1,4 +1,5 @@
 # **Fair Proof-of-Stake**
+
 From the very beginning up until now Waves has used a "pure" Proof of Stake (PoS) model (more about PoS you can find [here](/waves-environment/waves-protocol/leased-proof-of-stake-lpos.md)), as proposed by [Nxt](https://nxtwiki.org/wiki/Whitepaper:Nxt). In this model, the choice of account that has the right to generate the next block and receive the corresponding transaction fees is based on the number of tokens in the account. The more tokens that are held in the account, the greater the chance that account will earn the right to generate a block. 
 
 In Waves, we are convinced that each participant in the blockchain should participate in the block generation process proportionally his stake: we have decided to correct the PoS formula.  At the moment we do not have the goal of completely changing the algorithm, since there is no need; we simply want to make some adjustments.

@@ -4,7 +4,8 @@
 |:---| :--- | :--- | :--- |
 | 1 | [fraction(Int, Int, Int): Int](#fraction) | Multiplies [integers](/ride/data-types/int.md) `a`, `b` and divides the result by the integer `c` to avoid the integer overflow | 1 |
 | 2 | [log(Int, Int, Int, Int, Int, Union): Int](#log)|  Calculates logarithm of the number `a` with the base `b` | 100 |
-| 3 | [pow(Int, Int, Int, Int, Int, Union): Int](#pow) | Raises the number `a` to the power `b`| 100 |
+| 3 | [median(List[Int]): Int](#median)|  Returns the median of a list of integers | 10 |
+| 4 | [pow(Int, Int, Int, Int, Int, Union): Int](#pow) | Raises the number `a` to the power `b`| 100 |
 
 ## fraction(Int, Int, Int): Int<a id="fraction"></a>
 
@@ -67,8 +68,6 @@ fraction(3,2,3) # Returns 2
 
 Calculates logarithm of the number `a` with the base `b`.
 
-
-
 ``` ride
 log(value: Int, ep: Int, base: Int, bp: Int, rp: Int, round: Union): Int
 ```
@@ -118,6 +117,31 @@ The value of `log<sub>2,7</sub>(16,25)` equals to 2,807035421: 
 ```ride
 log(1625, 2, 27, 1, 2, HALFUP) # function returns 281, so, the result is: 2,81
 log(1625, 2, 27, 1, 5, HALFUP) # function returns 280703542, so, the result is: 2,80704
+```
+
+## median(List[Int]): Int<a id="median"></a>
+
+Returns the median of the [list](/ride/data-types/list). The list can't be empty, otherwise, the script will be finished with the error.
+
+> The `median` function becomes available with node 1.2 version. The function can be used when the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) feature is activated on the node.
+Version 1.2.x is currently available on stagenet.
+
+```ride
+median(arr: List[Int]): Int
+```
+
+### Parameters
+
+#### `arr`: [List[Int]](/ride/data-types/list.md)
+
+List of integers.
+
+### Examples
+
+```ride
+median([1, 2, 3]) # Returns 2
+median([2, 4, 9, 20]) # Returns 6
+median([-2, -4, -9, -20]) # Returns -7
 ```
 
 ## pow(Int, Int, Int, Int, Int, Union): Int<a id="pow"></a>

@@ -124,7 +124,8 @@ A **built-in function** is a [function](/ride/functions.md) of the [script conte
 | :--- | :--- | :--- | :--- |
 | 1 | fraction(Int, Int, Int): Int | Multiplies and divides an integer to avoid the integer overflow | 1 |
 | 2 | log(Int, Int, Int, Int, Int, Union): Int | Calculates logarithm of the number | 100 |
-| 3 | pow(Int, Int, Int, Int, Int, Union): Int | Raises the number to a power | 100 |
+| 3 | median(List[Int]): Int | Returns the median of a list of integers | 10 |
+| 4 | pow(Int, Int, Int, Int, Int, Union): Int | Raises the number to a power | 100 |
 
 ### [String functions](/ride/functions/built-in-functions/string-functions.md)
 
