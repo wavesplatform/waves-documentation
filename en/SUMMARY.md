@@ -1,7 +1,5 @@
 # Summary
 
-test
-
 ## Getting started
 
 * [News](README.md)
