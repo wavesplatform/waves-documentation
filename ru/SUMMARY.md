@@ -60,6 +60,7 @@
   * [Байт сети](blockchain/blockchain-network/chain-id.md)
   * [Основная сеть](blockchain/blockchain-network/main-network.md)
   * [Тестовая сеть](blockchain/blockchain-network/test-network.md)
+  * [Экспериментальная сеть](blockchain/blockchain-network/stage-network.md)
 * [Тип транзакции](blockchain/transaction-type.md)
   * [Транзакция вызова скрипта](blockchain/transaction-type/invoke-script-transaction.md)
   * [Транзакция выпуска](blockchain/transaction-type/issue-transaction.md)

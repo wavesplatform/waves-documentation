@@ -2,6 +2,10 @@
 
 ## December articles
 
+### Blockchain network
+
+* [Stage network](blockchain/blockchain-network/stage-network.md)
+
 ### Blockchain
 
 * Transaction type

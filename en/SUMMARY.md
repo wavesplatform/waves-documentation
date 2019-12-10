@@ -65,6 +65,7 @@
   * [Chain ID](blockchain/blockchain-network/chain-id.md)
   * [Main network](blockchain/blockchain-network/main-network.md)
   * [Test network](blockchain/blockchain-network/test-network.md)
+  * [Stage network](blockchain/blockchain-network/stage-network.md)
 * [Leasing Proof of Stake](blockchain/leasing.md)
 * [Mining](blockchain/mining.md)
   * [Miner](blockchain/mining/miner.md)
