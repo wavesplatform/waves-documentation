@@ -2,7 +2,7 @@
 
 The **stage network** or the **stagenet** is a Waves blockchain that is used for testing experimental functionality.
 
-Previously, new Waves functionality was published on [testnet](/en/blockchain/blockchain-network/test-network.md) before it was available on mainnet.
+Previously, new Waves functionality was published on [testnet](/blockchain/blockchain-network/test-network.md) before it was available on mainnet.
 
 However, when developing Waves-based projects on testnet, users could face problems due to the rollback of blockchain height caused by the instability of the testnet version.
 

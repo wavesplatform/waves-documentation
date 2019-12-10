@@ -54,8 +54,6 @@
 * [Block](blockchain/block.md)
   * [Block generation](blockchain/block/block-generation.md)
     * [Base target](blockchain/block/block-generation/base-target.md)
-    * Block
-  * Block generation
     * [Generation signature](blockchain/block/block-generation/generation-signature.md)
   * [Block height](blockchain/block/block-height.md)
   * [Block signature](blockchain/block/block-signature.md)
