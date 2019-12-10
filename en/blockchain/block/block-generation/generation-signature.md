@@ -5,7 +5,7 @@ A **generation signature** is a variable in the average block generation time [f
 The Hashing of the generation signature is done during the [mining](/blockchain/mining.md) process by the following steps:
 
 1. If the [blockchain height](/blockchain/blockchain/blockchain-height.md) is equal to 100 or more then return the [block](/blockchain/block.md) at the `current blockchain height - 1`, otherwise return the previous block.
-2. The miner hashes the following bytes of the chosen block using [Blake2b256](https://en.wikipedia.org/wiki/BLAKE_(hash_function)) hash:
+2. The miner hashes the following bytes of the chosen block using [Blake2b256](https://en.wikipedia.org/wiki/BLAKE_(hash_function) hash:
 
 | # | Field name  | Field type  | Field size in bytes  | Field description |
 |---|---|---|---|---|
