@@ -100,7 +100,7 @@ log(1625, 2, 2, 0, 2, Up()) # Возвращает 403
 Возвращает медиану [списка](/ride/data-types/list.md) целых чисел. Список не может быть пустым, иначе скрипт завершится с ошибкой.
 
 > Функция `median` становится доступной с версии ноды 1.2. Возможность использовать её включается с активацией на ноде функциональности "Ride V4 and multiple attached payments for Invoke Script Transaction" (№16).
-На данный момент версии 1.2.x доступны на stagenet
+На данный момент версии 1.2.x доступны на [stagenet](/blockchain/blockchain-network/stage-network.md)
 
 
 ``` ride

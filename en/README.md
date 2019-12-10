@@ -2,7 +2,15 @@
 
 ## December articles
 
+### Blockchain network
+
+* [Stage network](blockchain/blockchain-network/stage-network.md)
+
 ### Blockchain
+
+* Block
+  * Block generation
+    * [Generation signature](blockchain/block/block-generation/generation-signature.md)
 
 * Transaction type
   * [Update asset info transaction](blockchain/transaction-type/update-asset-info-transaction.md)
