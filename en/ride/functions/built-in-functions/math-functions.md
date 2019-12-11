@@ -123,7 +123,7 @@ log(1625, 2, 27, 1, 5, HALFUP) # function returns 280703542, so, the result is: 
 
 Returns the median of the [list](/ride/data-types/list). The list can't be empty, otherwise, the script will be finished with the error.
 
-> The `median` function becomes available with node 1.2 version. The function can be used when the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) feature is activated on the node.
+> The `median` function becomes available with node 1.2.0 version. The function can be used when the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) feature is activated on the node.
 Version 1.2.x is currently available on [stagenet](/blockchain/blockchain-network/stage-network.md).
 
 ```ride

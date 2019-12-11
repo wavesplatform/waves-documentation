@@ -33,7 +33,7 @@ The key of a record cannot be rewritten.
 
 ## Deleting records
 
-> From version 1.2, it is impossible to delete account data storage records. This feature becomes available after activation of the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) functionality on the node.
+> From version 1.2.0, it is impossible to delete account data storage records. This feature becomes available after activation of the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) functionality on the node.
 Version 1.2.x is currently available on [stagenet](/blockchain/blockchain-network/stage-network.md)
 
 Deleting records is implemented by
