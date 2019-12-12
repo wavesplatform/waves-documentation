@@ -1,4 +1,7 @@
-# TransferSet
+# TransferSet (for Standard Library version 3)
+
+> [!WARNING]
+> The structure is disabled in Standard library version 4. Starting with version 4 use `ScriptTransfer` in `ScriptResult` directly.
 
 Structure of a list of [token](/blockchain/token.md) transfers.
 

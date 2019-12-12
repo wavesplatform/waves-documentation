@@ -1,4 +1,7 @@
-# WriteSet
+# WriteSet (for Standard Library version 3)
+
+> [!WARNING]
+> The structure is disabled in Standard library version 4. Use `BinaryEntry`, `BooleanEntry`, `IntEntry`, and `StringEntry` in `ScriptResult`.
 
 Structure of a list of data records of an [account data storage](/blockchain/account/account-data-storage.md).
 
