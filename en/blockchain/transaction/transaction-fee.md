@@ -17,7 +17,7 @@ A sender can specify any amount of fee but not less than a certain amount. The l
 | Lease cancel transaction | 9 | 0.001 | |
 | Lease transaction | 8 | 0.001 | |
 | Mass transfer transaction | 11 | 0.001 + 0.0005 × N | `N` is the number of transfers inside of the transaction. <br>The value of 0.0005 × N in the formula is rounded up to the thousandths |
-| Reissue transaction | 5 | 1 | |
+| Reissue transaction | 5 | 0.001 | |
 | Set asset script transaction | 15 | 1 | |
 | Set script transaction | 13 | 0.01 | |
 | Sponsorship transaction | 14 | 1 | |
