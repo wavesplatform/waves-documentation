@@ -1,12 +1,6 @@
 ### GET /assets/balance/{address}
 ![master](https://img.shields.io/badge/MAINNET-available-4bc51d.svg)
 
-
-
-
-
-
-
 Balances for all assets that the given account ever had \(besides WAVES\).
 
 ```
@@ -62,9 +56,6 @@ Balances for all assets that the given account ever had \(besides WAVES\).
 ### GET /assets/balance/{address}/{assetId} <a id="getassetbalance"></a>
 ![master](https://img.shields.io/badge/MAINNET-available-4bc51d.svg)
 
-
-
-
 Account's balance for the given asset.
 
 ```
@@ -85,16 +76,10 @@ Account's balance for the given asset.
 ### GET /assets/details/{assetId}
 ![master](https://img.shields.io/badge/MAINNET-available-4bc51d.svg)
 
-
-
-
-
-
-
 Asset description.
 
 ```
-  "assetId" - Asset ID in Base58 format
+  "assetId" – Asset ID in Base58 format
 ```
 
 **Response JSON example:**
@@ -117,14 +102,109 @@ Asset description.
 }
 ```
 
-### POST /assets/broadcast/issue
+### GET /assets/details/?id={assetId1}&id={assetId2}&...
+
+Description of specified assets.
+
+> [!WARNING]
+> This method becomes available from node version 1.2.0, after activation of the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) feature. See [Activation Protocol](/blockchain/waves-protocol/activation-protocol.md). Version 1.2.x is currently available on [Stagenet](/blockchain/blockchain-network/stage-network.md) only.
+
+**Request params:**
+
+```
+  assetIdN – Asset ID in Base58 format
+```
+
+**Response JSON example:**
+```js
+[
+  {
+    "assetId": "7TG1nzpVhqqafTh4yeP4XXbEwtE4SnqHkqR2PfbLiA3U",
+    "issueHeight": 1714607,
+    "issueTimestamp": 1568977278682,
+    "issuer": "3PMno2s9naUyUbbnkBHfWpjgtzvRKyAzwkW",
+    "name": "Museician",
+    "description": "A token to help musicians in all facets of their careers from the live side to the studio side and everything in between.",
+    "decimals": 8,
+    "reissuable": true,
+    "quantity": 999989995499039700,
+    "scripted": false,
+    "minSponsoredAssetFee": 50000000
+  },
+  {
+  "assetId" : "8tdULCMr598Kn2dUaKwHkvsNyFbDB1Uj5NxvVRTQRnMQ",
+  "issueHeight" : 140194,
+  "issueTimestamp" : 1504015013373,
+  "issuer" : "3NCBMxgdghg4tUhEEffSXy11L6hUi6fcBpd",
+  "name" : "name",
+  "description" : "Sponsored asset",
+  "decimals" : 1,
+  "reissuable" : true,
+  "quantity" : 1221905614,
+  "script" : null,
+  "scriptText" : null,
+  "complexity" : 0,
+  "extraFee": 0,
+  "minSponsoredAssetFee": 100000
+  } 
+]
+```
+
+### GET /assets/nft/{address}/limit/{limit}?after={after}
+
+Account's NFTs balance.
+
+After Feature 16 activation this method returns only assets that are created after Feature 13 activation as NFT assets (amount: 1, decimal places: 0, reissuable: false).
+
+Before Feature 16 activation this method returns all the assets that are created as NFT assets (amount: 1, decimal places: 0, reissuable: false).
+
 ![master](https://img.shields.io/badge/MAINNET-available-4bc51d.svg)
 
+**Request params:**
 
+```
+  address – Account's address, Base58-encoded
+  limit — Number of tokens to be returned
+  after — Id of token to paginate after
+```
 
+**Response JSON example:**
 
+```js
+[
+  {
+    "assetId": "7TG1nzpVhqqafTh4yeP4XXbEwtE4SnqHkqR2PfbLiA3U",
+    "issueHeight": 1714607,
+    "issueTimestamp": 1568977278682,
+    "issuer": "3PMno2s9naUyUbbnkBHfWpjgtzvRKyAzwkW",
+    "name": "Museician",
+    "description": "A token to help musicians in all facets of their careers from the live side to the studio side and everything in between.",
+    "decimals": 0,
+    "reissuable": false,
+    "quantity": 1,
+    "scripted": false,
+    "minSponsoredAssetFee": 50000000,
+    "originTransactionId": "8RwwkZJ373Nm6fJCgV2Lefe6FeWawUY2APujcsauUNMR"
+  },
+  {
+    "assetId": "7TG1nzpVhqqafTh4yeP4XXbEwtE4SnqHkqR2PfbLiA3U",
+    "issueHeight": 1714607,
+    "issueTimestamp": 1568977278682,
+    "issuer": "3PMno2s9naUyUbbnkBHfWpjgtzvRKyAzwkW",
+    "name": "Museician",
+    "description": "A token to help musicians in all facets of their careers from the live side to the studio side and everything in between.",
+    "decimals": 0,
+    "reissuable": false,
+    "quantity": 1,
+    "scripted": false,
+    "minSponsoredAssetFee": 50000000,
+    "originTransactionId": "8RwwkZJ373Nm6fJCgV2Lefe6FeWawUY2APujcsauUNMR"
+  } 
+]
+```
 
-
+### POST /assets/broadcast/issue
+![master](https://img.shields.io/badge/MAINNET-available-4bc51d.svg)
 
 Publish signed Asset issue transaction to the network.
 

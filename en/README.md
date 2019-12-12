@@ -23,7 +23,15 @@
 
 * Structures
   * Common structures
+    * [BinaryEntry](ride/structures/common-structures/binary-entry.md)
+    * [BooleanEntry](ride/structures/common-structures/boolean-entry.md)
+    * [Burn](ride/structures/common-structures/burn.md)
     * [DeleteKey](ride/structures/common-structures/delete-key.md)
+    * [IntEntry](ride/structures/common-structures/int-entry.md)\
+    * [Issue](ride/structures/common-structures/issue.md)
+    * [Reissue](ride/structures/common-structures/reissue.md)
+    * [StringEntry](ride/structures/common-structures/string-entry.md)
+
   * Transaction structures
     * [UpdateAssetInfoTransaction](ride/structures/transaction-structures/update-asset-info-transaction.md)
 

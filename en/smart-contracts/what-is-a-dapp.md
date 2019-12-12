@@ -76,7 +76,7 @@ func verify() = {
 }
 ```
 
-##dApp limitations
+## dApp limitations
 
 The following limitations are applied to dApps:
 
@@ -86,11 +86,14 @@ The following limitations are applied to dApps:
 | [Complexity](/ride/base-concepts/complexity.md) | 4000 |
 | Number of callable function arguments | 22 |
 | Annotated function name size | 255 bytes |
-| [WriteSet](/ride/structures/common-structures/write-set.md) size | 5 Кбайт |
-| Number of records in WriteSet | 100 |
-| Number of transfers in [TransferSet](/ride/structures/common-structures/transfer-set.md) | 10 |
-| Size of the value of a variable of type String | 32767 символов |
-| Size of a ByteVector variable value | 65536 байт |
+| Number of [ScriptTransfer](/ride/structures/common-structures/script-transfer.md), [Issue](/ride/structures/common-structures/issue.md), [Reissue](/ride/structures/common-structures/reissue.md), [Burn](/ride/structures/common-structures/burn.md) calls in one script invocation (for [Standard Library](/ride/script/standard-library.md) **version 4**) | 10 |
+| Number of [BinaryEntry](/ride/structures/common-structures/binary-entry.md), [BooleanEntry](/ride/structures/common-structures/boolean-entry.md), [IntEntry](/ride/structures/common-structures/int-entry.md), [StringEntry](/ride/structures/common-structures/string-entry.md) calls in one script invocation (for [Standard Library](/ride/script/standard-library.md) **version 4**) | 100 |
+| Size of the data written to the account data storage, for all [BinaryEntry](/ride/structures/common-structures/binary-entry.md), [BooleanEntry](/ride/structures/common-structures/boolean-entry.md), [IntEntry](/ride/structures/common-structures/int-entry.md), [StringEntry](/ride/structures/common-structures/string-entry.md) calls in one script invocation (for [Standard Library](/ride/script/standard-library.md) **version 4**) | 5 Kbytes |
+| [WriteSet](/ride/structures/common-structures/write-set.md) size (for [Standard Library](/ride/script/standard-library.md) **version 3**) | 5 Kbytes |
+| Number of records in WriteSet (for [Standard Library](/ride/script/standard-library.md) **version 3**) | 100 |
+| Number of transfers in [TransferSet](/ride/structures/common-structures/transfer-set.md) (for [Standard Library](/ride/script/standard-library.md) **version 3**) | 10 |
+| Size of the value of a variable of type String | 32767  characters |
+| Size of a ByteVector variable value | 65536 bytes |
 
 Besides the limitations applied, an additional 0.004 WAVES is charged for each transaction sent with dApp. The minimum fee for most transactions is 0.001 WAVES. Thus, the cost of sending each of these transactions will be 0.005 WAVES for the owner of dApp.
 
