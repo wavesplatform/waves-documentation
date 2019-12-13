@@ -84,9 +84,11 @@ func verify() = {
 | [Complexity](/ride/base-concepts/complexity.md) | 4000 |
 | Количество аргументов Callable-функции | 22 |
 | Размер имени аннотированной функции | 255 байт |
-| Размер WriteSet | 5 Кбайт |
-| Количество записей в [WriteSet](/ride/structures/common-structures/write-set.md) | 100 |
-| Количество переводов в [TransferSet](/ride/structures/common-structures/transfer-set.md) | 10 |
+| Количество вызовов [ScriptTransfer](/ride/structures/common-structures/script-transfer.md), [Issue](/ride/structures/common-structures/issue.md), [Reissue](/ride/structures/common-structures/reissue.md), [Burn](/ride/structures/common-structures/burn.md) в одном вызове скрипта (применимо для [Стандартной библиотеки](/ride/script/standard-library.md) **версии 4** ) | 10 |
+| Количество вызовов [BinaryEntry](/ride/structures/common-structures/binary-entry.md), [BooleanEntry](/ride/structures/common-structures/boolean-entry.md), [IntEntry](/ride/structures/common-structures/int-entry.md), [StringEntry](/ride/structures/common-structures/string-entry.md) в одном вызове скрипта (применимо для [Стандартной библиотеки](/ride/script/standard-library.md) **версии 4** | 100 |
+| Размер записи [хранилища данных аккаунта](/blockchain/account/account-data-storage.md) для всех вызовов структур [BinaryEntry](/ride/structures/common-structures/binary-entry.md), [BooleanEntry](/ride/structures/common-structures/boolean-entry.md), [IntEntry](/ride/structures/common-structures/int-entry.md), [StringEntry](/ride/structures/common-structures/string-entry.md) в одном вызове скрипта (применимо для [Стандартной библиотеки](/ride/script/standard-library.md) **версии 4** | 5 Кбайт |
+| Размер WriteSet (применимо для [Стандартной библиотеки](/ride/script/standard-library.md) **версии 3** | 100 |
+| Количество переводов в [TransferSet](/ride/structures/common-structures/transfer-set.md) (применимо для [Стандартной библиотеки](/ride/script/standard-library.md) **версии 3** | 10 |
 | Размер значения переменной типа String | 32767 символов |
 | Размер значения переменной типа ByteVector | 65536 байт |
 
