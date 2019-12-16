@@ -1,8 +1,11 @@
 # ScriptResult
 
-Структура результата выполнения вызываемой функции.
+> [!ВНИМАНИЕ]
+> Структура ScriptResult не входит в [Стандартную библиотеку](/ride/script/standard-library.md) версии 4. Используйте List[BinaryEntry|BooleanEntry|IntEntry|StringEntry|ScriptTranfer|Issue|Reissue|Burn] вместо этой структуры.
 
-## Конструктор
+Структура результата выполнения [вызываемой функции](/ride/functions/callable-function.md).
+
+## Конструктор для стандартной библиотеки версии 3
 
 ``` ride
 ScriptResult(writeSet: WriteSet, transferSet: TransferSet)

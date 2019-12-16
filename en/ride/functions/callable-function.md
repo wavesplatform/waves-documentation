@@ -6,7 +6,7 @@ A dApp script may have several callable functions.
 
 A callable function of a [dApp](/blockchain/account/dapp.md) can be invoked by the [invoke script transaction](/blockchain/transaction-type/invoke-script-transaction.md).
 
-## Example (for Standard Library version 3)
+## Example for Standard Library version 3
 
 ```ride
 @Callable(inv)
@@ -15,7 +15,7 @@ func rate(name: String, rating: Int) = {
 }
 ```
 
-## Example (for Standard Library version 4)
+## Example for Standard Library version 4
 
 ```ride
  @Callable(i)
@@ -34,4 +34,4 @@ func rate(name: String, rating: Int) = {
 ```
 
 > [!WARNING]
-> Standard Library Version 4 becomes available from node version 1.2.0, after activation of the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) feature. See [Activation Protocol](/blockchain/waves-protocol/activation-protocol.md).
+> [Standard Library](/ride/script/standart-library.md) Version 4 becomes available from node version 1.2.0, after activation of the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) feature. See [Activation Protocol](/blockchain/waves-protocol/activation-protocol.md).

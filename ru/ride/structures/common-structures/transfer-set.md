@@ -1,5 +1,8 @@
 # TransferSet
 
+> [!ВНИМАНИЕ]
+> Структура TransferSet не входит в [Стандартную библиотеку](/ride/script/standard-library.md) версии 4. Начиная с версии 4, используйте `ScriptTransfer` в `ScriptResult` напрямую.
+
 Структура списка переводов токенов.
 
 ## Конструктор
