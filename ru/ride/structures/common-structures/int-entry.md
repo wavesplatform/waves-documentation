@@ -1,6 +1,6 @@
 # IntEntry
 
-> [!ВНИМАНИЕ]
+> [!WARNING]
 > Структура IntEntry представлена в [Стандартной библиотеке](/ride/script/standard-library.md) **версии 4**, которая в настоящее время доступна только на [Stagenet](/blockchain/blockchain-network/stage-network.md).
 
 Структура записи целочисленного типа [хранилища данных аккаунта](/blockchain/account/account-data-storage.md).
