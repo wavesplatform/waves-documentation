@@ -1,6 +1,6 @@
 # ScriptResult
 
-> [!ВНИМАНИЕ]
+> [!WARNING]
 > Структура ScriptResult не входит в [Стандартную библиотеку](/ride/script/standard-library.md) версии 4. Используйте List[BinaryEntry|BooleanEntry|IntEntry|StringEntry|ScriptTranfer|Issue|Reissue|Burn] вместо этой структуры.
 
 Структура результата выполнения [вызываемой функции](/ride/functions/callable-function.md).
