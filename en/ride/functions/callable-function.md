@@ -34,4 +34,39 @@ func rate(name: String, rating: Int) = {
 ```
 
 > [!WARNING]
-> [Standard Library](/ride/script/standart-library.md) Version 4 becomes available from node version 1.2.0, after activation of the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) feature. See [Activation Protocol](/blockchain/waves-protocol/activation-protocol.md).
+> [Standard Library](/ride/script/standard-library.md) Version 4 becomes available from node version 1.2.0, after activation of the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) feature. See [Activation Protocol](/blockchain/waves-protocol/activation-protocol.md).
+
+> [!INFO]
+> Starting from [Standard library]() version 4, the list of primitive data types values can be passed to the annotated function. Maximum list size - 1000 elements
+
+## Example 1
+
+```ride
+
+{-# STDLIB_VERSION 4 #-}
+{-# CONTENT_TYPE DAPP #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
+  
+@Callable(i)
+func f(args: List[String]) = {
+    StringEntry("entry1", args[0]),
+    StringEntry("entry1", args[1]),
+}
+```
+
+## Example 2
+
+```ride
+{-# STDLIB_VERSION 4 #-}
+{-# CONTENT_TYPE DAPP #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
+  
+@Callable(i)
+func f(a, args: List[String]) = {
+    let s = size(a)
+    if ((s == 1))
+        then (a == args[0])
+    else ((s != 1))
+        then (a == args[1])
+}
+```
