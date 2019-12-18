@@ -3,7 +3,7 @@
 | # | Name | Description | Complexity |
 | :--- | :--- | :--- | :--- |
 | 1 | [extract(T&#124;Unit): T](#extract) | Возвращает значение из параметра типа данных [объединение](/ride/data-types/union.md).<br>Выбрасывает исключение, если параметром является [unit](/ride/data-types/unit.md) | 13 |
-| 2 | [isDefined(List[T]|Unit): Boolean](#isDefined) | Проверяет, относится ли параметр к типу [unit](/ride/data-types/unit.md) | 1 |
+| 2 | [isDefined(List[T]&#124;Unit): Boolean](#isDefined) | Проверяет, относится ли значение параметра к типу [unit](/ride/data-types/unit.md) | 1 |
 | 3 | [value(T&#124;Unit): T](#value) | Возвращает значение из параметра типа данных [объединение](/ride/data-types/union.md).<br>Выбрасывает исключение, если параметром является [unit](/ride/data-types/unit.md) | 13 |
 | 4 | [valueOrErrorMessage(T&#124;Unit, String): T](#value-error) | Возвращает значение из параметра типа данных [объединение](/ride/data-types/union.md).<br>Если параметром является [unit](/ride/data-types/unit.md), возвращает сообщение об ошибке, заданное во втором параметре | 13 |
 
@@ -25,7 +25,7 @@ extract(a: T|Unit): T
 
 ## isDefined(List[T]|Unit): T<a id="isDefined"></a>
 
-Проверяет, относится ли параметр к типу [unit](/ride/data-types/unit.md)
+Проверяет, относится ли значение параметра к типу [unit](/ride/data-types/unit.md).
 
 ```ride
 isDefined(a: List[T]|Unit): Boolean
