@@ -12,7 +12,7 @@
 
 ## Usage
 
-| Name | Description | Transaction type ID |
+| Transaction type ID | Name | Description |
 | :--- | :--- | :--- |
 | 4 | [TransferTransaction](/ride/structures/transaction-structures/transfer-transaction.md) | Structure of [transfer transaction](/blockchain/transaction-type/transfer-transaction.md) |
 | 7 | [ExchangeTransaction](/ride/structures/transaction-structures/exchange-transaction.md) | Structure of [exchange transaction](/blockchain/transaction-type/exchange-transaction.md) |
