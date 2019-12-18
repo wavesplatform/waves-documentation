@@ -44,10 +44,10 @@ By default, depending on the operating system and the type of blockchain, the fo
 
 | | *nix | macOS | Windows |
 | :--- | :--- | :--- | :--- |
-| Mainnet | `$XDG_DATA_HOME/waves-mainnet` or `$HOME//.local/share/waves-mainnet` | `$HOME/Library/Application Support/waves-mainnet` | `$LOCALAPPDATA/waves-mainnet` |
-| Testnet | `$XDG_DATA_HOME/waves-testnet` or `$HOME//.local/share/waves-testnet` | `$HOME/Library/Application Support/waves-testnet` | `$LOCALAPPDATA/waves-testnet` |
-| Stagenet | `$XDG_DATA_HOME/waves-stagenet` or `$HOME//.local/share/waves-stagenet` | `$HOME/Library/Application Support/waves-stagenet` | `$LOCALAPPDATA/waves-stagenet` |
-| Custom | `$XDG_DATA_HOME/waves-custom-<character>*` or `$HOME//.local/share/waves-custom-<character>*` | `$HOME/Library/Application Support/waves-custom-<character>*` | `$LOCALAPPDATA/waves-custom-<character>*` |
+| Mainnet | `$XDG_DATA_HOME/waves-mainnet` or `$HOME/.local/share/waves-mainnet` | `$HOME/Library/Application Support/waves-mainnet` | `$LOCALAPPDATA/waves-mainnet` |
+| Testnet | `$XDG_DATA_HOME/waves-testnet` or `$HOME/.local/share/waves-testnet` | `$HOME/Library/Application Support/waves-testnet` | `$LOCALAPPDATA/waves-testnet` |
+| Stagenet | `$XDG_DATA_HOME/waves-stagenet` or `$HOME/.local/share/waves-stagenet` | `$HOME/Library/Application Support/waves-stagenet` | `$LOCALAPPDATA/waves-stagenet` |
+| Custom | `$XDG_DATA_HOME/waves-custom-<character>*` or `$HOME/.local/share/waves-custom-<character>*` | `$HOME/Library/Application Support/waves-custom-<character>*` | `$LOCALAPPDATA/waves-custom-<character>*` |
 
 \* See the `address-scheme-character` parameter description in [Configuring Custom Blockchain](#section-20ddd805c332b711c4699ea1c9539300) section.
 

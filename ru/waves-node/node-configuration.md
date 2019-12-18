@@ -45,10 +45,10 @@ java -jar waves-all-0.13.3.jar waves.conf
 
 | | *nix | macOS | Windows |
 | :--- | :--- | :--- | :--- |
-| Mainnet | `$XDG_DATA_HOME/waves-mainnet` или `$HOME//.local/share/waves-mainnet` | `$HOME/Library/Application Support/waves-mainnet` | `$LOCALAPPDATA/waves-mainnet` |
-| Testnet | `$XDG_DATA_HOME/waves-testnet` или `$HOME//.local/share/waves-testnet` | `$HOME/Library/Application Support/waves-testnet` | `$LOCALAPPDATA/waves-testnet` |
-| Stagenet | `$XDG_DATA_HOME/waves-stagenet` или `$HOME//.local/share/waves-stagenet` | `$HOME/Library/Application Support/waves-stagenet` | `$LOCALAPPDATA/waves-stagenet` |
-| Custom | `$XDG_DATA_HOME/waves-custom-<character>*` или `$HOME//.local/share/waves-custom-<character>*` | `$HOME/Library/Application Support/waves-custom-<character>*` | `$LOCALAPPDATA/waves-custom-<character>*` |
+| Mainnet | `$XDG_DATA_HOME/waves-mainnet` или `$HOME/.local/share/waves-mainnet` | `$HOME/Library/Application Support/waves-mainnet` | `$LOCALAPPDATA/waves-mainnet` |
+| Testnet | `$XDG_DATA_HOME/waves-testnet` или `$HOME/.local/share/waves-testnet` | `$HOME/Library/Application Support/waves-testnet` | `$LOCALAPPDATA/waves-testnet` |
+| Stagenet | `$XDG_DATA_HOME/waves-stagenet` или `$HOME/.local/share/waves-stagenet` | `$HOME/Library/Application Support/waves-stagenet` | `$LOCALAPPDATA/waves-stagenet` |
+| Custom | `$XDG_DATA_HOME/waves-custom-<character>*` или `$HOME/.local/share/waves-custom-<character>*` | `$HOME/Library/Application Support/waves-custom-<character>*` | `$LOCALAPPDATA/waves-custom-<character>*` |
 
 \* См. описание параметра `address-scheme-character` в настройках собственного блокчейна.
 
