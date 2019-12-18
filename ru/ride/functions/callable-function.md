@@ -47,10 +47,10 @@ func rate(name: String, rating: Int) = {
 {-# SCRIPT_TYPE ACCOUNT #-}
   
 @Callable(i)
-func f(args: List[String]) = {
+func f(args: List[String]) = [
     StringEntry("entry1", args[0]),
-    StringEntry("entry1", args[1]),
-}
+    StringEntry("entry1", args[1])
+]
 ```
 
 ## Пример 2
@@ -61,11 +61,12 @@ func f(args: List[String]) = {
 {-# SCRIPT_TYPE ACCOUNT #-}
  
 @Callable(i)
-func f(a, args: List[String]) = {
-    let s = size(a)
-    if ((s == 1))
-        then (a == args[0])
-    else ((s != 1))
-        then (a == args[1])
+func f(a: String, args: List[String]) = {
+    let s = size(args)
+    if s == 1 then
+        BooleanEntry("result", a == args[0])
+    else s > 1 then
+        BooleanEntry ("result", a == args[1])
+    else throw("args is empty")
 }
 ```
