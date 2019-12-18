@@ -1,6 +1,6 @@
 # Node Configuration
 
-> After upgrading to version 1.0.2 please note if your `/etc/waves/waves.conf` was originally copied from a template, you may need to assure that waves.directory points to the correct directory. If this option doesn't exist in the config, default directory `/var/lib/waves` and `/var/lib/waves-testnet` will be used for mainnet and testnet, respectively
+> After upgrading to version 1.0.2 please note if your `/etc/waves/waves.conf` was originally copied from a template, you may need to assure that waves.directory points to the correct directory. If this option doesn't exist in the config, default directory will be used.
 
 ## Configuration Format
 
@@ -36,15 +36,20 @@ Typically this file should contain you node's unique characteristics (ip, name, 
 
 Root configuration section `waves` holds essential application parameters and other configuration subsections.
 
-Using parameter `directory` it is possible to set a path to the base application directory. Starting from version 0.6.0 it is possible to use environment variables to set configuration parameters. For example, by default, the base directory constructed relative to the user’s `HOME` environment variable. Please, do not enclose environment variables references in quotes, in this case, they will be handled as strings and won’t be resolved.
+Using parameter `directory` it is possible to set a path to the base application directory. It is possible to use environment variables to set configuration parameters. For example, by default, the base directory constructed relative to the user’s `HOME` environment variable. Please, do not enclose environment variables references in quotes, in this case, they will be handled as strings and won’t be resolved.
 
-**Note:** If you want to change waves directory in Ubuntu packages you should change it using `-J-Dwaves.directory=path` in `/etc/waves/application.ini` and `/lib/systemd/system/waves.service`. You can override any JVM start parameter in `waves.service`, it has priority.
+Make sure the defined directory has a correct owner set: `waves` for mainnet or `waves-testnet` for testnet.
 
+By default, depending on the operating system and the type of blockchain, the following folders are used:
 
+| | *nix | macOS | Windows |
+| :--- | :--- | :--- | :--- |
+| Mainnet | `$XDG_DATA_HOME/waves-mainnet` or `$HOME/.local/share/waves-mainnet` | `$HOME/Library/Application Support/waves-mainnet` | `$LOCALAPPDATA/waves-mainnet` |
+| Testnet | `$XDG_DATA_HOME/waves-testnet` or `$HOME/.local/share/waves-testnet` | `$HOME/Library/Application Support/waves-testnet` | `$LOCALAPPDATA/waves-testnet` |
+| Stagenet | `$XDG_DATA_HOME/waves-stagenet` or `$HOME/.local/share/waves-stagenet` | `$HOME/Library/Application Support/waves-stagenet` | `$LOCALAPPDATA/waves-stagenet` |
+| Custom | `$XDG_DATA_HOME/waves-custom-<character>*` or `$HOME/.local/share/waves-custom-<character>*` | `$HOME/Library/Application Support/waves-custom-<character>*` | `$LOCALAPPDATA/waves-custom-<character>*` |
 
-**Note:** For Windows users. Often on Windows, the HOME environment variable is not set. Please, replace `${HOME}` with `${HOMEPATH}` or `${APPDATA}` in your additional configuration file. Also, you should remember that Windows' environment variables names are case sensitive.
-
-**Note:** Make sure the defined directory has a correct owner set: `waves` for mainnet or `waves-testnet` for testnet.
+\* See the `address-scheme-character` parameter description in [Configuring Custom Blockchain](#section-20ddd805c332b711c4699ea1c9539300) section.
 
 Parameter `data-directory` sets the location of LevelDB database folder. In this database stored blockchain data and state.
 
@@ -115,11 +120,12 @@ Using `seed` parameter you could recreate an existing wallet on a new node. Prov
 
 #### Update wallet's settings
 
-If you want to run the node with another wallet, you have to:
-* delete/cope to another location your wallet.dat file for making directory /wallet empty
-* update seed at config file
+If you want to run the node with another wallet, use one of the following instuctions:
+* Replace `wallet.dat` file with the file which contains SEED phrase of another wallet.
+OR
+* Delete/copy to another location your `wallet.dat` file for making directory `/wallet` empty. Then update SEED in config file.
 
-After that node will use another wallet settings.
+Restart the node. After restarting the node will use another wallet settings.
 
 ### Blockchain settings
 
@@ -129,7 +135,7 @@ Use parameter `max-transactions-per-block-diff` to set the number of transaction
 
 You can change the number of blocks stored in memory using parameter `min-blocks-in-memory`.
 
-Using `type` parameter you can select the blockchain type. Three choices are available: TESTNET, MAINNET and CUSTOM. For TESTNET or MAINNET types, parameters of blockchain are built in the application so you don’t have to configure them. But if you select CUSTOM blockchain type you have to provide the `custom` configuration section \(which is commented out in the example\).
+Using `type` parameter you can select the blockchain type. Three choices are available: MAINNET, TESTNET, STAGENET, and CUSTOM. For MAINNET or TESTNET or STAGENET types, parameters of blockchain are built in the application so you don’t have to configure them. But if you select CUSTOM blockchain type you have to provide the `custom` configuration section \(which is commented out in the example\).
 
 #### Configuring custom blockchain
 
@@ -137,7 +143,7 @@ Use parameter `address-scheme-character` in section `custom` to set the address 
 
 `functionality` section allows you to set the timestamps of activation of different blockchain validations. It’s better to set all functionality settings to 0 to have a blockchain with all validations active.
 
-In `genesis` section it is possible to describe the first \(genesis\) block of your custom blockchain.
+In `genesis` section describe the first \(genesis\) block of your custom blockchain.
 
 Use `block-timestamp` parameter to set the date of creation of genesis block. Using parameter `timestamp` it is possible to set time of creation for genesis transactions.
 
@@ -172,10 +178,11 @@ The **REST API section** is a section in the node configuration file with settin
 | 1 | enable | Activates REST API. <br>If you want to deactivate REST API, change the default value to `no` | yes |
 | 2 | `bind-address` | Sets the network address where the REST API will accept the incoming connections. <br>**Note.** It's not recommended to change the default value. Use [Nginx’s proxy pass module](http://nginx.org/ru/docs/http/ngx_http_proxy_module.html) or [SSH port forwarding](http://blog.trackets.com/2014/05/17/ssh-tunnel-local-and-remote-port-forwarding-explained-with-examples.html) for external access. | `"127.0.0.1"` |
 | 3 | `port` | Sets the port number where the REST API will await connections. | 6869 |
-| 4 | `api-key-hash` | Sets the hash of the [API key](https://en.wikipedia.org/wiki/Application_programming_interface_key) that is provided by the node owner.<br> [API key](https://en.wikipedia.org/wiki/Application_programming_interface_key) of the node owner is highly important as the [seed](http://confluence.wavesplatform.com/display/WDOCS/Seed+phrase) phrase and the password of the wallet.<br>Follow these steps to generate the hash of the API key:<br> 1. Go to [Swagger web interface](http://confluence.wavesplatform.com/display/WDOCS/Node+API)<br> 2. Click on[`utils`](https://nodes.wavesnodes.com/api-docs/index.html#/utils)section<br>3. Click on the API method [`/utils/hash/secure`](https://nodes.wavesnodes.com/api-docs/index.html#!/utils/hashSecure_1)<br>4. Create a unique [API key](https://en.wikipedia.org/wiki/Application_programming_interface_key) as a string value and include it in the `message` parameter<br> 5. Get the hash of the [API key](https://en.wikipedia.org/wiki/Application_programming_interface_key) and paste it in your node configuration file<br>6. Restart the node<br>**Note.** The API key is transmitted in the HTTP header as unprotected plain text. An attacker can intercept it in the network transit and use it to transfer your money to any address! So it's highly important to protect the transmission using HTTPS or SSH port forwarding. | "" |
-| 5 | cors | Enables [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) support that is necessary for [Swagger](https://swagger.io/) and [DEX](http://confluence.wavesplatform.com/display/WDOCS/About+Waves+DEX). <br>[CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) allows to safely resolve queries for other domains outside the one that is running the node.<br> **Note.** If you want to deactivate [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) support, change the default value to `no` | yes |
+| 4 | `api-key-hash` | Sets the hash of the [API key](https://en.wikipedia.org/wiki/Application_programming_interface_key) that is provided by the node owner.<br> [API key](https://en.wikipedia.org/wiki/Application_programming_interface_key) of the node owner is highly important as the [seed](http://confluence.wavesplatform.com/display/WDOCS/Seed+phrase) phrase and the password of the wallet.<br>Follow these steps to generate the hash of the API key:<br> 1. Go to [Swagger web interface](/waves-node/node-api.md)<br> 2. Click on[`utils`](https://nodes.wavesnodes.com/api-docs/index.html#/utils)section<br>3. Click on the API method [`/utils/hash/secure`](https://nodes.wavesnodes.com/api-docs/index.html#!/utils/hashSecure_1)<br>4. Create a unique [API key](https://en.wikipedia.org/wiki/Application_programming_interface_key) as a string value and include it in the `message` parameter<br> 5. Get the hash of the [API key](https://en.wikipedia.org/wiki/Application_programming_interface_key) and paste it in your node configuration file<br>6. Restart the node<br>**Note.** The API key is transmitted in the HTTP header as unprotected plain text. An attacker can intercept it in the network transit and use it to transfer your money to any address! So it's highly important to protect the transmission using HTTPS or SSH port forwarding. | "" |
+| 5 | cors | Enables [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) support that is necessary for [Swagger](https://swagger.io/) and [Exchange](https://waves.exchange).<br>[CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) allows to safely resolve queries for other domains outside the one that is running the node.<br> **Note.** If you want to deactivate [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) support, change the default value to `no` | yes |
 
-During REST API calls the node owner must provide the string value of his unique [API key](https://en.wikipedia.org/wiki/Application_programming_interface_key) instead of the hashed value.
+**Note**: During REST API calls the node owner must provide the API key itself, not the the hashed value.
+
 This is an example for signing a transaction that already exists in the wallet of the node owner as a CURL command:
 
 ```
@@ -235,6 +242,6 @@ waves {
 }  
 ```
 
-The value can be any integer in the range from 0 to 9,223,372,036,854,775,807 inclusive.
+The value can be any integer in the range from 0 to 9,223,372,036,854,775,807 inclusive. Negative value will be ignored.
 
 See [Mining reward](/blockchain/mining/mining-reward.md) for more information.
