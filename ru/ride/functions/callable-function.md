@@ -35,3 +35,38 @@ func rate(name: String, rating: Int) = {
 
 > [!WARNING]
 > [Стандартная библиотека](/ride/script/standart-library.md) версии 4 доступна начиная с версии ноды 1.2.0 после активации функциональности "Ride V4 and multiple attached payments for Invoke Script Transaction" (№ 16). См. [протокол активации](/platform-features/activation-protocol.md).
+
+> [!INFO]
+> Начиная с 4 версии [Стандартной библиотеки](/ride/script/standard-library.md) в качестве аргумента аннотируемой функции может передаваться список значений, относящихся к примитивным типам данных. Максимальный размер списка - до 1000 элементов включительно.
+
+## Пример 1
+
+```ride
+{-# STDLIB_VERSION 4 #-}
+{-# CONTENT_TYPE DAPP #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
+  
+@Callable(i)
+func f(args: List[String]) = [
+    StringEntry("entry1", args[0]),
+    StringEntry("entry1", args[1])
+]
+```
+
+## Пример 2
+
+```ride
+{-# STDLIB_VERSION 4 #-}
+{-# CONTENT_TYPE DAPP #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
+ 
+@Callable(i)
+func f(a: String, args: List[String]) = {
+    let s = size(args)
+    if s == 1 then
+        BooleanEntry("result", a == args[0])
+    else s > 1 then
+        BooleanEntry ("result", a == args[1])
+    else throw("args is empty")
+}
+```
