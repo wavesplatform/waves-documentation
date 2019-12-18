@@ -279,6 +279,7 @@
     * [Verification functions](ride/functions/built-in-functions/verification-functions.md)
   * [Callable function](ride/functions/callable-function.md)
   * [Verifier function](ride/functions/verifier-function.md)
+* [FOLD<N> Macro](ride/fold-macro.md)
 * [Operators](ride/operators.md)
 * [Script](ride/script.md)
   * [Directives](ride/script/directives.md)
