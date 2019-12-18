@@ -2,6 +2,11 @@
 
 ## December articles
 
+### RIDE
+
+* [FOLD<N> Macro](ride/fold-macro.md)
+
+
 ### Blockchain network
 
 * [Stage network](blockchain/blockchain-network/stage-network.md)

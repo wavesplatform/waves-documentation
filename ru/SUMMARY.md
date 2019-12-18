@@ -228,6 +228,7 @@
 * [Исключения](ride/exceptions.md)
 * [Комментарии](ride/comments.md)
 * [Константы](ride/constants.md)
+* [Макрос FOLD<N>](ride/fold-macro.md)
 * [Операторы](ride/operators.md)
 * [Переменные](ride/variables.md)
   * [Встроенные переменные](ride/variables/built-in-variables.md)

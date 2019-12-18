@@ -2,6 +2,10 @@
 
 ## Декабрьские статьи
 
+### RIDE
+
+* [Макрос FOLD<N>](ride/fold-macro.md)
+
 ### Сеть блокчейна
 
 * [Экспериментальная сеть](blockchain/blockchain-network/stage-network.md)
