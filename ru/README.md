@@ -19,6 +19,10 @@
   * Protobuf-схема транзакции
     * [Protobuf-схема транзакции обновления информации ассета](blockchain/binary-format/transaction-protobuf-scheme/update-asset-info-transaction-protobuf-scheme.md)
 
+### Нода
+
+* [Конфигурация ноды](waves-node/node-configuration.md)
+
 ### Ride
 
 * Структура
@@ -27,7 +31,7 @@
     * [BooleanEntry](ride/structures/common-structures/boolean-entry.md)
     * [Burn](ride/structures/common-structures/burn.md)
     * [DeleteKey](ride/structures/common-structures/delete-key.md)
-    * [IntEntry](ride/structures/common-structures/int-entry.md)\
+    * [IntEntry](ride/structures/common-structures/int-entry.md)
     * [Issue](ride/structures/common-structures/issue.md)
     * [Reissue](ride/structures/common-structures/reissue.md)
     * [StringEntry](ride/structures/common-structures/string-entry.md)
