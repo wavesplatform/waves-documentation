@@ -2,10 +2,13 @@
 
 ## December articles
 
+### Node API
+
+* [Requests headers](waves-node/node-api/headers.md)
+
 ### RIDE
 
 * [FOLD<N> Macro](ride/fold-macro.md)
-
 
 ### Blockchain network
 

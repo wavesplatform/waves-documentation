@@ -397,7 +397,7 @@ and all the other parameters appropriate for a transaction of the given type.
 }
 ```
 
-### POST /transactions/status <a id="status_post"></a>
+### POST /transactions/status
 
 Returns transactions data by their ids.
 
@@ -442,7 +442,7 @@ Returns transactions data by their ids.
 ]
 ```
 
-### GET /transactions/status?id=tx1id&id=tx2id <a id="status_get"></a>
+### GET /transactions/status?id=tx1id&id=tx2id
 
 Returns transactions data by their ids.
 
