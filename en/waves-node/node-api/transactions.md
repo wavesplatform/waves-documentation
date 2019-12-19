@@ -1,4 +1,5 @@
 ### GET /transactions/info/{id}
+
 ![master](https://img.shields.io/badge/MAINNET-available-4bc51d.svg)
 
 
@@ -395,3 +396,44 @@ and all the other parameters appropriate for a transaction of the given type.
  "alias":"dajzmj6gfuzmbfnhamsbuxivc"
 }
 ```
+
+### POST /transactions/status <a id="status_post"></a>
+
+Returns transactions data by their ids.
+
+**Request params**
+
+`id` - transaction id
+
+**Request JSON example**
+
+[
+  {
+    "id": "H27nMqvLp514M9fFoKbn4qCvFtG3VGzMGcN7noDyDv6C"
+  },
+  {
+    "id": "Bi2vXQdUTsUPRDLE4tWkCFNVNkLjRtvy9PuvWd5iNP63"
+  },
+  {
+    "id": "Ew2mxDagrDJevuaXKUuA48e8QD5evkDr5Zpv7ERVpCN2"
+  }
+]
+
+**Response JSON example**
+
+[
+  {
+    "id": "H27nMqvLp514M9fFoKbn4qCvFtG3VGzMGcN7noDyDv6C",
+    "status": "confirmed",
+    "confirmations": 120,
+    "height": 1772853
+  },
+  {
+    "id": "Bi2vXQdUTsUPRDLE4tWkCFNVNkLjRtvy9PuvWd5iNP63",
+    "status": "not_found"
+  },
+  {
+    "id": "Ew2mxDagrDJevuaXKUuA48e8QD5evkDr5Zpv7ERVpCN2",
+    "status": "unconfirmed"
+  }
+]
