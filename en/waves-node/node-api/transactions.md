@@ -407,6 +407,7 @@ Returns transactions data by their ids.
 
 **Request JSON example**
 
+```js
 [
   {
     "id": "H27nMqvLp514M9fFoKbn4qCvFtG3VGzMGcN7noDyDv6C"
@@ -418,9 +419,11 @@ Returns transactions data by their ids.
     "id": "Ew2mxDagrDJevuaXKUuA48e8QD5evkDr5Zpv7ERVpCN2"
   }
 ]
+```
 
 **Response JSON example**
 
+```js
 [
   {
     "id": "H27nMqvLp514M9fFoKbn4qCvFtG3VGzMGcN7noDyDv6C",
@@ -437,3 +440,29 @@ Returns transactions data by their ids.
     "status": "unconfirmed"
   }
 ]
+```
+
+### GET /transactions/status?id=tx1id&id=tx2id <a id="status_get"></a>
+
+Returns transactions data by their ids.
+
+**Response JSON example**
+
+```js
+[
+  {
+    "id": "H27nMqvLp514M9fFoKbn4qCvFtG3VGzMGcN7noDyDv6C",
+    "status": "confirmed",
+    "confirmations": 120,
+    "height": 1772853
+  },
+  {
+    "id": "Bi2vXQdUTsUPRDLE4tWkCFNVNkLjRtvy9PuvWd5iNP63",
+    "status": "not_found"
+  },
+  {
+    "id": "Ew2mxDagrDJevuaXKUuA48e8QD5evkDr5Zpv7ERVpCN2",
+    "status": "unconfirmed"
+  }
+]
+```
