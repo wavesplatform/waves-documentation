@@ -15,29 +15,24 @@ func rate(name: String, rating: Int) = {
 }
 ```
 
+> [!WARNING]
+> [Standard Library](/ride/script/standard-library.md) Version 4 becomes available from node version 1.2.0, after activation of the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) feature. See [Activation Protocol](/blockchain/waves-protocol/activation-protocol.md).
+> [!INFO]
+> Starting from [Standard library]() version 4, the list of primitive data types values can be passed to the annotated function. Maximum list size - 1000 elements
+
 ## Example for Standard Library version 4
 
 ```ride
- @Callable(i)
- func foo() =
-   [
-     IntegerEntry("key1", 1),
-     BooleanEntry("key2", true),
-     StringEntry("key3", "str"),
-     BinaryEntry("key4", base58''),
-     DeleteEntry("key5"),
-     ScriptTransfer(i.caller, 1, base58''),
-     Issue(unit, 4, "description", true, "name", 1000, 0),
-     Reissue(base58'', false, 1),
-     Burn(base58'', 1)
-   ]
+{-# STDLIB_VERSION 4 #-}
+{-# CONTENT_TYPE DAPP #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
+  
+@Callable(i)
+func f(args: List[String]) = [
+    StringEntry("entry1", args[0]),
+    StringEntry("entry1", args[1])
+]
 ```
-
-> [!WARNING]
-> [Standard Library](/ride/script/standard-library.md) Version 4 becomes available from node version 1.2.0, after activation of the "Ride V4 and multiple attached payments for Invoke Script Transaction" (No. 16) feature. See [Activation Protocol](/blockchain/waves-protocol/activation-protocol.md).
-
-> [!INFO]
-> Starting from [Standard library]() version 4, the list of primitive data types values can be passed to the annotated function. Maximum list size - 1000 elements
 
 ## Example 1
 
