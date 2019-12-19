@@ -151,7 +151,7 @@ Get a script information by address.
 }
 ```
 
-### POST /addresses/balance
+### POST /addresses/balance <a id="post_addr_balances">
 
 Returns addresses balances on specified height. If height is not specified, then current height adresses balances should be returned.
 
@@ -187,7 +187,7 @@ Returns addresses balances on specified height. If height is not specified, then
 ]
 ```
 
-### GET /addresses/balance?height=123&address=addr1&address=addr2
+### GET /addresses/balance?height=123&address=addr1&address=addr2 <a id="get_addr_balances">
 
 Returns addresses balances on specified height. If height is not specified, then current height adresses balances should be returned.
 
