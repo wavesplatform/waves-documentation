@@ -5,7 +5,8 @@
 | 1 | [extract(T&#124;Unit): T](#extract) | Возвращает значение из параметра типа данных [объединение](/ride/data-types/union.md).<br>Выбрасывает исключение, если параметром является [unit](/ride/data-types/unit.md) | 13 |
 | 2 | [isDefined(List[T]&#124;Unit): Boolean](#isDefined) | Проверяет, относится ли значение параметра к типу [unit](/ride/data-types/unit.md) | 1 |
 | 3 | [value(T&#124;Unit): T](#value) | Возвращает значение из параметра типа данных [объединение](/ride/data-types/union.md).<br>Выбрасывает исключение, если параметром является [unit](/ride/data-types/unit.md) | 13 |
-| 4 | [valueOrErrorMessage(T&#124;Unit, String): T](#value-error) | Возвращает значение из параметра типа данных [объединение](/ride/data-types/union.md).<br>Если параметром является [unit](/ride/data-types/unit.md), возвращает сообщение об ошибке, заданное во втором параметре | 13 |
+| 4 | [valueOrElse(T&#124;Unit, T): T](#valueOrElse) | Возвращает из параметра [типа данных объединение](/ride/data-types/union.md) значение, если оно не является к типу [unit](/ride/data-types/unit.md). Если значение является пустым, возвращает второй параметр | 13 |
+| 5 | [valueOrErrorMessage(T&#124;Unit, String): T](#value-error) | Возвращает значение из параметра типа данных [объединение](/ride/data-types/union.md).<br>Если параметром является [unit](/ride/data-types/unit.md), возвращает сообщение об ошибке, заданное во втором параметре | 13 |
 
 ## extract(T|Unit): T<a id="extract"></a>
 
@@ -62,6 +63,26 @@ value(a: T|Unit): T
 #### a: T|Unit
 
 Параметр типа данных [объединение](/ride/data-types/union.md).
+
+## valueOrElse(T|Unit, T): T<a id="valueOrElse"></a>
+
+Возвращает значение из параметра типа данных [объединение](/ride/data-types/union.md).
+
+Если значение является пустым, возвращает второй параметр.
+
+``` ride
+valueOrElse(t: T|Unit, t0: T): T
+```
+
+### Параметры
+
+#### t: T|Unit
+
+Параметр типа данных [объединение](/ride/data-types/union.md), в котором осуществляется поиск.
+
+#### t0: T
+
+Возвращается, если параметр `t` относится к типу [unit](/ride/data-types/unit.md).
 
 ## valueOrErrorMessage(T|Unit, String): T<a id="value-error"></a>
 
