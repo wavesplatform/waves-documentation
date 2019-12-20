@@ -223,7 +223,11 @@ In `micro-block-synchronizer` subsection you could tune various parameters of Wa
 
 ### UTX pool settings
 
-In this section, you can change the size of unconfirmed transactions pool \(`max-size` parameter\) and maximum age of transactions allowed to UTX \(`max-transaction-age`\).
+`max-size` subsection allows to set the size of unconfirmed transactions pool for non-scripted transactions.
+
+`max-scripted-size` subsection allows to set the size of unconfirmed transactions pool for scripted transactions. Prior to node version 1.1.6, the invoke script transactions were not counted.
+
+`max-transaction-age` subsection allows to set the maximum age of transactions allowed to UTX.
 
 <a id="rewards"></a>
 ### Rewards settings
