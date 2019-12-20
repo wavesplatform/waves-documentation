@@ -401,7 +401,6 @@ and all the other parameters appropriate for a transaction of the given type.
 
 ### POST /transactions/status
 
-> [!INFO]
 > Current endpoint is available in node 1.1.7 release.
 
 Returns transactions data, including their status, by their ids. Resulting transactions list keeps order the transactions' ids were passed in request. If the transactions ids weren't specified, the request won't be executed and an error will be returned.
@@ -456,7 +455,6 @@ Returns transactions data, including their status, by their ids. Resulting trans
 
 ### GET /transactions/status?id=tx1id&id=tx2id
 
-> [!INFO]
 > Current endpoint is available in node 1.1.7 release.
 
 Returns transactions data, including their status, by their ids. Resulting transactions list keeps order the transactions' ids were passed in request. If the transactions ids weren't specified, the request won't be executed and an error will be returned.
