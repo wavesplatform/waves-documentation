@@ -4,7 +4,7 @@
 
 For log writing, we use one of the logging frameworks [logback](https://logback.qos.ch/documentation.html). For the logback correct work, it needs the right configuration, [here](https://logback.qos.ch/manual/configuration.html) you can see how to configure the [logback.xml](https://github.com/wavesplatform/Waves/blob/master/node/src/main/resources/logback.xml) file.
 
-By [default](https://github.com/wavesplatform/Waves/blob/master/node/src/main/resources/logback.xml) logs are written to STDOUT and to `waves.log` file in a human-readable format.
+Prior to node version 1.1.6, the logs were written to STDOUT and to `waves.log` file in a human-readable format by [default](https://github.com/wavesplatform/Waves/blob/master/node/src/main/resources/logback.xml). After the node 1.1.6 version release, the execution traces are no longer written to waves.log by default to reduce the amount of logs the node produces under heavy load. If you need the traces, define logback.uts-trace.enabled system property either in application.ini, on the command line or in logback.xml to save traces to utx-trace.log. Also waves.log is now rotated when size limit is reached (100 mb by default), in addition to daily rotation.
 
 ## STDOUT
 
