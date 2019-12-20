@@ -1,13 +1,13 @@
 # Requests headers
 
-## large-significant-format=string
+## large-significand-format=string
 
 Sets serialization format for monetary fields. If set, the field will be serialized to JSON as a string, otherwise - as a number. This can be useful for values with long mantissa.
 
 ### Example
 
 ```
-curl -X GET --header 'Accept: application/json; large-significant-format=string' 'https://nodes.wavesnodes.com/blocks/headers/last'
+curl -X GET --header 'Accept: application/json; large-significand-format=string' 'https://nodes.wavesnodes.com/blocks/headers/last'
 
 ```
 
