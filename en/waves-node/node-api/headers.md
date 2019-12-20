@@ -1,4 +1,4 @@
-# Requests headers
+# Request headers
 
 ## large-significand-format=string
 
