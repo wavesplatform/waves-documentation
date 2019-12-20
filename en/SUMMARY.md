@@ -392,7 +392,7 @@
 * [Node configuration](waves-node/node-configuration.md)
 * [Logging configuration](waves-node/logging-configuration.md)
 * [Node API](waves-node/node-api.md)
-  * [Requests headers](waves-node/node-api/headers.md)
+  * [Request headers](waves-node/node-api/headers.md)
   * [Address](waves-node/node-api/address.md)
   * [Lease Transactions](waves-node/node-api/lease-transactions.md)
   * [Assets](waves-node/node-api/asset-transactions.md)

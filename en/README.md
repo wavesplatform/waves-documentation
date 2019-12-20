@@ -4,7 +4,7 @@
 
 ### Node API
 
-* [Requests headers](waves-node/node-api/headers.md)
+* [Request headers](waves-node/node-api/headers.md)
 
 ### RIDE
 
