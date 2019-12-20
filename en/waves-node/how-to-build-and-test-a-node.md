@@ -9,7 +9,7 @@ To build and test your Waves Node, you will need to follow these steps:
 
 ```
 sudo apt-get update
-sudo apt-get install deafult-jre default-jdk
+sudo apt-get install default-jre default-jdk
 ```
 
 * ### Installing SBT
