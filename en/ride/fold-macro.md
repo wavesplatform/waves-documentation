@@ -1,6 +1,6 @@
-# FOLD<N> Macro
+# FOLD&lt;N&gt; Macro
 
-**FOLD<N> Macro** is a construct for the compiler that allows implementing the [higher-order function](https://en.wikipedia.org/wiki/Higher-order_function) known in Scala (and other languages) as `fold` or `reduce`.
+**FOLD&lt;N&gt; Macro** is a construct for the compiler that allows implementing the [higher-order function](https://en.wikipedia.org/wiki/Higher-order_function) known in Scala (and other languages) as `fold` or `reduce`.
 
 The `FOLD<N>` macro allows performing computations in relation to variable size lists, such as `sum`, `avg`, `filter`, `zip`, `exists` etc.
 

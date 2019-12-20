@@ -15,7 +15,13 @@ func rate(name: String, rating: Int) = {
 }
 ```
 
+> [!WARNING]
+> [Стандартная библиотека](/ride/script/standart-library.md) версии 4 доступна начиная с версии ноды 1.2.0 после активации функциональности "Ride V4 and multiple attached payments for Invoke Script Transaction" (№ 16). См. [протокол активации](/platform-features/activation-protocol.md).
+
 ## Пример для стандартной библиотеки версии 4
+
+> [!INFO]
+> Начиная с 4 версии [Стандартной библиотеки](/ru/ride/script/standard-library.md) в качестве аргумента аннотируемой функции может передаваться список значений, относящихся к [примитивным типам данных](https://ru.wikipedia.org/wiki/Простой_тип). Максимальный размер списка - до 1000 элементов включительно.
 
 ```ride
 {-# STDLIB_VERSION 4 #-}
@@ -28,11 +34,6 @@ func f(args: List[String]) = [
     StringEntry("entry1", args[1])
 ]
 ```
-
-> [!WARNING]
-> [Стандартная библиотека](/ride/script/standart-library.md) версии 4 доступна начиная с версии ноды 1.2.0 после активации функциональности "Ride V4 and multiple attached payments for Invoke Script Transaction" (№ 16). См. [протокол активации](/platform-features/activation-protocol.md).
-> [!INFO]
-> Начиная с 4 версии [Стандартной библиотеки](/ru/ride/script/standard-library.md) в качестве аргумента аннотируемой функции может передаваться список значений, относящихся к [примитивным типам данных](https://ru.wikipedia.org/wiki/Простой_тип). Максимальный размер списка - до 1000 элементов включительно.
 
 ## Пример 1
 
