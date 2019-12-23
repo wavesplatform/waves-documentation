@@ -42,17 +42,17 @@ npm i @waves.exchange/storage-provider -S
 
 Add library initialization to you app.
 
-* For Testnet & TestProvider:
+* For Testnet & SeedProvider:
 
    ```js
    import Waves from '@waves/waves-js';
-   import { TestProvider } from '??';
+   import { SeedProvider } from '@waves/seed-provider';
    import { libs } from '@waves/waves-transactions';
    import { CHAIN_ID, NODE_URL, STATE } from './_state';
 
-   const seed = libs.crypto.randomSeed();
-   const address = libs.crypto.address(seed, CHAIN_ID);
-   const publicKey = libs.crypto.publicKey(seed);
+   const seed = libs.crypto.randomSeed(15);
+   const waves = new Waves();
+   waves.setProvider(new SeedProvider(seed));
    ```
 
 * For Testnet & Waves.Exchange Storage Provider:
@@ -85,32 +85,15 @@ After that you will be able to use Waves JS API features in the app.
 Now your application is ready to work with Waves Platform. Let's test it by implementing basic functionality. For example, we could try to authenticate user login, get his/her balances and transfer funds.
 
 ```js
-it('Login', async () => {
-    const waves = new Waves({ NODE_URL: NODE_URL });
-    const provider = new TestProvider(seed);
-    await waves.setProvider(provider);
-
-it('Login', async () => {
-    const waves = new Waves({ NODE_URL: NODE_URL });
-    const provider = new TestProvider(seed);
-    await waves.setProvider(provider);
-
     const user = await waves.login();
-    expect(user.address).toBe(address);
-    expect(user.publicKey).toBe(publicKey);
-});
-
-it('Get balances empty', async () => {
-    const waves = new Waves({ NODE_URL: NODE_URL });
-    const provider = new TestProvider(seed);
-    await waves.setProvider(provider);
-
-    await waves.login();
     const balances = await waves.getBalance();
-    expect(balances.length).toBe(1);
-    expect(balances[0].assetId).toBe('WAVES');
-    expect(balances[0].amount).toBe('0');
-});
+    const [broadcastedTransfer] = await waves
+      .transfer({amount: 100000000, recipient: 'alias:T:merry'}) // Transfer 1 Waves to alias merry
+      .broadcast(); // Promise will resolved afrer user sign and node response 
+
+    const [signedTransfer] = await waves
+      .transfer({amount: 100000000, recipient: 'alias:T:merry'}) // Transfer 1 Waves to alias merry
+      .sign(); // Promise will resolved afrer user sign 
 ```
 
 <a id="constructor"></a>
@@ -190,7 +173,7 @@ Promise of user data: address and public key.
 
 **Usage:**
 ```ts
-const user = await waves.login();
+const {address, publicKey} = await waves.login();
 ```
 
 **Output example:**
@@ -242,9 +225,9 @@ const balances = await waves.getBalance();
   assetId: 'WAVES',
   assetName: 'Waves',
   decimals: 8,
-  amount: '6.77728840'
+  amount: '10000000',
   isMyAsset: false,
-  tokens: 677728840,
+  tokens: 1,
   sponsorship: null,
   isSmart: false
 },
@@ -252,9 +235,9 @@ const balances = await waves.getBalance();
   assetId: 'AcrRM9STdBu5PNiFveTCbRFTS8tADhKcsbC2KBp8A4tx',
   assetName: 'CoffeeCoin',
   decimals: 3,
-  amount: '1.5',
+  amount: '15',
   isMyAsset: false,
-  tokens: 1500,
+  tokens: 0.015,
   isSmart: false,
   sponsorship: 500
 }]
@@ -955,7 +938,25 @@ batch(txOrList)
 **Usage:**
 
 ```js
-??
+const [transfer, alias, issue] = await waves.batch([
+  {
+    type: 4,
+    recipient: 'alias:T:merry',
+    amount: 100000000
+  },
+  {
+    type: 10,
+    alias: 'send33'
+  },
+  {
+    type: 3,
+    name: 'SomeTokenName',
+    description: 'Some Token Description',
+    reissuable: false,
+    quantity: 100,
+    decimals: 1
+  }
+]).sign(); // Or broadcast
 ```
 
 **Output example:**
@@ -981,7 +982,6 @@ broadcast(list: T[],[options])
 | :--- | :--- | :--- |
 | tx* | | Signed transaction |
 | list* | | Signed transaction |
-| options.retry | ?? | Number of attemps to send each transaction to blockchain (in case of fail) |
 | options.chain | false | [Type: boolean] Send the next transaction only after the previous transaction put in the blockchain |
 | options.confirmations | -1 | Number of confirmations after that the Promise is resolved |
 
@@ -992,7 +992,10 @@ broadcast(list: T[],[options])
 **Usage:**
 
 ```js
+const [transfer1] = await waves.transfer({amount: 1, recipient: 'alias:T:merry'}).sign();
+const [transfer2] = await waves.transfer({amount: 1, recipient: 'alias:T:merry'}).sign();
 
+await waves.broadcast([transfer1, transfer2], {chain: true, confirmations: 2});
 ```
 
 **Output example:**
