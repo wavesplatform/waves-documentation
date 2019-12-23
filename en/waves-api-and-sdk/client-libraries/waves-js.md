@@ -2,7 +2,7 @@
 
 * [Overview](#overview)
 * [Getting Started](#getting-started)
-* [Constructior](#constructor)
+* [Constructor](#constructor)
 * [Methods](#methods)
 
 <a id="overview"></a>
@@ -72,8 +72,6 @@ const address = libs.crypto.address(seed, CHAIN_ID);
 const publicKey = libs.crypto.publicKey(seed);
 
 
-
-
 After that you will be able to use Signer API features in the app.
 
 ### 3. Basic example
@@ -117,7 +115,7 @@ it('Get balances empty', async () => {
 new Waves({
   NODE_URL: 'string',
   POLL_INTERVAL: number,
-  MATCHER_URL: 'string'm
+  MATCHER_URL: 'string',
  }): Waves
 ```
 
@@ -164,8 +162,121 @@ Parameters:
 * [transfer](#transfer)
 * [waitTxConfirm](#waittxconfirm)
 
+
+### User info
+
+<a id="login"></a>
+#### login
+
+Description
+
+```js
+```
+
+**Parameters:**
+
+| Field name | Type | Description |
+| :--- | :--- | :--- |
+
+**Returns:** ???
+
+**Usage:**
+```ts
+```
+
+**Output example:**
+
+```js
+{
+}
+```
+
+<a id="logout"></a>
+#### logout
+
+Description
+
+```js
+```
+
+**Parameters:**
+
+| Field name | Type | Description |
+| :--- | :--- | :--- |
+
+**Returns:** ???
+
+**Usage:**
+```ts
+```
+
+**Output example:**
+
+```js
+{
+}
+```
+
+<a id="getbalance"></a>
+#### getBalance
+
+If user is authenticates, prodives balances of assets in user's portfolio.
+
+    /**
+     * Получаем список балансов пользователя (необходимо выполнить login перед использованием)
+     * Basic usage example:
+     *
+     */
+**Parameters:**
+
+| Field name | Type | Description |
+| :--- | :--- | :--- |
+
+**Returns:** ???
+
+**Usage:**
+```ts
+await waves.getBalance();
+```
+
+**Output example:**
+
+```js
+{
+  public
+}
+```
+
+<a id="getsponsoredbalances"></a>
+#### getSponsoredBalances
+
+Description
+
+```js
+```
+
+**Parameters:**
+
+| Field name | Type | Description |
+| :--- | :--- | :--- |
+
+**Returns:** ???
+
+**Usage:**
+```ts
+```
+
+**Output example:**
+
+```js
+{
+}
+```
+
+### Create transactions
+
 <a id="alias"></a>
-### alias
+#### alias
 
 Creates and signs [alias transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/alias-transaction.html).
 
@@ -210,70 +321,8 @@ console.log(signedAliasTx)
 ```js
 ```
 
-<a id="batch"></a>
-### batch
-
-Signs transations and send them to the blockchain.
-
-```js
-batch(txOrList)
-```
-
-**Parameters:**
-
-| Field name | Default value | Description |
-| :--- | :--- | :--- |
-| txOrList* | | Transaction or list of transaction |
-
-\* Required field
-
-**Usage:**
-
-```js
-??
-```
-
-**Output example:**
-
-<a id="broadcast"></a>
-### broadcast
-
-Sends transactions that are already signed to the blockchain.
-
-```js
-broadcast(tx,[options])
-```
-
-```js
-broadcast(list: T[],[options])
-```
-
-**Returns:** Promise of ???
-
-**Parameters:**
-
-| Field name | Default value | Description |
-| :--- | :--- | :--- |
-| tx* | | Signed transaction |
-| list* | | Signed transaction |
-| options.retry | ?? | Number of attemps to send each transaction to blockchain (in case of fail) |
-| options.chain | false | [Type: boolean] Send the next transaction only after the previous transaction put in the blockchain |
-| options.confirmations | -1 | Number of confirmations after that the Promise is resolved |
-
-\* One of `tx`, `list` is required.
-
-Но ведь транзакция уже подписана?? учитывается ли первая подпись в количестве подтверждений?
-
-**Usage:**
-
-```js
-
-```
-
-**Output example:**
-
 <a id="burn"></a>
-### burn
+#### burn
 
 Creates and signs [burn transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/burn-transaction.html).
 
@@ -346,7 +395,7 @@ console.log(signedLeaseCancelTx)
 ```
 
 <a id="data"></a>
-### data
+#### data
 
 Creates and signs [data](https://docs.wavesplatform.com/en/blockchain/transaction-type/data-transaction.html) transaction.
 
@@ -400,7 +449,7 @@ console.log(signedDataTx)
 ```
 
 <a id="exchange"></a>
-### exchange
+#### exchange
 
 Creates and signs [exchange](https://docs.wavesplatform.com/en/blockchain/transaction-type/data-transaction.html) transaction.
 
@@ -443,67 +492,33 @@ const data = [{
 const signedDataTx = waves.data(data)
 console.log(signedDataTx)
 ```
-
-<a id="getbalance"></a>
-### getBalance
-
-If user is authenticates, prodives balances of assets in user's portfolio.
-
-    /**
-     * Получаем список балансов пользователя (необходимо выполнить login перед использованием)
-     * Basic usage example:
-     *
-     */
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-await waves.getBalance();
-```
-
-**Output example:**
-
-```js
-{
-  public
-}
-```
-
-<a id="getsponsoredbalances"></a>
-### getSponsoredBalances
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
 <a id="invoke"></a>
-### invoke
+#### invoke
 
-Description
+Creates and signs [invoke scipt transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/invoke-script-transaction.html).
+
+```js
+alias(data: {
+  alias: 'string',
+  chainId: number,
+  fee: LONG,
+  proofs: Array<string>,
+  senderPublicKey: string,
+})
+```
+
+**Parameters:**
+
+| Field name | Default value | Description |
+| :--- | :--- | :--- |
+| alias* | | |
+| chainId | Defined by node | 'W'.charCodeAt(0) or 87 means Mainnet<br>
+'T'.charCodeAt(0) or 84 means Testnet |
+| fee | ?? | [Transaction fee](https://docs.wavesplatform.com/en/blockchain/transaction/transaction-fee.html) |
+| proofs | | Необязательный?? Как получить?? Что если не указаны?? |
+| senderPublicKey | | Base58-encoded public key of transaction sender that is returned by [login](#login) method |
+
+\* Required field
 
 ```js
 ```
@@ -527,7 +542,7 @@ Description
 ```
 
 <a id="issue"></a>
-### issue
+#### issue
 
 Description
 
@@ -553,7 +568,7 @@ Description
 ```
 
 <a id="lease"></a>
-### lease
+#### lease
 
 Description
 
@@ -578,164 +593,9 @@ Description
 }
 ```
 
-<a id="login"></a>
-### login
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="logout"></a>
-### logout
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="make"></a>
-### make
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
 
 <a id="masstransfer"></a>
-### massTransfer
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="off"></a>
-### off
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="on"></a>
-### on
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="once"></a>
-### once
+#### massTransfer
 
 Description
 
@@ -761,7 +621,7 @@ Description
 ```
 
 <a id="reissue"></a>
-### reissue
+#### reissue
 
 Description
 
@@ -787,33 +647,7 @@ Description
 ```
 
 <a id="setassetscript"></a>
-### setAssetScript
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="setprovider"></a>
-### setProvider
+#### setAssetScript
 
 Description
 
@@ -839,85 +673,7 @@ Description
 ```
 
 <a id="setscript"></a>
-### setScript
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="signmessage"></a>
-### signMessage
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="signtx"></a>
-### signTx
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="signtypeddata"></a>
-### signTypedData
+#### setScript
 
 Description
 
@@ -943,7 +699,7 @@ Description
 ```
 
 <a id="sponsorship"></a>
-### sponsorship
+#### sponsorship
 
 Description
 
@@ -969,7 +725,7 @@ Description
 ```
 
 <a id="transfer"></a>
-### transfer
+#### transfer
 
 Description
 
@@ -994,8 +750,281 @@ Description
 }
 ```
 
+### Others
+
+<a id="batch"></a>
+#### batch
+
+Signs transations and send them to the blockchain.
+
+```js
+batch(txOrList)
+```
+
+**Parameters:**
+
+| Field name | Default value | Description |
+| :--- | :--- | :--- |
+| txOrList* | | Transaction or list of transaction |
+
+\* Required field
+
+**Usage:**
+
+```js
+??
+```
+
+**Output example:**
+
+<a id="broadcast"></a>
+#### broadcast
+
+Sends transactions that are already signed to the blockchain.
+
+```js
+broadcast(tx,[options])
+```
+
+```js
+broadcast(list: T[],[options])
+```
+
+**Returns:** Promise of ???
+
+**Parameters:**
+
+| Field name | Default value | Description |
+| :--- | :--- | :--- |
+| tx* | | Signed transaction |
+| list* | | Signed transaction |
+| options.retry | ?? | Number of attemps to send each transaction to blockchain (in case of fail) |
+| options.chain | false | [Type: boolean] Send the next transaction only after the previous transaction put in the blockchain |
+| options.confirmations | -1 | Number of confirmations after that the Promise is resolved |
+
+\* One of `tx`, `list` is required.
+
+Но ведь транзакция уже подписана?? учитывается ли первая подпись в количестве подтверждений?
+
+**Usage:**
+
+```js
+
+```
+
+**Output example:**
+
+<a id="make"></a>
+#### make
+
+Description
+
+```js
+```
+
+**Parameters:**
+
+| Field name | Type | Description |
+| :--- | :--- | :--- |
+
+**Returns:** ???
+
+**Usage:**
+```ts
+```
+
+**Output example:**
+
+```js
+{
+}
+```
+
+<a id="off"></a>
+#### off
+
+Description
+
+```js
+```
+
+**Parameters:**
+
+| Field name | Type | Description |
+| :--- | :--- | :--- |
+
+**Returns:** ???
+
+**Usage:**
+```ts
+```
+
+**Output example:**
+
+```js
+{
+}
+```
+
+<a id="on"></a>
+#### on
+
+Description
+
+```js
+```
+
+**Parameters:**
+
+| Field name | Type | Description |
+| :--- | :--- | :--- |
+
+**Returns:** ???
+
+**Usage:**
+```ts
+```
+
+**Output example:**
+
+```js
+{
+}
+```
+
+<a id="once"></a>
+#### once
+
+Description
+
+```js
+```
+
+**Parameters:**
+
+| Field name | Type | Description |
+| :--- | :--- | :--- |
+
+**Returns:** ???
+
+**Usage:**
+```ts
+```
+
+**Output example:**
+
+```js
+{
+}
+```
+
+<a id="setprovider"></a>
+#### setProvider
+
+Description
+
+```js
+```
+
+**Parameters:**
+
+| Field name | Type | Description |
+| :--- | :--- | :--- |
+
+**Returns:** ???
+
+**Usage:**
+```ts
+```
+
+**Output example:**
+
+```js
+{
+}
+```
+
+<a id="signmessage"></a>
+#### signMessage
+
+Description
+
+```js
+```
+
+**Parameters:**
+
+| Field name | Type | Description |
+| :--- | :--- | :--- |
+
+**Returns:** ???
+
+**Usage:**
+```ts
+```
+
+**Output example:**
+
+```js
+{
+}
+```
+
+<a id="signtx"></a>
+#### signTx
+
+Description
+
+```js
+```
+
+**Parameters:**
+
+| Field name | Type | Description |
+| :--- | :--- | :--- |
+
+**Returns:** ???
+
+**Usage:**
+```ts
+```
+
+**Output example:**
+
+```js
+{
+}
+```
+
+<a id="signtypeddata"></a>
+#### signTypedData
+
+Description
+
+```js
+```
+
+**Parameters:**
+
+| Field name | Type | Description |
+| :--- | :--- | :--- |
+
+**Returns:** ???
+
+**Usage:**
+```ts
+```
+
+**Output example:**
+
+```js
+{
+}
+```
+
+
 <a id="waittxconfirm"></a>
-### waitTxConfirm
+#### waitTxConfirm
 
 Description
 
