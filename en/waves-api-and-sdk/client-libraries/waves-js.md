@@ -389,11 +389,6 @@ const [tx] = await waves
   .broadcast();
 ```
 
-**Output example:**
-
-```js
-```
-
 <a id="burn"></a>
 #### burn
 
@@ -418,9 +413,6 @@ burn(data: {
 
 See [Common fields](#common-fields) for optional fields description.
 
-**Returns:** Promise of ???
-
-
 **Usage:**
 
 ```js
@@ -444,8 +436,6 @@ cancelLease(data: {
     leaseId: 'string',
 })
 ```
-
-**Returns:** Promise of ???
 
 **Parameters:**
 
@@ -492,8 +482,6 @@ data(data: [{
 ```
 
 Почему в одном случае Array\<number\>>, в другом number []? Надо ли отдельно описать Uint8Array, возможно достаточно number?
-
-**Returns:** Promise of ???
 
 **Parameters:**
 
@@ -596,7 +584,7 @@ invoke(data: {
 | payment | | Payments attached to the transaction. Maximum of two payments. |
 | payment.assetId* | | Base58-encoded id of the asset to pay. `WAVES` or `null` means WAVES |
 | payment.amount* | | Amount of asset multiplied by 10^`decimals`. For example, decimals of WAVES is 8, so the real amount is multipied by 10^8. `{ "WAVES": 677728840 }` means 6.77728840 |
-| call | ?? Если не указано то что? |  |
+| call | Default function should be invoked in the dApp | Parameters for called function |
 | call.function* | | Name of the function that is called |
 | call.args* | | Arguments for the function  that is called |
 | call.args.type* | | Type of argument |
@@ -605,8 +593,6 @@ invoke(data: {
 \* Required field
 
 See [Common fields](#common-fields) for optional fields description.
-
-**Returns:** Promise of ???
 
 **Usage:**
 ```ts
@@ -630,13 +616,6 @@ const data = {
 const [tx] = await waves
   .invoke(data)
   .broadcast();
-```
-
-**Output example:**
-
-```js
-{
-}
 ```
 
 <a id="issue"></a>
@@ -670,8 +649,6 @@ issue(data: {
 
 See [Common fields](#common-fields) for optional fields description.
 
-**Returns:** Promise of ???
-
 **Usage:**
 
 ```js
@@ -686,12 +663,6 @@ const data = {
 const [tx] = await waves
   .issue(data)
   .broadcast();
-```
-
-**Output example:**
-
-```js
-???
 ```
 
 <a id="lease"></a>
@@ -717,8 +688,6 @@ lease(data: {
 
 See [Common fields](#common-fields) for optional fields description.
 
-**Returns:** Promise of ???
-
 **Usage:**
 
 ```js
@@ -730,11 +699,6 @@ const data = {
 const [tx] = await waves
   .lease(data)
   .broadcast();
-```
-
-**Output example:**
-
-```js
 ```
 
 <a id="masstransfer"></a>
@@ -767,8 +731,6 @@ massTransfer(data: {
 
 See [Common fields](#common-fields) for optional fields description.
 
-**Returns:** Promise of ???
-
 **Usage:**
 
 ```js
@@ -786,11 +748,6 @@ const data = [
 const [tx] = await waves
   .massTransfer(data)
   .broadcast();
-```
-
-**Output example:**
-
-```js
 ```
 
 <a id="reissue"></a>
@@ -817,8 +774,6 @@ reissue(data: {
 \* Required field
 
 See [Common fields](#common-fields) for optional fields description.
-
-**Returns:** Promise of ???
 
 **Usage:**
 
@@ -857,8 +812,6 @@ setAssetScript(data: {
 
 See [Common fields](#common-fields) for optional fields description.
 
-**Returns:** Promise of ???
-
 **Usage:**
 
 ```js
@@ -870,11 +823,6 @@ const data = {
 const [tx] = await waves
   .setAssetScript(data)
   .broadcast();
-```
-
-**Output example:**
-
-```js
 ```
 
 <a id="setscript"></a>
@@ -895,8 +843,6 @@ setScript(data: {
 | script | | Base64-encoded [account script](https://docs.wavesplatform.com/en/ride/script/script-types/account-script.html) or [dApp script](https://docs.wavesplatform.com/en/ride/script/script-types/dapp-script.html) to be attached to the user account. `null` means cancelling the script |
 
 See [Common fields](#common-fields) for optional fields description.
-
-**Returns:** Promise of ???
 
 **Usage:**
 
@@ -931,8 +877,6 @@ sponsorship(data: {
 \* Required field
 
 See [Common fields](#common-fields) for optional fields description.
-
-**Returns:** Promise of ???
 
 **Usage:**
 
