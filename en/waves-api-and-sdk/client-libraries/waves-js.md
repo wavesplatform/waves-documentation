@@ -1000,81 +1000,31 @@ await waves.broadcast([transfer1, transfer2], {chain: true, confirmations: 2});
 
 **Output example:**
 
-<a id="off"></a>
-#### off
+Провайжер должен удовлетворять интерфейсу:
+```typescript
+interface IProvider {
 
-Description
+    /**
+     * Подключаем провайдер к настройкам библиотеки
+     * @param options
+     */
+    connect(options: {NODE_URL: string, NETWORK_BYTE: number}): Promise<void>;
 
-```js
-```
+    /**
+     * Авторизуемся в провайдере
+     */
+    login(): Promise<{addres: string, publicKey: string}>;
 
-**Parameters:**
+    /**
+     * Разрываем сессию
+     */
+    logout(): Promise<void>;
 
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="on"></a>
-#### on
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="once"></a>
-#### once
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
+    /**
+     * Подписываем массив транзакций
+     * @param list
+     */
+    sign(list: Array<TTransactionParamWithType>): Promise<Array<TTransactionWithProofs<TLong> & IWithId>>;
 }
 ```
 
@@ -1084,6 +1034,7 @@ Description
 Description
 
 ```js
+setProvider(provider);
 ```
 
 **Parameters:**
@@ -1103,85 +1054,6 @@ Description
 {
 }
 ```
-
-<a id="signmessage"></a>
-#### signMessage
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="signtx"></a>
-#### signTx
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
-<a id="signtypeddata"></a>
-#### signTypedData
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
-
 
 <a id="waittxconfirm"></a>
 #### waitTxConfirm
@@ -1200,6 +1072,13 @@ Description
 
 **Usage:**
 ```ts
+const [tx] = await waves
+  .transfer({amount: 10000000, recipient: 'alias:T:merry'})
+  .broadcast();
+
+waves.waitTxConfirm(tx, 1).then((tx) => {
+  // Tx have one confirmation
+}});
 ```
 
 **Output example:**
