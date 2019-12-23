@@ -78,7 +78,7 @@ Add library initialization to you app.
    waves.setProvider(new Provider());
    ```
 
-After that you will be able to use Signer API features in the app.
+After that you will be able to use Waves JS API features in the app.
 
 ### 3. Basic example
 
@@ -111,7 +111,6 @@ it('Get balances empty', async () => {
     expect(balances[0].assetId).toBe('WAVES');
     expect(balances[0].amount).toBe('0');
 });
-
 ```
 
 <a id="constructor"></a>
@@ -120,9 +119,7 @@ it('Get balances empty', async () => {
 ```js
 new Waves({
   NODE_URL: 'string',
-  POLL_INTERVAL: number,
-  MATCHER_URL: 'string',
- }): Waves
+})
 ```
 
 Creates an object that features the following [methods](#methods).
@@ -132,153 +129,170 @@ Parameters:
 | Parameter | Default value | Description |
 | :--- | :--- | :--- |
 | NODE_URL | https://nodes.wavesnodes.com | Node that is used to access a blockchain |
-| POLL_INTERVAL |  | Node that is used to access a blockchain |
-| MATCHER_URL | https://matcher.waves.exchange/ | Matcher that is used to serve orders |
+
+<!-- | MATCHER_URL | https://matcher.waves.exchange/ | Matcher that is used to serve orders | -->
 
 <a id="methods"></a>
 ## Methods
 
-* [alias](#alias)
-* [batch](#batch)
-* [broadcast](#broadcast)
-* [burn](#burn)
-* [cancelLease](#cancellease)
-* [data](#data)
-* [exchange](#exchange)
-* [getBalance](#getbalance)
-* [getSponsoredBalances](#getsponsoredbalances)
-* [invoke](#invoke)
-* [issue](#issue)
-* [lease](#lease)
-* [login](#login)
-* [logout](#logout)
-* [make](#make)
-* [massTransfer](#masstransfer)
-* [off](#off)
-* [on](#on)
-* [once](#once)
-* [reissue](#reissue)
-* [setAssetScript](#setassetscript)
-* [setProvider](#setprovider)
-* [setScript](#setscript)
-* [signMessage](#signmessage)
-* [signTx](#signtx)
-* [signTypedData](#signtypeddata)
-* [sponsorship](#sponsorship)
-* [transfer](#transfer)
-* [waitTxConfirm](#waittxconfirm)
+* [User Info](#user-info)
+
+   * [getBalance](#getbalance)
+   * [getSponsoredBalances](#getsponsoredbalances)
+   * [login](#login)
+   * [logout](#logout)
+
+* [Сreate Transactions](create-transactions)
+
+   * [alias](#alias)
+   * [burn](#burn)
+   * [cancelLease](#cancellease)
+   * [data](#data)
+   * [invoke](#invoke)
+   * [issue](#issue)
+   * [lease](#lease)
+   * [reissue](#reissue)
+   * [setAssetScript](#setassetscript)
+   * [setScript](#setscript)
+   * [sponsorship](#sponsorship)
+   * [transfer](#transfer)
+
+* [Others](#others)
+
+   * [batch](#batch)
+   * [broadcast](#broadcast)
+   * [massTransfer](#masstransfer)
+   * [off](#off)
+   * [on](#on)
+   * [once](#once)
+   * [setProvider](#setprovider)
+   * [signMessage](#signmessage)
+   * [signTx](#signtx)
+   * [signTypedData](#signtypeddata)
+   * [waitTxConfirm](#waittxconfirm)
 
 
-### User info
+<a id="user-info"></a>
+### User Info
 
 <a id="login"></a>
 #### login
 
-Description
+Authenticates user with his/her account; creates account if it don't exist.
 
 ```js
+login();
 ```
 
-**Parameters:**
+**Returns:**
+Promise of user data: address and public key.
 
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
 
 **Usage:**
 ```ts
+const user = await waves.login();
 ```
 
 **Output example:**
 
 ```js
 {
+  address: '3P8pGyzZL9AUuFs9YRYPDV3vm73T48ptZxs',
+  publicKey: 'FuChbN7t3gvW5esgARFytKNVuHSCZpXSYf1y3eDSruEN',
 }
 ```
 
 <a id="logout"></a>
 #### logout
 
-Description
+Logs out.
 
 ```js
+logout();
 ```
 
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
+**Returns:** Promise\<void\>.
 
 **Usage:**
 ```ts
-```
-
-**Output example:**
-
-```js
-{
-}
+await waves.logout();
 ```
 
 <a id="getbalance"></a>
 #### getBalance
 
-If user is authenticates, prodives balances of assets in user's portfolio.
+If user logged in, provides balances of assets in user's portfolio.
 
-    /**
-     * Получаем список балансов пользователя (необходимо выполнить login перед использованием)
-     * Basic usage example:
-     *
-     */
-**Parameters:**
+```js
+getBalance();
+```
 
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
+**Returns:** Promise of list of balances.
 
 **Usage:**
+
 ```ts
-await waves.getBalance();
+const balances = await waves.getBalance();
 ```
 
 **Output example:**
 
 ```js
+[{
+  assetId: 'WAVES',
+  assetName: 'Waves',
+  decimals: 8,
+  amount: '6.77728840'
+  isMyAsset: false,
+  tokens: 677728840,
+  sponsorship: null,
+  isSmart: false
+},
 {
-  public
-}
+  assetId: 'AcrRM9STdBu5PNiFveTCbRFTS8tADhKcsbC2KBp8A4tx',
+  assetName: 'CoffeeCoin',
+  decimals: 3,
+  amount: '1.5',
+  isMyAsset: false,
+  tokens: 1500,
+  isSmart: false,
+  sponsorship: 500
+}]
 ```
 
 <a id="getsponsoredbalances"></a>
 #### getSponsoredBalances
 
-Description
+If user logged in, provides balances of sposored assets in user's portfolio.
 
 ```js
+getSponsoredBalances();
 ```
 
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
+**Returns:** Promise of list of balances.
 
 **Usage:**
+
 ```ts
+const sponsoredBalances = await waves.getSponsoredBalances();
 ```
 
 **Output example:**
 
 ```js
-{
-}
+[{
+  assetId: 'AcrRM9STdBu5PNiFveTCbRFTS8tADhKcsbC2KBp8A4tx',
+  assetName: 'CoffeeCoin',
+  decimals: 3,
+  amount: '1.5',
+  isMyAsset: false,
+  tokens: 1500,
+  isSmart: false,
+  sponsorship: 500
+}]
 ```
 
+<a id="create-transactions"></a>
 ### Create transactions
 
 The following methods only create transactions but do not sign or broadcast them:
@@ -298,6 +312,8 @@ The following methods only create transactions but do not sign or broadcast them
 * [sponsorship](#sponsorship)
 * [transfer](#transfer)
 
+> :warning: Check which of these transactions are supported by your Provider.
+
 To sign transaction use [sign](#sign) method. For example:
 
 ```js
@@ -316,6 +332,16 @@ waves.invoke({
 }).broadcast().then(t => console.log(t));
 ```
 
+You can sign or broadcast several transactions at once. For example:
+
+```js
+waves.alias({ 'new_alias', })
+  .data([{ key: 'value', type: 'number', value: 1 ])
+  .transfer({ recipient: '3P8pGyzZL9AUuFs9YRYPDV3vm73T48ptZxs', amount: 10000 })
+}).broadcast().then(t => console.log(t));
+```
+
+<a id="common-fields"></a>
 #### Common fields
 
 Each create transaction method has optional fields that you don't specify manually in most cases:
@@ -326,6 +352,9 @@ Each create transaction method has optional fields that you don't specify manual
 | fee | Transaction fee | Calculated automatically as described in [Transaction fee](https://docs.wavesplatform.com/en/blockchain/transaction/transaction-fee.html) section |
 | proofs | Array of transaction signatures | Added by `sign` or `broadcast` method (see [Intro](#intro)). If you specify a proof manually, it is also added to the array |
 | senderPublicKey | Base58-encoded public key of transaction sender | Returned by [login](#login) method |
+
+#### Response
+Each create transaction method returns object that features the `sign` and `broadcast` methods.
 
 <a id="alias"></a>
 #### alias
@@ -347,8 +376,6 @@ alias(data: {
 \* Required field
 
 See [Common fields](#common-fields) for optional fields description.
-
-**Returns:** Promise of ???
 
 **Usage:**
 
@@ -494,7 +521,7 @@ const [tx] = await waves
   .broadcast();
 ```
 
-<a id="exchange"></a>
+<!-- <a id="exchange"></a>
 #### exchange
 
 Creates [exchange](https://docs.wavesplatform.com/en/blockchain/transaction-type/data-transaction.html) transaction.
@@ -535,7 +562,7 @@ const data = {}
 const [tx] = await waves
   .exchange(data)
   .broadcast();
-```
+```-->
 
 <a id="invoke"></a>
 #### invoke
@@ -949,14 +976,13 @@ transfer(data: {
 
 See [Common fields](#common-fields) for optional fields description.
 
-**Returns:** Promise of ???
-
 **Usage:**
 
 ```js
 const data = {
-  script: 'base64:AAIDAAAAAAAAAAQIARIAAAAAAAAAAA...',
-}
+  recipient: '3P8pGyzZL9AUuFs9YRYPDV3vm73T48ptZxs',
+  amount: 10000,
+  }
 
 const [tx] = await waves
   .transfer(data)
@@ -1026,32 +1052,6 @@ broadcast(list: T[],[options])
 ```
 
 **Output example:**
-
-<a id="make"></a>
-#### make
-
-Description
-
-```js
-```
-
-**Parameters:**
-
-| Field name | Type | Description |
-| :--- | :--- | :--- |
-
-**Returns:** ???
-
-**Usage:**
-```ts
-```
-
-**Output example:**
-
-```js
-{
-}
-```
 
 <a id="off"></a>
 #### off
