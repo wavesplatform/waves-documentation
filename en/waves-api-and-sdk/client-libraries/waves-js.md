@@ -17,23 +17,7 @@ Waves JS API uses external Provider library to authenticate users with their acc
 For now, the following Providers are available:
 
 * TestProvider that creates test account from SEED. TestProvider is a part of Waves JS API and can be used at the app debugging stage/
-* [Waves.Exchange](https://waves.exchange) Provider is the wallet software that 
-
-
-Supports node interaction, offline transaction signing, Matcher orders, and creating addresses and keys.
-Waves Keeper is a browser extension that allows secure interaction with Waves-enabled web services.
-
-Seed phrases and private keys are encrypted and stored within the extension and cannot be accessed by online dApps and services, making sure that users' funds are protected from hackers and malicious websites. Completion of a transaction doesn't require entering any sensitive information.
-
-Waves Keeper is designed for convenience, so users can sign transactions with just a couple of clicks. Users can create multiple wallets and switch between them easily. And if a user ever forgets the password to the account, the access can be recovered from the seed phrase.
-
-Waves JS API enables:
-
-* to authenticate users with their accounts,
-* to get their signatures of transactions and arbitrary messages,
-* broadcast transactions to blockchain.
-
-In order to implement these features, Signer API uses Provider – an external library that signs transactions. Currently, the only Provider available is Waves.Exchange.
+* [Waves.Exchange](https://waves.exchange) Provider is the wallet software that encryptes and stores user's private key and SEED phrase, making sure that users' funds are protected from hackers and malicious websites. Completion of a transaction doesn't require entering any sensitive information.
 
 In code you can use [TypeScript types](https://github.com/wavesplatform/waveskeeper-types).
 
