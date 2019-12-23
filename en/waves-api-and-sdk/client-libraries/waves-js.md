@@ -14,63 +14,69 @@ Waves JS API uses external Provider library to authenticate users with their acc
 
 ![](./_assets/waves-js.png)
 
-For now, the following Providers are available:
+For now, you can use one of the following Providers:
 
-* TestProvider that creates test account from SEED. TestProvider is a part of Waves JS API and can be used at the app debugging stage/
-* [Waves.Exchange](https://waves.exchange) Provider is the wallet software that encryptes and stores user's private key and SEED phrase, making sure that users' funds are protected from hackers and malicious websites. Completion of a transaction doesn't require entering any sensitive information.
+* Test Provider built-in Waves JS API creates test account from SEED. TestProvider can be used at the app debugging stage.
+* Storage Provider developed by Waves.Exchange is the wallet software that encryptes and stores user's private key and SEED phrase, making sure that users' funds are protected from hackers and malicious websites. Completion of a transaction doesn't require entering any sensitive information.
 
-In code you can use [TypeScript types](https://github.com/wavesplatform/waveskeeper-types).
+In code you can use [TypeScript types](https://github.com/wavesplatform/ts-types/blob/master/transactions/index.d.ts).
 
 <a id="getting-started"></a>
 ## Getting Started
 
 ### 1. Provider SDK installation
 
-To install Waves.Exchange Provider SDK, use
+To install Waves JS, use
 
 ```
-npm i @waves/waves-js @waves.exchange/storage-provider -S
+npm i @waves/waves-js
+```
+
+To install Storage Provider developed by Waves.Exchange, use
+
+```
+npm i @waves.exchange/storage-provider -S
 ```
 
 ### 2. Library initialization
 
 Add library initialization to you app.
 
-For Mainnet & Waves.Exchange Provider:
+* For Testnet & TestProvider:
 
-```js
-import Waves from '@waves/waves-js';
-import Provider from '@waves.exchange/storage-provider';
+   ```js
+   import Waves from '@waves/waves-js';
+   import { TestProvider } from '??';
+   import { libs } from '@waves/waves-transactions';
+   import { CHAIN_ID, NODE_URL, STATE } from './_state';
 
-const waves = new Waves();
-waves.setProvider(new Provider());
-```
+   const seed = libs.crypto.randomSeed();
+   const address = libs.crypto.address(seed, CHAIN_ID);
+   const publicKey = libs.crypto.publicKey(seed);
+   ```
 
-For Testnet & Waves.Exchange Provider:
+* For Testnet & Waves.Exchange Storage Provider:
 
-```js
-import Waves from '@waves/waves-js';
-import Provider from '@waves.exchange/storage-provider';
+   ```js
+   import Waves from '@waves/waves-js';
+   import Provider from '@waves.exchange/storage-provider';
+   
+   const waves = new Waves({
+     // Specify URL of the node on Testnet
+     NODE_URL: 'https://pool.testnet.wavesnodes.com'
+   });
+   waves.setProvider(new Provider());
+   ```
 
-const waves = new Waves({
-  // Specify URL of the node on Testnet
-  NODE_URL: 'https://pool.testnet.wavesnodes.com'
-});
-waves.setProvider(new Provider());
-```
+* For Mainnet & Waves.Exchange Storage Provider:
 
-& Waves.Exchange Provider:
-
-import Waves from '../src/Waves';
-import { TestProvider } from './TestProvider';
-import { libs } from '@waves/waves-transactions';
-import { CHAIN_ID, NODE_URL, STATE } from './_state';
-
-
-const seed = libs.crypto.randomSeed();
-const address = libs.crypto.address(seed, CHAIN_ID);
-const publicKey = libs.crypto.publicKey(seed);
-
+   ```js
+   import Waves from '@waves/waves-js';
+   import Provider from '@waves.exchange/storage-provider';
+   
+   const waves = new Waves();
+   waves.setProvider(new Provider());
+   ```
 
 After that you will be able to use Signer API features in the app.
 
@@ -275,18 +281,60 @@ Description
 
 ### Create transactions
 
+The following methods only create transactions but do not sign or broadcast them:
+
+* [alias](#alias)
+* [burn](#burn)
+* [cancelLease](#cancellease)
+* [data](#data)
+* [exchange](#exchange)
+* [invoke](#invoke)
+* [issue](#issue)
+* [lease](#lease)
+* [massTransfer](#masstransfer)
+* [reissue](#reissue)
+* [setAssetScript](#setassetscript)
+* [setScript](#setscript)
+* [sponsorship](#sponsorship)
+* [transfer](#transfer)
+
+To sign transaction use [sign](#sign) method. For example:
+
+```js
+waves.invoke({
+   dApp: address,
+   call: { function: name, args: convertedArgs },
+}).sign().then(t => console.log(t));
+```
+
+To sign transaction and immediately send it to bloackchain use [broadcast](#broadcast) method. For example:
+
+```js
+waves.invoke({
+   dApp: address,
+   call: { function: name, args: convertedArgs },
+}).broadcast().then(t => console.log(t));
+```
+
+#### Common fields
+
+Each create transaction method has optional fields that you don't specify manually in most cases:
+
+| Field name | Description | Default value |
+| :--- | :--- | :--- |
+| chainId | 'W'.charCodeAt(0) or 87 means Mainnet<br/>'T'.charCodeAt(0) or 84 means Testnet |Defined by configuration of Waves node that is set in [Constructor](#constructor) | Defined by configuration of Waves node that is set in [Constructor](#constructor) |
+| fee | Transaction fee | Calculated automatically as described in [Transaction fee](https://docs.wavesplatform.com/en/blockchain/transaction/transaction-fee.html) section |
+| proofs | Array of transaction signatures | Added by `sign` or `broadcast` method (see [Intro](#intro)). If you specify a proof manually, it is also added to the array |
+| senderPublicKey | Base58-encoded public key of transaction sender | Returned by [login](#login) method |
+
 <a id="alias"></a>
 #### alias
 
-Creates and signs [alias transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/alias-transaction.html).
+Creates [alias transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/alias-transaction.html).
 
 ```js
 alias(data: {
-  alias: 'string',
-  chainId: number,
-  fee: LONG,
-  proofs: Array<string>,
-  senderPublicKey: string,
+  alias: 'string'
 })
 ```
 
@@ -294,16 +342,13 @@ alias(data: {
 
 | Field name | Default value | Description |
 | :--- | :--- | :--- |
-| alias* | | |
-| chainId | Defined by node | 'W'.charCodeAt(0) or 87 means Mainnet<br>
-'T'.charCodeAt(0) or 84 means Testnet |
-| fee | ?? | [Transaction fee](https://docs.wavesplatform.com/en/blockchain/transaction/transaction-fee.html) |
-| proofs | | Необязательный?? Как получить?? Что если не указаны?? |
-| senderPublicKey | | Base58-encoded public key of transaction sender that is returned by [login](#login) method |
+| alias* | | Short and easy to remember name of address. See [Alias](https://docs.wavesplatform.com/en/blockchain/account/alias.html) for more information |
 
 \* Required field
 
-**Returns:** ???
+See [Common fields](#common-fields) for optional fields description.
+
+**Returns:** Promise of ???
 
 **Usage:**
 
@@ -312,8 +357,9 @@ const data = {
   alias: 'new_alias',
 }
 
-const signedAliasTx = alias(data)
-console.log(signedAliasTx)
+const [tx] = await waves
+  .alias(data)
+  .broadcast();
 ```
 
 **Output example:**
@@ -324,28 +370,29 @@ console.log(signedAliasTx)
 <a id="burn"></a>
 #### burn
 
-Creates and signs [burn transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/burn-transaction.html).
+Creates [burn transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/burn-transaction.html).
 
 ```js
 burn(data: {
     assetId*: 'string',
     quantity*: LONG,
-    chainId: number,
 })
 ```
 
-**Returns:** Promise of ???
 
 **Parameters:**
 
 | Field name | Default value | Description |
 | :--- | :--- | :--- |
-| assetId* | | Id of the asset to burn. `WAVES` or `null` means WAVES |
+| assetId* | | Base58-encoded id of the asset to burn |
 | quantity* | | Amount of asset multiplied by 10^`decimals`. For example, decimals of WAVES is 8, so the real amount is multipied by 10^8. `{ "WAVES": 677728840 }` means 6.77728840 |
-| chainId | Defined by node | 'W'.charCodeAt(0) or 87 means Mainnet<br>
-'T'.charCodeAt(0) or 84 means Testnet |
 
 \* Required field.
+
+See [Common fields](#common-fields) for optional fields description.
+
+**Returns:** Promise of ???
+
 
 **Usage:**
 
@@ -355,19 +402,19 @@ const data = {
   quantity: 100,
 }
 
-const signedBurnTx = burn(data)
-console.log(signedBurnTx)
+const [tx] = await waves
+  .burn(data)
+  .broadcast();
 ```
 
 <a id="cancellease"></a>
 #### cancelLease
 
-Creates and signs [lease cancel transaction transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/lease-cancel-transaction.html).
+Creates [lease cancel transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/lease-cancel-transaction.html).
 
 ```js
 cancelLease(data: {
     leaseId: 'string',
-    chainId: number,
 })
 ```
 
@@ -378,10 +425,10 @@ cancelLease(data: {
 | Field name | Default value | Description |
 | :--- | :--- | :--- |
 | leasetId* | | Id of the lease transaction |
-| chainId | Defined by node | 'W'.charCodeAt(0) or 87 means Mainnet<br>
-'T'.charCodeAt(0) or 84 means Testnet |
 
 \* Required field.
+
+See [Common fields](#common-fields) for optional fields description.
 
 **Usage:**
 
@@ -390,20 +437,21 @@ const data = {
   leaseId: '69HK14PEHq2UGRfRYghVW8Kc3487uJaoUmk2ntT4kw7X',
 }
 
-const signedLeaseCancelTx = cancelLease(data)
-console.log(signedLeaseCancelTx)
+const [tx] = await waves
+  .cancelLease(data)
+  .broadcast();
 ```
 
 <a id="data"></a>
 #### data
 
-Creates and signs [data](https://docs.wavesplatform.com/en/blockchain/transaction-type/data-transaction.html) transaction.
+Creates [data](https://docs.wavesplatform.com/en/blockchain/transaction-type/data-transaction.html) transaction.
 
 ```js
 data(data: [{
-    key: 'string',
-    type: 'string' | 'integer' | 'binary' | 'boolean',
-    value: 'string' | number | boolean | Uint8Array | Array<number>,
+  key: 'string',
+  type: 'string' | 'integer' | 'binary' | 'boolean',
+  value: 'string' | number | boolean | Uint8Array | Array<number>,
 ])
 ```
 
@@ -411,8 +459,8 @@ or
 
 ```js
 data(data: [{
-    key: 'string',
-    value: 'string' | number | boolean | Uint8Array | number[],
+  key: 'string',
+  value: 'string' | number | boolean | Uint8Array | number[],
 }])
 ```
 
@@ -430,80 +478,35 @@ data(data: [{
 
 \* Required field.
 
+See [Common fields](#common-fields) for optional fields description.
+
 **Usage:**
 
 ```js
-const data = [{
-  key: 'name',
-  type: 'string',
-  value: 'Lorem ipsum dolor sit amet',
-},
-{
-  key: 'value',
-  type: 'number',
-  value: 1234567,
-}]
+const data = [
+  { key: 'name', type: 'string', value: 'Lorem ipsum dolor sit amet' },
+  { key: 'value', type: 'number', value: 1234567 },
+  { key: 'flag', type: 'boolean', value: true }
+]
 
-const signedDataTx = waves.data(data)
-console.log(signedDataTx)
+const [tx] = await waves
+  .data(data)
+  .broadcast();
 ```
 
 <a id="exchange"></a>
 #### exchange
 
-Creates and signs [exchange](https://docs.wavesplatform.com/en/blockchain/transaction-type/data-transaction.html) transaction.
+Creates [exchange](https://docs.wavesplatform.com/en/blockchain/transaction-type/data-transaction.html) transaction.
 
 ```js
 exchange(data: {
-    buyOrder: IExchangeTransactionOrder<LONG> & IWithProofs;
-    sellOrder: IExchangeTransactionOrder<LONG> & IWithProofs;
-    price: LONG;
-    amount: LONG;
-    buyMatcherFee: LONG;
-    sellMatcherFee: LONG;)
-```
-
-**Returns:** Promise of ???
-
-**Parameters:**
-
-| Field name | Default value | Description |
-| :--- | :--- | :--- |
-| key* | | Key of a record. Maximum of 100 characters |
-| type | | Type of a record |
-| value* | | Value of a record. Maximum of 5 Kbytes |
-
-\* Required field.
-
-**Usage:**
-
-```js
-const data = [{
-  key: 'name',
-  type: 'string',
-  value: 'Lorem ipsum dolor sit amet',
-},
-{
-  key: 'value',
-  type: 'number',
-  value: 1234567,
-}]
-
-const signedDataTx = waves.data(data)
-console.log(signedDataTx)
-```
-<a id="invoke"></a>
-#### invoke
-
-Creates and signs [invoke scipt transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/invoke-script-transaction.html).
-
-```js
-alias(data: {
-  alias: 'string',
-  chainId: number,
-  fee: LONG,
-  proofs: Array<string>,
-  senderPublicKey: string,
+  buyOrder: IExchangeTransactionOrder<LONG> & IWithProofs (??),
+  sellOrder: IExchangeTransactionOrder<LONG> & IWithProofs,
+  price: LONG,
+  amount: LONG,
+  buyMatcherFee: LONG,
+  sellMatcherFee: LONG,
 })
 ```
 
@@ -511,27 +514,95 @@ alias(data: {
 
 | Field name | Default value | Description |
 | :--- | :--- | :--- |
-| alias* | | |
-| chainId | Defined by node | 'W'.charCodeAt(0) or 87 means Mainnet<br>
-'T'.charCodeAt(0) or 84 means Testnet |
-| fee | ?? | [Transaction fee](https://docs.wavesplatform.com/en/blockchain/transaction/transaction-fee.html) |
-| proofs | | Необязательный?? Как получить?? Что если не указаны?? |
-| senderPublicKey | | Base58-encoded public key of transaction sender that is returned by [login](#login) method |
+| buyOrder* | | Key of a record. Maximum of 100 characters |
+| sellOrder* | | Type of a record |
+| price* | | Value of a record. Maximum of 5 Kbytes |
+| amount* | | Value of a record. Maximum of 5 Kbytes |
+| buyMatcherFee* | | Value of a record. Maximum of 5 Kbytes |
+| sellMatcher* | | Value of a record. Maximum of 5 Kbytes |
 
-\* Required field
+\* Required field.
+
+See [Common fields](#common-fields) for optional fields description.
+
+**Returns:** Promise of ???
+
+**Usage:**
 
 ```js
+const data = {}
+
+const [tx] = await waves
+  .exchange(data)
+  .broadcast();
+```
+
+<a id="invoke"></a>
+#### invoke
+
+Creates [invoke scipt transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/invoke-script-transaction.html).
+
+```js
+invoke(data: {
+  dApp: 'string',
+  fee: LONG,
+  payment: [{
+    assetId: 'string',
+    amount: LONG,
+  }],
+  call: {
+    function: 'string',
+    args: [{
+      type: 'integer' | 'string' | 'binary',
+      value: number | 'string',
+    }],
+  },
+})
 ```
 
 **Parameters:**
 
-| Field name | Type | Description |
+| Field name | Default value | Description |
 | :--- | :--- | :--- |
+| dApp* | | Base58-encoded address or alias of the dApp whose script should be invoked |
+| fee* | | Transaction fee that depends on number of action performed by called function |
+| payment | | Payments attached to the transaction. Maximum of two payments. |
+| payment.assetId* | | Base58-encoded id of the asset to pay. `WAVES` or `null` means WAVES |
+| payment.amount* | | Amount of asset multiplied by 10^`decimals`. For example, decimals of WAVES is 8, so the real amount is multipied by 10^8. `{ "WAVES": 677728840 }` means 6.77728840 |
+| call | ?? Если не указано то что? |  |
+| call.function* | | Name of the function that is called |
+| call.args* | | Arguments for the function  that is called |
+| call.args.type* | | Type of argument |
+| call.args.value* | | Value of argument |
 
-**Returns:** ???
+\* Required field
+
+See [Common fields](#common-fields) for optional fields description.
+
+**Returns:** Promise of ???
 
 **Usage:**
 ```ts
+const data = {
+  dApp: '3Fb641A9hWy63K18KsBJwns64McmdEATgJd',
+  fee: 1000000,
+  payment: [{
+    assetId: '73pu8pHFNpj9tmWuYjqnZ962tXzJvLGX86dxjZxGYhoK',
+    amount: 7,
+  }],
+  call: {
+    function: 'foo',
+    args: [
+      { type: 'integer', value: 1 },
+      { type: 'binary', value: 'base64:AAA=' },
+      { type: 'string', value: 'foo' }
+    ],
+  },
+}
+
+const [tx] = await waves
+  .invoke(data)
+  .broadcast();
 ```
 
 **Output example:**
@@ -544,210 +615,352 @@ alias(data: {
 <a id="issue"></a>
 #### issue
 
-Description
+Creates [issue transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/issue-transaction.html).
 
 ```js
+issue(data: {
+  name: 'string',
+  decimals: 'number',
+  quantity: LONG,
+  reissuable: boolean,
+  description: 'string',
+  script: 'string',
+})
 ```
 
 **Parameters:**
 
-| Field name | Type | Description |
+| Field name | Default value | Description |
 | :--- | :--- | :--- |
+| name* | | Asset name |
+| decimals* | | Number of digits in decimal part |
+| quantity* | | Amount of asset multiplied by 10^`decimals` |
+| reissuable* | | `true` – asset reissue is possible.<br>`false` — asset reissue is not possible |
+| description* | | Asset description |
+| script | | ?? Base64-encoded script to be attached to to asset |
 
-**Returns:** ???
+\* Required field
+
+See [Common fields](#common-fields) for optional fields description.
+
+**Returns:** Promise of ???
 
 **Usage:**
-```ts
+
+```js
+const data = {
+  name: 'MyToken',
+  decimals: 8,
+  quantity: 100000000000,
+  reissuable: true,
+  description: 'It is a gaming token',
+}
+
+const [tx] = await waves
+  .issue(data)
+  .broadcast();
 ```
 
 **Output example:**
 
 ```js
-{
-}
+???
 ```
 
 <a id="lease"></a>
 #### lease
 
-Description
+Creates [lease transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/lease-transaction.html).
 
 ```js
+lease(data: {
+    amount: LONG,
+    recipient: 'string',
+})
 ```
 
 **Parameters:**
 
-| Field name | Type | Description |
+| Field name | Default value | Description |
 | :--- | :--- | :--- |
+| amount* | | Amount of WAVES multiplied by 10^8. For example, `{ "WAVES": 677728840 }` means 6.77728840 |
+| recipient* | | Base58-encoded [address](https://docs.wavesplatform.com/en/blockchain/account/address.html) of the recipient |
 
-**Returns:** ???
+\* Required field
+
+See [Common fields](#common-fields) for optional fields description.
+
+**Returns:** Promise of ???
 
 **Usage:**
-```ts
+
+```js
+const data = {
+    amount: 10000,
+    recipient: '3P8pGyzZL9AUuFs9YRYPDV3vm73T48ptZxs',
+}
+
+const [tx] = await waves
+  .lease(data)
+  .broadcast();
 ```
 
 **Output example:**
 
 ```js
-{
-}
 ```
-
 
 <a id="masstransfer"></a>
 #### massTransfer
 
-Description
+Creates [mass transfer transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/mass-transfer-transaction.html).
 
 ```js
+massTransfer(data: {
+  assetId: 'string',
+  transfers: [{
+    amount: LONG,
+    recipient: 'string',
+  }],
+  attachment: 'string',
+})
 ```
 
 **Parameters:**
 
-| Field name | Type | Description |
+| Field name | Default value | Description |
 | :--- | :--- | :--- |
+| assetId | WAVES | Base58-encoded ID of the asset to transfer |
+| transfers | | List of transfers |
+| transfers.amount* | | Amount of asset multiplied by 10^`decimals`. For example, decimals of WAVES is 8, so the real amount is multipied by 10^8. `{ "WAVES": 677728840 }` means 6.77728840Amount of  multiplied by 10^8. |
+| transfers.recipient* | | Base58-encoded [address](https://docs.wavesplatform.com/en/blockchain/account/address.html) of the recipient |
+| attachment | | Optional data attached to the transaction. This field is often used to attach a comment to the transaction. The maximum data size is 140 bytes |
 
-**Returns:** ???
+\* Required field
+
+See [Common fields](#common-fields) for optional fields description.
+
+**Returns:** Promise of ???
 
 **Usage:**
-```ts
+
+```js
+const data = [
+    {
+      amount: 100,
+      recipient: '3P23fi1qfVw6RVDn4CH2a5nNouEtWNQ4THs',
+    },
+    {
+      amount: 200,
+      recipient: '3PPnqZznWJbPG2Z1Y35w8tZzskiq5AMfUXr',
+    },
+]
+
+const [tx] = await waves
+  .massTransfer(data)
+  .broadcast();
 ```
 
 **Output example:**
 
 ```js
-{
-}
 ```
 
 <a id="reissue"></a>
 #### reissue
 
-Description
+Creates [reissue transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/reissue-transaction.html).
 
 ```js
+reissue(data: {
+  assetId: 'string',
+  quantity: LONG,
+  reissuable: boolean,
+})
 ```
 
 **Parameters:**
 
-| Field name | Type | Description |
+| Field name | Default value | Description |
 | :--- | :--- | :--- |
+| assetId* | | Base58-encoded ID of the asset to reissue |
+| quantity* | | Amount of asset multiplied by 10^`decimals` to reissue |
+| reissuable* | | `true` – asset reissue is possible.<br>`false` — asset reissue is not possible |
 
-**Returns:** ???
+\* Required field
+
+See [Common fields](#common-fields) for optional fields description.
+
+**Returns:** Promise of ???
 
 **Usage:**
-```ts
-```
-
-**Output example:**
 
 ```js
-{
+const data = {
+  assetId: 'AcrRM9STdBu5PNiFveTCbRFTS8tADhKcsbC2KBp8A4tx'
+  quantity: 100000000000,
+  reissuable: true,
 }
+
+const [tx] = await waves
+  .reissue(data)
+  .broadcast();
 ```
 
 <a id="setassetscript"></a>
 #### setAssetScript
 
-Description
+Creates [set asset script transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/set-asset-script-transaction.html).
 
 ```js
+setAssetScript(data: {
+  assetId: 'string',
+  script: 'string',
+})
 ```
 
 **Parameters:**
 
-| Field name | Type | Description |
+| Field name | Default value | Description |
 | :--- | :--- | :--- |
+| assetId* | | Base58-encoded ID of the asset |
+| script | | Base64-encoded script to be attached to the asset |
 
-**Returns:** ???
+\* Required field
+
+See [Common fields](#common-fields) for optional fields description.
+
+**Returns:** Promise of ???
 
 **Usage:**
-```ts
+
+```js
+const data = {
+  assetId: 'AcrRM9STdBu5PNiFveTCbRFTS8tADhKcsbC2KBp8A4tx',
+  script: 'base64:AwZd0cYf',
+}
+
+const [tx] = await waves
+  .setAssetScript(data)
+  .broadcast();
 ```
 
 **Output example:**
 
 ```js
-{
-}
 ```
 
 <a id="setscript"></a>
 #### setScript
 
-Description
+Creates [set script transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/set-script-transaction.html).
 
 ```js
+setScript(data: {
+  script: 'string',
+})
 ```
 
 **Parameters:**
 
-| Field name | Type | Description |
+| Field name | Default value | Description |
 | :--- | :--- | :--- |
+| script | | Base64-encoded [account script](https://docs.wavesplatform.com/en/ride/script/script-types/account-script.html) or [dApp script](https://docs.wavesplatform.com/en/ride/script/script-types/dapp-script.html) to be attached to the user account. `null` means cancelling the script |
 
-**Returns:** ???
+See [Common fields](#common-fields) for optional fields description.
+
+**Returns:** Promise of ???
 
 **Usage:**
-```ts
-```
-
-**Output example:**
 
 ```js
-{
+const data = {
+  script: 'base64:AAIDAAAAAAAAAAQIARIAAAAAAAAAAA...',
 }
+
+const [tx] = await waves
+  .setScript(data)
+  .broadcast();
 ```
 
 <a id="sponsorship"></a>
 #### sponsorship
 
-Description
+Creates sponsorship transaction.
 
 ```js
+sponsorship(data: {
+    assetId: 'string',
+    minSponsoredAssetFee: LONG,
+})
 ```
 
 **Parameters:**
 
-| Field name | Type | Description |
+| Field name | Default value | Description |
 | :--- | :--- | :--- |
+| assetId* | | Base58-encoded ID of the asset |
+| minSponsoredAssetFee | | Required amount of sponsored token to be charged to users multiplied by 10^`decimals` |
+\* Required field
 
-**Returns:** ???
+See [Common fields](#common-fields) for optional fields description.
+
+**Returns:** Promise of ???
 
 **Usage:**
-```ts
-```
-
-**Output example:**
 
 ```js
-{
+const data = {
+  assetId: 'AcrRM9STdBu5PNiFveTCbRFTS8tADhKcsbC2KBp8A4tx',
+  minSponsoredAssetFee: 314,
 }
+
+const [tx] = await waves
+  .sponsorship(data)
+  .broadcast();
 ```
 
 <a id="transfer"></a>
 #### transfer
 
-Description
+Creates [transfer transaction](https://docs.wavesplatform.com/en/blockchain/transaction-type/transfer-transaction.html).
 
 ```js
+transfer(data: {
+  recipient: 'string',
+  amount: LONG,
+  assetId: 'string',
+  attachment: 'string',
+  feeAssetId: 'string',
+})
 ```
 
 **Parameters:**
 
-| Field name | Type | Description |
+| Field name | Default value | Description |
 | :--- | :--- | :--- |
+| recipient* | | Base58-encoded [address](https://docs.wavesplatform.com/en/blockchain/account/address.html) of the recipient |
+| amount* | | Amount of asset multiplied by 10^`decimals`. For example, decimals of WAVES is 8, so the real amount is multipied by 10^8. `{ "WAVES": 677728840 }` means 6.77728840 |
+| assetId | WAVES | Base58-encoded ID of the asset to transfer. `null` or omitted field means WAVES |
+| attachment | | Optional data attached to the transaction. This field is often used to attach a comment to the transaction. The maximum data size is 140 bytes |
+| feeAssetId | WAVES | Base58-encoded ID of the asset to pay the commission. `null` or omitted field means WAVES |
 
-**Returns:** ???
+\* Required field
+
+See [Common fields](#common-fields) for optional fields description.
+
+**Returns:** Promise of ???
 
 **Usage:**
-```ts
-```
-
-**Output example:**
 
 ```js
-{
+const data = {
+  script: 'base64:AAIDAAAAAAAAAAQIARIAAAAAAAAAAA...',
 }
+
+const [tx] = await waves
+  .transfer(data)
+  .broadcast();
 ```
 
 ### Others
