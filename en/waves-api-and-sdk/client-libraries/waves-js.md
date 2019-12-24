@@ -4,7 +4,7 @@
 * [Getting Started](#getting-started)
 * [Constructor](#constructor)
 * [Methods](#methods)
-* [Provider Interface](#provider)
+* [Provider Interface](#provider-interface)
 
 <a id="overview"></a>
 ## Overview
@@ -18,7 +18,7 @@ Waves JS API uses external Provider library to authenticate users with their acc
 For now, you can use one of the following Providers:
 
 * SeedProvider developed by Waves team creates test account from SEED. SeedProvider can be used at the app debugging stage.
-* StorageProvider developed by Waves.Exchange is the wallet software that encryptes and stores user's private key and SEED phrase, making sure that users' funds are protected from hackers and malicious websites.
+* [Waves Signer](https://gitlab.waves.exchange/we-public/storage-provider) developed by Waves.Exchange is the wallet software that encryptes and stores user's private key and SEED phrase, making sure that users' funds are protected from hackers and malicious websites.
 
 You can also develop your own Provider, see [Prodider Interface](#provider-interface).
 
@@ -41,10 +41,10 @@ In code you can use [TypeScript types](https://github.com/wavesplatform/ts-types
    npm install @waves/seed-provider @waves/waves-transactions
    ```
 
-* To install StorageProvider developed by Waves.Exchange, use
+* To install Waver Signer developed by Waves.Exchange, use
 
    ```
-   npm install @waves.exchange/storage-provider
+   npm install @waves.exchange/waves-signer
    ```
 
 ### 2. Library initialization
@@ -70,7 +70,7 @@ Add library initialization to you app.
 
    ```js
    import Waves from '@waves/waves-js';
-   import Provider from '@waves.exchange/storage-provider';
+   import Provider from '@waves.exchange/waves-signer';
    
    const waves = new Waves({
      // Specify URL of the node on Testnet
@@ -83,7 +83,7 @@ Add library initialization to you app.
 
    ```js
    import Waves from '@waves/waves-js';
-   import Provider from '@waves.exchange/storage-provider';
+   import Provider from '@waves.exchange/waves-signer';
    
    const waves = new Waves();
    waves.setProvider(new Provider());
