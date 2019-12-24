@@ -475,20 +475,9 @@ Creates [data](https://docs.wavesplatform.com/en/blockchain/transaction-type/dat
 data(data: [{
   key: 'string',
   type: 'string' | 'integer' | 'binary' | 'boolean',
-  value: 'string' | number | boolean | Uint8Array | Array<number>,
+  value: 'string' | number | boolean,
 ])
 ```
-
-or
-
-```js
-data(data: [{
-  key: 'string',
-  value: 'string' | number | boolean | Uint8Array | number[],
-}])
-```
-
-Почему в одном случае Array\<number\>>, в другом number []? Надо ли отдельно описать Uint8Array, возможно достаточно number?
 
 **Parameters:**
 
@@ -650,7 +639,7 @@ issue(data: {
 | quantity* | | Amount of asset multiplied by 10^`decimals` |
 | reissuable* | | `true` – asset reissue is possible.<br>`false` — asset reissue is not possible |
 | description* | | Asset description |
-| script | | ?? Base64-encoded script to be attached to to asset |
+| script | | Base64-encoded script (with `base64:` prefix) to be attached to to asset |
 
 \* Required field
 
@@ -813,7 +802,7 @@ setAssetScript(data: {
 | Field name | Default value | Description |
 | :--- | :--- | :--- |
 | assetId* | | Base58-encoded ID of the asset |
-| script | | Base64-encoded script to be attached to the asset |
+| script | | Base64-encoded script (with `base64:` prefix) to be attached to the asset |
 
 \* Required field
 
@@ -847,7 +836,7 @@ setScript(data: {
 
 | Field name | Default value | Description |
 | :--- | :--- | :--- |
-| script | | Base64-encoded [account script](https://docs.wavesplatform.com/en/ride/script/script-types/account-script.html) or [dApp script](https://docs.wavesplatform.com/en/ride/script/script-types/dapp-script.html) to be attached to the user account. `null` means cancelling the script |
+| script | | Base64-encoded [account script](https://docs.wavesplatform.com/en/ride/script/script-types/account-script.html) or [dApp script](https://docs.wavesplatform.com/en/ride/script/script-types/dapp-script.html) (with `base64:` prefix) to be attached to the user account. `null` means cancelling the script |
 
 See [Common fields](#common-fields) for other fields description.
 
@@ -1005,7 +994,7 @@ broadcast(tx,[options])
 | :--- | :--- | :--- |
 | tx* | | Signed transaction or array of signed transactions |
 | options.chain | false | [Type: boolean] Send the next transaction only after the previous transaction is put in the blockchain and confirmed |
-| options.confirmations | -1 | Number of blocks added to the blockchain after that the Promise is resolved:<br>0 or less than 0 – Promise is resolved when the block that contains the transaction is added<br>1 – Promise is resolved when the next block is added and so on |
+| options.confirmations | -1 | Number of confirmations after that the Promise is resolved:<br>less than 0 – Promise is resolved when the transaction is put in UTX pool<br>0 – Promise is resolved when the block that contains the transaction is added to the blockchain<br>1 – Promise is resolved when the next block is added to the blockchain and so on |
 
 \* Required field
 
@@ -1023,7 +1012,7 @@ In this example:
 * `transfer1` transaction is sent to the node and put in UTX pool.
 * Block with `transfer1` and two more blocks are added to the blockchain.
 * `transfer2` transaction is sent to the node and put in UTX pool.
-* Block with `transfer1` and two more blocks are added to the blockchain.
+* Block with `transfer2` and two more blocks are added to the blockchain.
 * Promise is resolved and you can notify user that his/her transactions are confirmed.
 
 <a id="setprovider"></a>
