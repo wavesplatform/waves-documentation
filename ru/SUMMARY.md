@@ -123,7 +123,6 @@
   * [Переводы Bitcoin SV](waves-client/transfers-and-gateways/bitcoin-sv-transfers.md)
   * [Переводы Ergo](waves-client/transfers-and-gateways/ergo-transfers.md)
   * [Переводы Bancor](waves-client/transfers-and-gateways/bancor-transfers.md)
-  * [Перевод EUR и USD](waves-client/transfers-and-gateways/eur-usd-transfers.md)
   * [Покупка Waves с банковской карты](waves-client/transfers-and-gateways/buying-waves-using-card.md)
 * [Управление ассетами](waves-client/assets-management.md)
   * [Создание токена](waves-client/assets-management/issue-an-asset.md)
