@@ -225,7 +225,7 @@ In `micro-block-synchronizer` subsection you could tune various parameters of Wa
 
 `max-size` parameter allows to set the size of unconfirmed transactions pool (both scripted and non-scripted).
 
-`max-scripted-size` parameter allows to set the size of unconfirmed transactions pool for scripted transactions. Prior to node version 1.1.6, the invoke script transactions were not counted.
+`max-scripted-size` parameter allows to set the size of unconfirmed transactions pool for scripted transactions. Prior to node version 1.1.6, the invoke script transactions were not counted (the counted were the transactions for the validation of which it is required to execute a smart contract).
 
 `max-transaction-age` parameter allows to set the maximum age of transactions allowed to UTX.
 
