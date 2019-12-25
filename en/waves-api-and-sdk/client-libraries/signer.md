@@ -18,7 +18,7 @@ Signer uses external Provider library to authenticate users with their accounts 
 For now, you can use one of the following Providers:
 
 * SeedProvider developed by Waves team creates test account from SEED. SeedProvider can be used at the app debugging stage.
-* [Provider-web](https://gitlab.waves.exchange/we-public/provider-web) developed by Waves.Exchange is the wallet software that encryptes and stores user's private key and SEED phrase, making sure that users' funds are protected from hackers and malicious websites.
+* [ProviderWeb](https://gitlab.waves.exchange/we-public/provider-web) developed by Waves.Exchange is the wallet software that encryptes and stores user's private key and SEED phrase, making sure that users' funds are protected from hackers and malicious websites.
 
 You can also develop your own Provider, see [Prodider Interface](#provider-interface).
 
@@ -41,7 +41,7 @@ In code you can use [TypeScript types](https://github.com/wavesplatform/ts-types
    npm i @waves/seed-provider @waves/waves-transactions
    ```
 
-* To install Provider-web developed by Waves.Exchange, use
+* To install ProviderWeb developed by Waves.Exchange, use
 
    ```bash
    npm i @waves.exchange/provider-web
@@ -66,7 +66,7 @@ Add library initialization to your app.
    waves.setProvider(new SeedProvider(seed));
    ```
 
-* For Testnet & Waves.Exchange Provider-web:
+* For Testnet & Waves.Exchange ProviderWeb:
 
    ```js
    import Waves from '@waves/signer';
@@ -79,7 +79,7 @@ Add library initialization to your app.
    waves.setProvider(new Provider());
    ```
 
-* For Mainnet & Waves.Exchange Provider-web:
+* For Mainnet & Waves.Exchange ProviderWeb:
 
    ```js
    import Waves from '@waves/signer';
