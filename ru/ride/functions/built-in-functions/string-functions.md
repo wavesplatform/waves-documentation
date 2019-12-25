@@ -2,14 +2,44 @@
 
 | # | Название | Описание | Сложность |
 | :--- | :--- | :--- | :--- |
-| 1 | [drop(String, Int): String](#drop)  | Удаляет первые `n` символов строки | 1 |
-| 2 | [dropRight(String, Int): String](#drop-right)  | Удаляет последние `n` символов строки | 19 |
-| 3 | [indexOf(String, String): Int&#124;Unit](#index-of-first)  | Возвращает индекс первого вхождения подстроки  | 20 |
-| 4 | [indexOf(String, String, Int): Int&#124;Unit](#index-after-index)  | Возвращает индекс первого вхождения подстроки после указанного индекса | 20 |
-| 5 | [size(String): Int](#size)  | Возвращает длину строки | 1 |
-| 6 | [split(String, String): List[String]](#split)  | Разбивает строку на список подстрок, используя разделитель | 100 |
-| 7 | [take(String, Int): String](#take)  | Возвращает первые `n` символов строки | 1 |
-| 8 | [takeRight(String, Int): String](#take-right)  | Возвращает последние `n` символов строки | 19 |
+| 1 | [contains(String, String): Boolean](#contains) | Проверяет, содержится ли строка в строке  | 20 |
+| 2 | [drop(String, Int): String](#drop)  | Удаляет первые `n` символов строки | 1 |
+| 3 | [dropRight(String, Int): String](#drop-right)  | Удаляет последние `n` символов строки | 19 |
+| 4 | [indexOf(String, String): Int&#124;Unit](#index-of-first)  | Возвращает индекс первого вхождения подстроки  | 20 |
+| 5 | [indexOf(String, String, Int): Int&#124;Unit](#index-after-index)  | Возвращает индекс первого вхождения подстроки после указанного индекса | 20 |
+| 6 | [size(String): Int](#size)  | Возвращает длину строки | 1 |
+| 7 | [split(String, String): List[String]](#split)  | Разбивает строку на список подстрок, используя разделитель | 100 |
+| 8 | [take(String, Int): String](#take)  | Возвращает первые `n` символов строки | 1 |
+| 9 | [takeRight(String, Int): String](#take-right)  | Возвращает последние `n` символов строки | 19 |
+
+## contains(String, String): Boolean<a id=contains></a>
+
+Проверяет, содержится ли строка в строке.
+
+``` ride
+contains(haystack: String, needle: String): Boolean
+```
+
+### Параметры
+
+#### `haystack`: String
+
+Строка, в которой осуществляется поиск.
+
+#### `needle`: String
+
+Искомая строка.
+
+### Примеры
+
+```ride
+{-# STDLIB_VERSION 4 #-}
+{-# CONTENT_TYPE DAPP #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
+ 
+"hello".contains("hell") # Возвращает true
+"hello".contains("world") # Возвращает false
+```
 
 ## drop(String, Int): String<a id=drop></a>
 

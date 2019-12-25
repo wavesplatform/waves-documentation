@@ -131,14 +131,15 @@ A **built-in function** is a [function](/ride/functions.md) of the [script conte
 
 | # | Name | Description | Complexity |
 | :--- | :--- | :--- | :--- |
-| 1 | drop(String, Int): String | Drops the first `n` characters of a string | 1 |
-| 2 | dropRight(String, Int): String | Drops the last `n` characters of a string | 19 |
-| 3 | indexOf(String, String): Int&#124;Unit | Returns the index of the first occurrence of a substring | 20 |
-| 4 | indexOf(String, String, Int): Int&#124;Unit | Returns the index of the first occurrence of a substring after a certain index | 20 |
-| 5 | size(String): Int | Returns the size of a string | 1 |
-| 6 | split(String, String): List[String] | Splits a string delimited by a separator into a list of substrings. | 100 |
-| 7 | take(String, Int): String | Takes the first `n` characters from a string | 1 |
-| 8 | takeRight(String, Int): String | Takes the last `n` characters from a string | 19 |
+| 1 | contains(String, String): Boolean | Checks whether the string contains substring | 20 |
+| 2 | drop(String, Int): String | Drops the first `n` characters of a string | 1 |
+| 3 | dropRight(String, Int): String | Drops the last `n` characters of a string | 19 |
+| 4 | indexOf(String, String): Int&#124;Unit | Returns the index of the first occurrence of a substring | 20 |
+| 5 | indexOf(String, String, Int): Int&#124;Unit | Returns the index of the first occurrence of a substring after a certain index | 20 |
+| 6 | size(String): Int | Returns the size of a string | 1 |
+| 7 | split(String, String): List[String] | Splits a string delimited by a separator into a list of substrings. | 100 |
+| 8 | take(String, Int): String | Takes the first `n` characters from a string | 1 |
+| 9 | takeRight(String, Int): String | Takes the last `n` characters from a string | 19 |
 
 ### [Union functions](/ride/functions/built-in-functions/union-functions.md)
 
