@@ -155,7 +155,6 @@
     * [Bitcoin SV transfers](waves-client/transfers-and-gateways/bitcoin-sv-transfers.md)
     * [Ergo transfers](waves-client/transfers-and-gateways/ergo-transfers.md)
     * [Bancor transfers](waves-client/transfers-and-gateways/bancor-transfers.md)
-    * [EURO and USD transfers](waves-client/transfers-and-gateways/eur-usd-transfers.md)
     * [Buying Waves using credit or debit card](waves-client/transfers-and-gateways/buying-waves-using-card.md)
   * [Advanced Features](waves-client/advanced_features.md)
     * [Script transaction](waves-client/advanced_features/script_transaction.md)
