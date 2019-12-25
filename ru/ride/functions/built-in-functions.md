@@ -119,14 +119,15 @@
 
 | # | Название | Описание | Сложность |
 | :--- | :--- | :--- | :--- |
-| 1 | drop(String, Int): String | Удаляет первые `n` символов строки | 1 |
-| 2 | dropRight(String, Int): String | Удаляет последние `n` символов строки | 19 |
-| 3 | indexOf(String, String): Int&#124;Unit | Возвращает индекс первого вхождения подстроки | 20 |
-| 4 | indexOf(String, String, Int): Int&#124;Unit | Возвращает индекс первого вхождения подстроки после указанного индекса | 20 |
-| 5 | size(String): Int | Возвращает длину строки | 1 |
-| 6 | split(String, String): List[String] | Разбивает строку на список подстрок, используя разделитель | 100 |
-| 7 | take(String, Int): String | Возвращает первые `n` символов строки | 1 |
-| 8 | takeRight(String, Int): String | Возвращает последние `n` символов строки | 19 |
+| 1 | contains(String, String): Boolean | Проверяет, содержится ли строка в строке  | 20 |
+| 2 | drop(String, Int): String | Удаляет первые `n` символов строки | 1 |
+| 3 | dropRight(String, Int): String | Удаляет последние `n` символов строки | 19 |
+| 4 | indexOf(String, String): Int&#124;Unit | Возвращает индекс первого вхождения подстроки | 20 |
+| 5 | indexOf(String, String, Int): Int&#124;Unit | Возвращает индекс первого вхождения подстроки после указанного индекса | 20 |
+| 6 | size(String): Int | Возвращает длину строки | 1 |
+| 7 | split(String, String): List[String] | Разбивает строку на список подстрок, используя разделитель | 100 |
+| 8 | take(String, Int): String | Возвращает первые `n` символов строки | 1 |
+| 9 | takeRight(String, Int): String | Возвращает последние `n` символов строки | 19 |
 
 ### [Функции транзакции данных](/ride/functions/built-in-functions/data-transaction-functions.md)
 
