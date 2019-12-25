@@ -15,7 +15,6 @@ Transfers and gateways chapter includes all details about send and deposit opera
 * [Bitcoin SV transfers](transfers-and-gateways/bitcoin-sv-transfers.md)
 * [Ergo transfers](transfers-and-gateways/ergo-transfers.md)
 * [Bancor transfers](transfers-and-gateways/bancor-transfers.md)
-* [EURO and USD transfers](transfers-and-gateways/eur-usd-transfers.md)
 
 The Waves wallet also supports purchases of Waves in Euro and US Dollar \(minimum 30 EUR/USD, maximum 3000 EUR/USD\) using plastic card.
 
