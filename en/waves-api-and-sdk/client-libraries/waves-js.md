@@ -31,20 +31,20 @@ In code you can use [TypeScript types](https://github.com/wavesplatform/ts-types
 
 * To install Waves JS library use
 
-   ```
-   npm install @waves/waves-js
+   ```bash
+   npm i @waves/waves-js
    ```
 
 * To install SeedProvider developed by Waves team, use
 
-   ```
-   npm install @waves/seed-provider @waves/waves-transactions
+   ```bash
+   npm i @waves/seed-provider @waves/waves-transactions
    ```
 
 * To install Waver Signer developed by Waves.Exchange, use
 
-   ```
-   npm install @waves.exchange/waves-signer
+   ```bash
+   npm i @waves.exchange/waves-signer
    ```
 
 ### 2. Library initialization
