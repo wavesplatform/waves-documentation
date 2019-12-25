@@ -107,6 +107,11 @@ const [signedTransfer] = await waves
   .sign(); // Promise will resolved after user sign
 ```
 
+<a id="more-examples"></a>
+### More examples
+
+See example of an app that implements the donate button: <https://github.com/vlzhr/crypto-donate>.
+
 <a id="constructor"></a>
 ## Constructor
 
