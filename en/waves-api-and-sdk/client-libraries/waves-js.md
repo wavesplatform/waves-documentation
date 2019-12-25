@@ -9,7 +9,7 @@
 <a id="overview"></a>
 ## Overview
 
-Waves JS API is a TypeScript/JavaScript component for your web app for interacting with the Waves blockchain. Using Waves JS API you can easily create and sign transactions.
+[Waves JS API](https://github.com/wavesplatform/waves-js) is a TypeScript/JavaScript component for your web app for interacting with the Waves blockchain. Using Waves JS API you can easily create and sign transactions.
 
 Waves JS API uses external Provider library to authenticate users with their accounts and to sign transactions. Your web app and Waves JS API itself do not have access to user's private key and SEED phrase.
 
