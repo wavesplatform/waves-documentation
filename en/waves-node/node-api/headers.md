@@ -1,5 +1,14 @@
 # Request headers
 
+## api-key
+
+[API key](https://en.wikipedia.org/wiki/Application_programming_interface_key) of the node owner is highly important as the [seed](http://confluence.wavesplatform.com/display/WDOCS/Seed+phrase) phrase and the password of the wallet.
+
+The API key is transmitted in the HTTP header as unprotected plain text in `api-key` header. An attacker can intercept it in the network transit and use it to transfer your money to any address! So it's highly important to protect the transmission using HTTPS or SSH port forwarding.
+
+Please note that node does not have built-in HTTPS support. Consider using HTTPS-proxy, for example, nginx.
+
+
 ## large-significand-format=string
 
 Sets serialization format for monetary fields. If set, the field will be serialized to JSON as a string, otherwise - as a number. This can be useful for values with long mantissa.
