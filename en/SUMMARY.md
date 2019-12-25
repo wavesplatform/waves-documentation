@@ -427,7 +427,7 @@
   * [WavesC](waves-api-and-sdk/client-libraries/waves-c.md)
   * [GoWaves](waves-api-and-sdk/client-libraries/gowaves.md)
   * [WavesRS](waves-api-and-sdk/client-libraries/wavesrs.md)
-  * [Waves signature adapter](waves-api-and-sdk/client-libraries/waves-signature-adapter.md)
+  * [Waves JS](waves-api-and-sdk/client-libraries/waves-js.md)
   * [Waves transactions](waves-api-and-sdk/client-libraries/waves-transactions.md)
   * [Community libraries](waves-api-and-sdk/client-libraries/unofficial-libraries.md)
 * [Examples](waves-api-and-sdk/examples.md)

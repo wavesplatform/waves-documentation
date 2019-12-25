@@ -49,7 +49,7 @@ In code you can use [TypeScript types](https://github.com/wavesplatform/ts-types
 
 ### 2. Library initialization
 
-Add library initialization to you app.
+Add library initialization to your app.
 
 * For Testnet & SeedProvider:
 
