@@ -9,16 +9,16 @@
 <a id="overview"></a>
 ## Overview
 
-[Waves JS API](https://github.com/wavesplatform/waves-js) is a TypeScript/JavaScript component for your web app for interacting with the Waves blockchain. Using Waves JS API you can easily create and sign transactions.
+[Signer](https://github.com/wavesplatform/signer) is a TypeScript/JavaScript component for your web app for interacting with the Waves blockchain. Using Signer JS API you can easily create and sign transactions.
 
-Waves JS API uses external Provider library to authenticate users with their accounts and to sign transactions. Your web app and Waves JS API itself do not have access to user's private key and SEED phrase.
+Signer uses external Provider library to authenticate users with their accounts and to sign transactions. Your web app and Signer itself do not have access to user's private key and SEED phrase.
 
 ![](./_assets/waves-js.png)
 
 For now, you can use one of the following Providers:
 
 * SeedProvider developed by Waves team creates test account from SEED. SeedProvider can be used at the app debugging stage.
-* [Waves Signer](https://gitlab.waves.exchange/we-public/storage-provider) developed by Waves.Exchange is the wallet software that encryptes and stores user's private key and SEED phrase, making sure that users' funds are protected from hackers and malicious websites.
+* [Provider-web](https://gitlab.wavesexchange/we-public/provider-web) developed by Waves.Exchange is the wallet software that encryptes and stores user's private key and SEED phrase, making sure that users' funds are protected from hackers and malicious websites.
 
 You can also develop your own Provider, see [Prodider Interface](#provider-interface).
 
@@ -32,7 +32,7 @@ In code you can use [TypeScript types](https://github.com/wavesplatform/ts-types
 * To install Waves JS library use
 
    ```bash
-   npm i @waves/waves-js
+   npm i @waves/signer
    ```
 
 * To install SeedProvider developed by Waves team, use
@@ -44,7 +44,7 @@ In code you can use [TypeScript types](https://github.com/wavesplatform/ts-types
 * To install Waver Signer developed by Waves.Exchange, use
 
    ```bash
-   npm i @waves.exchange/waves-signer
+   npm i @waves.exchange/provider-web
    ```
 
 ### 2. Library initialization
@@ -54,7 +54,7 @@ Add library initialization to your app.
 * For Testnet & SeedProvider:
 
    ```js
-   import Waves from '@waves/waves-js';
+   import Waves from '@waves/signer';
    import { SeedProvider } from '@waves/seed-provider';
    import { libs } from '@waves/waves-transactions';
 
@@ -66,11 +66,11 @@ Add library initialization to your app.
    waves.setProvider(new SeedProvider(seed));
    ```
 
-* For Testnet & Waves.Exchange Storage Provider:
+* For Testnet & Waves.Exchange Provider-web:
 
    ```js
-   import Waves from '@waves/waves-js';
-   import Provider from '@waves.exchange/waves-signer';
+   import Waves from '@waves/signer';
+   import Provider from '@waves.exchange/provider-web';
    
    const waves = new Waves({
      // Specify URL of the node on Testnet
@@ -79,11 +79,11 @@ Add library initialization to your app.
    waves.setProvider(new Provider());
    ```
 
-* For Mainnet & Waves.Exchange Storage Provider:
+* For Mainnet & Waves.Exchange Storage Provider-web:
 
    ```js
-   import Waves from '@waves/waves-js';
-   import Provider from '@waves.exchange/waves-signer';
+   import Waves from '@waves/signer';
+   import Provider from '@waves.exchange/provider-web';
    
    const waves = new Waves();
    waves.setProvider(new Provider());

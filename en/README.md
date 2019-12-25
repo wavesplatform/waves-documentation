@@ -42,7 +42,7 @@
 
 ### API & SDK
 
-* [Waves JS](/waves-api-and-sdk/client-libraries/waves-js.md)
+* [Signer](/waves-api-and-sdk/client-libraries/signer.md)
 
 ## November articles
 
