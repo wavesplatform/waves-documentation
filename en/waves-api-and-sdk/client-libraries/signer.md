@@ -561,7 +561,6 @@ Creates [invoke scipt transaction](https://docs.wavesplatform.com/en/blockchain/
 ```js
 invoke(data: {
   dApp: 'string',
-  fee: LONG,
   payment: [{
     assetId: 'string',
     amount: LONG,
@@ -581,7 +580,6 @@ invoke(data: {
 | Field name | Default value | Description |
 | :--- | :--- | :--- |
 | dApp* | | Base58-encoded address or alias (with `alias:T:` prefix) of the dApp whose script should be invoked |
-| fee* | | Transaction fee that depends on number of action performed by called function (see [Transaction Fee](https://docs.wavesplatform.com/en/blockchain/transaction/transaction-fee.html)) |
 | payment | | Payments attached to the transaction. Maximum of two payments |
 | payment.assetId* | | Base58-encoded ID of the asset to pay. `WAVES` or `null` means WAVES |
 | payment.amount* | | Amount of asset multiplied by 10^`decimals`. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10^8. `{ "WAVES": 677728840 }` means 6.77728840 |
