@@ -9,11 +9,11 @@
 <a id="overview"></a>
 ## Overview
 
-[Signer](https://github.com/wavesplatform/signer) is a TypeScript/JavaScript component for your web app for interacting with the Waves blockchain. Using Signer JS API you can easily create and sign transactions.
+[Signer](https://github.com/wavesplatform/signer) is a TypeScript/JavaScript component for your web app for interacting with the Waves blockchain. Using Signer you can easily create and sign transactions.
 
-Signer uses external Provider library to authenticate users with their accounts and to sign transactions. Your web app and Signer itself do not have access to user's private key and SEED phrase.
+Signer implements a protocol for interacting with external Provider library that authenticates users with their accounts and signes transactions. Your web app and Signer itself do not have access to user's private key and SEED phrase.
 
-![](./_assets/waves-js.png)
+![](./_assets/signer.png)
 
 For now, you can use one of the following Providers:
 
@@ -54,39 +54,39 @@ Add library initialization to your app.
 * For Testnet & SeedProvider:
 
    ```js
-   import Waves from '@waves/signer';
+   import Signer from '@waves/signer';
    import { SeedProvider } from '@waves/seed-provider';
    import { libs } from '@waves/waves-transactions';
 
    const seed = libs.crypto.randomSeed(15);
-   const waves = new Waves({
+   const signer = new Signer({
      // Specify URL of the node on Testnet
      NODE_URL: 'https://pool.testnet.wavesnodes.com'
    });
-   waves.setProvider(new SeedProvider(seed));
+   signer.setProvider(new SeedProvider(seed));
    ```
 
 * For Testnet & Waves.Exchange ProviderWeb:
 
    ```js
-   import Waves from '@waves/signer';
+   import Signer from '@waves/signer';
    import Provider from '@waves.exchange/provider-web';
    
-   const waves = new Waves({
+   const signer = new Signer({
      // Specify URL of the node on Testnet
      NODE_URL: 'https://pool.testnet.wavesnodes.com'
    });
-   waves.setProvider(new Provider());
+   signer.setProvider(new Provider());
    ```
 
 * For Mainnet & Waves.Exchange ProviderWeb:
 
    ```js
-   import Waves from '@waves/signer';
+   import Signer from '@waves/signer';
    import Provider from '@waves.exchange/provider-web';
    
-   const waves = new Waves();
-   waves.setProvider(new Provider());
+   const signer = new Signer();
+   signer.setProvider(new Provider());
    ```
 
 After that you will be able to use Signer features in the app.
@@ -96,13 +96,13 @@ After that you will be able to use Signer features in the app.
 Now your application is ready to work with Waves Platform. Let's test it by implementing basic functionality. For example, we could try to authenticate user, get his/her balances and transfer funds.
 
 ```js
-const user = await waves.login();
-const balances = await waves.getBalance();
-const [broadcastedTransfer] = await waves
+const user = await signer.login();
+const balances = await signer.getBalance();
+const [broadcastedTransfer] = await signer
   .transfer({amount: 100000000, recipient: 'alias:T:merry'}) // Transfer 1 Waves to alias merry
   .broadcast(); // Promise will resolved after user sign and node response
 
-const [signedTransfer] = await waves
+const [signedTransfer] = await signer
   .transfer({amount: 100000000, recipient: 'alias:T:merry'}) // Transfer 1 Waves to alias merry
   .sign(); // Promise will resolved after user sign
 ```
@@ -116,7 +116,7 @@ See example of an app that implements the donate button: <https://github.com/vlz
 ## Constructor
 
 ```js
-new Waves({
+new Signer({
   NODE_URL: 'string',
 })
 ```
@@ -184,7 +184,7 @@ Promise of user data: address and public key.
 
 **Usage:**
 ```ts
-const {address, publicKey} = await waves.login();
+const {address, publicKey} = await signer.login();
 ```
 
 **Output example:**
@@ -209,7 +209,7 @@ logout();
 
 **Usage:**
 ```ts
-await waves.logout();
+await signer.logout();
 ```
 
 <a id="getbalance"></a>
@@ -226,7 +226,7 @@ getBalance();
 **Usage:**
 
 ```ts
-const balances = await waves.getBalance();
+const balances = await signer.getBalance();
 ```
 
 **Output example:**
@@ -281,7 +281,7 @@ getSponsoredBalances();
 **Usage:**
 
 ```ts
-const sponsoredBalances = await waves.getSponsoredBalances();
+const sponsoredBalances = await signer.getSponsoredBalances();
 ```
 
 **Output example:**
@@ -343,7 +343,7 @@ Each create transaction method returns object that features the `sign` and `broa
 To sign transaction use `sign` method. For example:
 
 ```js
-waves.invoke({
+signer.invoke({
    dApp: address,
    call: { function: name, args: convertedArgs },
 }).sign();
@@ -352,18 +352,18 @@ waves.invoke({
 To sign transaction and immediately send it to blockchain use `broadcast` method. For example:
 
 ```js
-waves.invoke({
+signer.invoke({
    dApp: address,
    call: { function: name, args: convertedArgs },
 }).broadcast();
 ```
 
-Note: this `broadcast` method has the same options as the [waves.broadcast](#broadcast) method that is described below.
+Note: this `broadcast` method has the same options as the [signer.broadcast](#broadcast) method that is described below.
 
 You can sign or broadcast several transactions at once. For example:
 
 ```js
-waves.alias({ 'new_alias', })
+signer.alias({ 'new_alias', })
   .data([{ key: 'value', type: 'number', value: 1 ])
   .transfer({ recipient: '3P8pGyzZL9AUuFs9YRYPDV3vm73T48ptZxs', amount: 10000 })
 }).broadcast();
@@ -957,7 +957,7 @@ batch([{
 **Usage:**
 
 ```js
-const [transfer, alias, issue] = await waves.batch([
+const [transfer, alias, issue] = await signer.batch([
   {
     type: 4,
     recipient: 'alias:T:merry',
@@ -1006,10 +1006,10 @@ broadcast(tx,[options])
 **Usage:**
 
 ```js
-const [transfer1] = await waves.transfer({amount: 1, recipient: 'alias:T:merry'}).sign();
-const [transfer2] = await waves.transfer({amount: 1, recipient: 'alias:T:merry'}).sign();
+const [transfer1] = await signer.transfer({amount: 1, recipient: 'alias:T:merry'}).sign();
+const [transfer2] = await signer.transfer({amount: 1, recipient: 'alias:T:merry'}).sign();
 
-await waves.broadcast([transfer1, transfer2], {chain: true, confirmations: 2});
+await signer.broadcast([transfer1, transfer2], {chain: true, confirmations: 2});
 ```
 
 In this example:
@@ -1039,7 +1039,7 @@ setProvider(provider);
 
 **Usage:**
 ```js
-waves.setProvider(new Provider());
+signer.setProvider(new Provider());
 ```
 
 <a id="waittxconfirm"></a>
@@ -1066,7 +1066,7 @@ const [tx] = await waves
   .transfer({amount: 10000000, recipient: 'alias:T:merry'})
   .broadcast();
 
-waves.waitTxConfirm(tx, 1).then((tx) => {
+signer.waitTxConfirm(tx, 1).then((tx) => {
   // Tx have one confirmation
 }});
 ```
