@@ -17,7 +17,7 @@ Signer implements a protocol for interacting with external Provider library that
 
 For now, you can use one of the following Providers:
 
-* SeedProvider developed by Waves team creates test account from SEED. SeedProvider can be used at the app debugging stage.
+* ProviderSeed developed by Waves team creates user account from SEED. ProviderSeed can be used at the app debugging stage.
 * [ProviderWeb](https://gitlab.waves.exchange/we-public/provider-web) developed by Waves.Exchange is the wallet software that encryptes and stores user's private key and SEED phrase, making sure that users' funds are protected from hackers and malicious websites.
 
 You can also develop your own Provider, see [Provider Interface](#provider-interface).
@@ -35,10 +35,10 @@ In code you can use [TypeScript types](https://github.com/wavesplatform/ts-types
    npm i @waves/signer
    ```
 
-* To install SeedProvider developed by Waves team, use
+* To install ProviderSeed developed by Waves team, use
 
    ```bash
-   npm i @waves/seed-provider @waves/waves-transactions
+   npm i @waves/provider-seed @waves/waves-transactions
    ```
 
 * To install ProviderWeb developed by Waves.Exchange, use
@@ -51,11 +51,11 @@ In code you can use [TypeScript types](https://github.com/wavesplatform/ts-types
 
 Add library initialization to your app.
 
-* For Testnet & SeedProvider:
+* For Testnet & ProviderSeed:
 
    ```js
    import Signer from '@waves/signer';
-   import { SeedProvider } from '@waves/seed-provider';
+   import { ProviderSeed } from '@waves/provider-seed';
    import { libs } from '@waves/waves-transactions';
 
    const seed = libs.crypto.randomSeed(15);
@@ -63,7 +63,7 @@ Add library initialization to your app.
      // Specify URL of the node on Testnet
      NODE_URL: 'https://pool.testnet.wavesnodes.com'
    });
-   signer.setProvider(new SeedProvider(seed));
+   signer.setProvider(new ProviderSeed(seed));
    ```
 
 * For Testnet & Waves.Exchange ProviderWeb:
