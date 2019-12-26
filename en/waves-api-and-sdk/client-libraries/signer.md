@@ -9,15 +9,15 @@
 <a id="overview"></a>
 ## Overview
 
-[Signer](https://github.com/wavesplatform/signer) is a TypeScript/JavaScript component for your web app for interacting with the Waves blockchain. Using Signer you can easily create and sign transactions.
+Waves Signer is a TypeScript/JavaScript library for your web app for interacting with the Waves blockchain. Using Signer you can easily create and sign transactions.
 
-Signer implements a protocol for interacting with external Provider library that authenticates users with their accounts and signes transactions. Your web app and Signer itself do not have access to user's private key and SEED phrase.
+Signer is a protocol for interacting with external Provider library that authenticates users with their accounts and signes transactions. Your web app and Signer itself do not have access to user's private key and SEED phrase.
 
 ![](./_assets/signer.png)
 
 For now, you can use one of the following Providers:
 
-* ProviderSeed developed by Waves team creates user account from SEED. ProviderSeed can be used at the app debugging stage.
+* [ProviderSeed](https://github.com/wavesplatform/provider-seed) developed by Waves team creates user account from SEED. ProviderSeed can be used at the app debugging stage.
 * [ProviderWeb](https://gitlab.waves.exchange/we-public/provider-web) developed by Waves.Exchange is the wallet software that encryptes and stores user's private key and SEED phrase, making sure that users' funds are protected from hackers and malicious websites.
 
 You can also develop your own Provider, see [Provider Interface](#provider-interface).
@@ -386,8 +386,6 @@ alias(data: {
 | :--- | :--- | :--- |
 | alias* | | Short and easy to remember name of address. See [Alias](https://docs.wavesplatform.com/en/blockchain/account/alias.html) for more information |
 
-\* Required field
-
 See [Common fields](#common-fields) for other fields description.
 
 **Usage:**
@@ -561,6 +559,7 @@ Creates [invoke scipt transaction](https://docs.wavesplatform.com/en/blockchain/
 ```js
 invoke(data: {
   dApp: 'string',
+  fee: LONG,
   payment: [{
     assetId: 'string',
     amount: LONG,
@@ -580,6 +579,7 @@ invoke(data: {
 | Field name | Default value | Description |
 | :--- | :--- | :--- |
 | dApp* | | Base58-encoded address or alias (with `alias:T:` prefix) of the dApp whose script should be invoked |
+| fee | | We recommend to specify fee depending on number of action performed by called function (see [Transaction Fee](https://docs.wavesplatform.com/en/blockchain/transaction/transaction-fee.html)) |
 | payment | | Payments attached to the transaction. Maximum of two payments |
 | payment.assetId* | | Base58-encoded ID of the asset to pay. `WAVES` or `null` means WAVES |
 | payment.amount* | | Amount of asset multiplied by 10^`decimals`. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10^8. `{ "WAVES": 677728840 }` means 6.77728840 |
