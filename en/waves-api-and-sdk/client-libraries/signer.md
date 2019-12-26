@@ -20,7 +20,7 @@ For now, you can use one of the following Providers:
 * SeedProvider developed by Waves team creates test account from SEED. SeedProvider can be used at the app debugging stage.
 * [ProviderWeb](https://gitlab.waves.exchange/we-public/provider-web) developed by Waves.Exchange is the wallet software that encryptes and stores user's private key and SEED phrase, making sure that users' funds are protected from hackers and malicious websites.
 
-You can also develop your own Provider, see [Prodider Interface](#provider-interface).
+You can also develop your own Provider, see [Provider Interface](#provider-interface).
 
 In code you can use [TypeScript types](https://github.com/wavesplatform/ts-types/blob/master/transactions/index.d.ts).
 
@@ -99,11 +99,11 @@ Now your application is ready to work with Waves Platform. Let's test it by impl
 const user = await signer.login();
 const balances = await signer.getBalance();
 const [broadcastedTransfer] = await signer
-  .transfer({amount: 100000000, recipient: 'alias:T:merry'}) // Transfer 1 Waves to alias merry
+  .transfer({amount: 100000000, recipient: 'alias:T:merry'}) // Transfer 1 WAVES to alias merry
   .broadcast(); // Promise will resolved after user sign and node response
 
 const [signedTransfer] = await signer
-  .transfer({amount: 100000000, recipient: 'alias:T:merry'}) // Transfer 1 Waves to alias merry
+  .transfer({amount: 100000000, recipient: 'alias:T:merry'}) // Transfer 1 WAVES to alias merry
   .sign(); // Promise will resolved after user sign
 ```
 
@@ -330,7 +330,7 @@ Each create transaction method has optional fields that you don't specify manual
 
 | Field name | Description | Default value |
 | :--- | :--- | :--- |
-| chainId | 'W'.charCodeAt(0) or 87 means Mainnet<br/>'T'.charCodeAt(0) or 84 means Testnet |Defined by configuration of Waves node that is set in [Constructor](#constructor) | Defined by configuration of Waves node that is set in [Constructor](#constructor) |
+| chainId | 'W'.charCodeAt(0) or 87 means Mainnet<br/>'T'.charCodeAt(0) or 84 means Testnet | Defined by configuration of Waves node that is set in [Constructor](#constructor) |
 | fee | Transaction fee | Calculated automatically as described in [Transaction fee](https://docs.wavesplatform.com/en/blockchain/transaction/transaction-fee.html) section |
 | proofs | Array of transaction signatures | Added by `sign` or `broadcast` method (see [How to Sign and Broadcast Transactions](#how-to-sign-and-broadcast-transaction)). If you specify a proof manually, it is also added to the array |
 | senderPublicKey | Base58-encoded public key of transaction sender | Returned by [login](#login) method |
@@ -397,7 +397,7 @@ const data = {
   alias: 'new_alias',
 }
 
-const [tx] = await waves
+const [tx] = await signer
   .alias(data)
   .broadcast();
 ```
@@ -433,7 +433,7 @@ const data = {
   quantity: 100,
 }
 
-const [tx] = await waves
+const [tx] = await signer
   .burn(data)
   .broadcast();
 ```
@@ -466,7 +466,7 @@ const data = {
   leaseId: '69HK14PEHq2UGRfRYghVW8Kc3487uJaoUmk2ntT4kw7X',
 }
 
-const [tx] = await waves
+const [tx] = await signer
   .cancelLease(data)
   .broadcast();
 ```
@@ -505,7 +505,7 @@ const data = [
   { key: 'flag', type: 'boolean', value: true }
 ]
 
-const [tx] = await waves
+const [tx] = await signer
   .data(data)
   .broadcast();
 ```
@@ -548,7 +548,7 @@ See [Common fields](#common-fields) for other fields description.
 ```js
 const data = {}
 
-const [tx] = await waves
+const [tx] = await signer
   .exchange(data)
   .broadcast();
 ```-->
@@ -614,7 +614,7 @@ const data = {
   },
 }
 
-const [tx] = await waves
+const [tx] = await signer
   .invoke(data)
   .broadcast();
 ```
@@ -661,7 +661,7 @@ const data = {
   description: 'It is a gaming token',
 }
 
-const [tx] = await waves
+const [tx] = await signer
   .issue(data)
   .broadcast();
 ```
@@ -697,7 +697,7 @@ const data = {
     recipient: 'alias:T:merry',
 }
 
-const [tx] = await waves
+const [tx] = await signer
   .lease(data)
   .broadcast();
 ```
@@ -746,7 +746,7 @@ const data = [
     },
 ]
 
-const [tx] = await waves
+const [tx] = await signer
   .massTransfer(data)
   .broadcast();
 ```
@@ -785,7 +785,7 @@ const data = {
   reissuable: true,
 }
 
-const [tx] = await waves
+const [tx] = await signer
   .reissue(data)
   .broadcast();
 ```
@@ -821,7 +821,7 @@ const data = {
   script: 'base64:AwZd0cYf',
 }
 
-const [tx] = await waves
+const [tx] = await signer
   .setAssetScript(data)
   .broadcast();
 ```
@@ -852,7 +852,7 @@ const data = {
   script: 'base64:AAIDAAAAAAAAAAQIARIAAAAAAAAAAA...',
 }
 
-const [tx] = await waves
+const [tx] = await signer
   .setScript(data)
   .broadcast();
 ```
@@ -887,7 +887,7 @@ const data = {
   minSponsoredAssetFee: 314,
 }
 
-const [tx] = await waves
+const [tx] = await signer
   .sponsorship(data)
   .broadcast();
 ```
@@ -929,7 +929,7 @@ const data = {
   amount: 10000,
   }
 
-const [tx] = await waves
+const [tx] = await signer
   .transfer(data)
   .broadcast();
 ```
@@ -1062,7 +1062,7 @@ waitTxConfirm(tx, confirmations)
 
 **Usage:**
 ```ts
-const [tx] = await waves
+const [tx] = await signer
   .transfer({amount: 10000000, recipient: 'alias:T:merry'})
   .broadcast();
 
