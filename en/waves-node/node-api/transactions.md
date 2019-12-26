@@ -397,6 +397,7 @@ and all the other parameters appropriate for a transaction of the given type.
 }
 ```
 
+<<<<<<< HEAD
 <a id="post-tx-status"></a>
 
 ### POST /transactions/status
@@ -404,6 +405,11 @@ and all the other parameters appropriate for a transaction of the given type.
 > Current endpoint is available in node 1.1.7 release.
 
 Returns the list of transactions statuses, by transaction IDs. The resulting transaction list keeps the order of the transaction IDs as they were passed in the request. If the transactions IDs were not specified, the request will not be executed and an error will be returned.
+=======
+### POST /transactions/status <a id="status_post"></a>
+
+Returns transactions data by their ids.
+>>>>>>> master
 
 **Request params**
 
@@ -411,7 +417,10 @@ Returns the list of transactions statuses, by transaction IDs. The resulting tra
 
 **Request JSON example**
 
+<<<<<<< HEAD
 ```js
+=======
+>>>>>>> master
 [
   {
     "id": "H27nMqvLp514M9fFoKbn4qCvFtG3VGzMGcN7noDyDv6C"
@@ -423,6 +432,7 @@ Returns the list of transactions statuses, by transaction IDs. The resulting tra
     "id": "Ew2mxDagrDJevuaXKUuA48e8QD5evkDr5Zpv7ERVpCN2"
   }
 ]
+<<<<<<< HEAD
 ```
 
 **Response JSON example**
@@ -468,6 +478,11 @@ Returns the list of transactions statuses, by transaction IDs. The resulting tra
 - `height` - transaction's height in the blockchain.
 
 ```js
+=======
+
+**Response JSON example**
+
+>>>>>>> master
 [
   {
     "id": "H27nMqvLp514M9fFoKbn4qCvFtG3VGzMGcN7noDyDv6C",
@@ -484,4 +499,7 @@ Returns the list of transactions statuses, by transaction IDs. The resulting tra
     "status": "unconfirmed"
   }
 ]
+<<<<<<< HEAD
 ```
+=======
+>>>>>>> master
