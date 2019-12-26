@@ -19,7 +19,7 @@
   * Transaction protobuf scheme
     * [Asset info update transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/update-asset-info-transaction-protobuf-scheme.md)
 
-### RIDE
+### Ride
 
 * [FOLD<N> Macro](ride/fold-macro.md)
 * Structures
