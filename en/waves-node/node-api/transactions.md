@@ -459,6 +459,7 @@ Returns the list of transactions statuses, by transaction IDs. The resulting tra
 
 Returns the list of transactions statuses, by transaction IDs. The resulting transaction list keeps the order of the transaction IDs as they were passed in the request. If the transactions IDs were not specified, the request will not be executed and an error will be returned.
 
+
 **Response JSON example**
 
 - `id` - transaction ID
