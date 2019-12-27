@@ -40,9 +40,10 @@ current_folder = '/Users/mmaslin/Dropbox/Dropbox/Waves/waves-documentation'
 
 
 for file in orphaned_files:
-	file_name = file.split('/')[-1]
-	file_path = f'{current_folder}/en/{file}'
-	target_path = f'{current_folder}/unused_docs/{file_name}'
-	shutil.move(file_path, target_path)
-	print(file, 'moved')
+	if not file.endswith('scheme.md'):
+		file_name = file.split('/')[-1]
+		file_path = f'{current_folder}/en/{file}'
+		target_path = f'{current_folder}/unused_docs/{file_name}'
+		shutil.move(file_path, target_path)
+		print(file, 'moved')
 
