@@ -32,12 +32,10 @@ for filename in existing_files:
 	found = False
 
 
-# shutil.move("path/to/current/file.foo", "path/to/new/destination/for/file.foo")
-
 orphaned_files.remove('SUMMARY.md')
 
 current_folder = '/Users/mmaslin/Dropbox/Dropbox/Waves/waves-documentation'
-
+unused_docs = '_unused_docs'
 
 for file in orphaned_files:
 	if not file.endswith('scheme.md'):
@@ -45,11 +43,11 @@ for file in orphaned_files:
 		file_path = f'{current_folder}/en/{file}'
 		if 'iOS' in file or 'android' in file:
 			if 'iOS' in file:
-				target_path = f'{current_folder}/_unused_docs/iOS-{file_name}'
+				target_path = f'{current_folder}/{search_folder}/{unused_docs}/iOS-{file_name}'
 			else:
-				target_path = f'{current_folder}/_unused_docs/android-{file_name}'
+				target_path = f'{current_folder}/{search_folder}/{unused_docs}/android-{file_name}'
 		else:
-			target_path = f'{current_folder}/en/_unused_docs/{file_name}'
+			target_path = f'{current_folder}/{search_folder}/{unused_docs}/{file_name}'
 		shutil.move(file_path, target_path)
 		print(file, 'moved')
 
