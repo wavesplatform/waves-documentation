@@ -45,11 +45,11 @@ for file in orphaned_files:
 		file_path = f'{current_folder}/en/{file}'
 		if 'iOS' in file or 'android' in file:
 			if 'iOS' in file:
-				target_path = f'{current_folder}/unused_docs/iOS-{file_name}'
+				target_path = f'{current_folder}/_unused_docs/iOS-{file_name}'
 			else:
-				target_path = f'{current_folder}/unused_docs/android-{file_name}'
+				target_path = f'{current_folder}/_unused_docs/android-{file_name}'
 		else:
-			target_path = f'{current_folder}/en/unused_docs/{file_name}'
+			target_path = f'{current_folder}/en/_unused_docs/{file_name}'
 		shutil.move(file_path, target_path)
 		print(file, 'moved')
 
