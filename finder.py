@@ -37,6 +37,7 @@ for filename in existing_files:
 orphaned_files.remove('SUMMARY.md')
 orphaned_files.remove('waves-client/security.md')
 orphaned_files.remove('blockchain/block-generation.md')
+orphaned_files.remove('platform-features/leased-proof-of-stake-lpos.md')
 
 current_folder = '/Users/mmaslin/Dropbox/Dropbox/Waves/waves-documentation'
 
