@@ -36,16 +36,15 @@ for filename in existing_files:
 
 orphaned_files.remove('SUMMARY.md')
 orphaned_files.remove('waves-client/security.md')
+orphaned_files.remove('blockchain/block-generation.md')
 
 current_folder = '/Users/mmaslin/Dropbox/Dropbox/Waves/waves-documentation'
 
 
 for file in orphaned_files:
-	# print(file)
 	file_name = file.split('/')[-1]
 	file_path = f'{current_folder}/en/{file}'
 	target_path = f'{current_folder}/unused_docs/{file_name}'
-	print(file_name)
 	shutil.move(file_path, target_path)
 	print(file, 'moved')
 
