@@ -2,7 +2,7 @@ import os
 import shutil
 
 
-search_folder = 'en' 
+search_folder = 'ru' 
 existing_files = []
 
 for currentpath, folders, files in os.walk(search_folder):
@@ -40,7 +40,7 @@ unused_docs = '_unused_docs'
 for file in orphaned_files:
 	if not file.endswith('protobuf-scheme.md'):
 		file_name = file.split('/')[-1]
-		file_path = f'{current_folder}/en/{file}'
+		file_path = f'{current_folder}/{search_folder}/{file}'
 		if 'iOS' in file or 'android' in file:
 			if 'iOS' in file:
 				target_path = f'{current_folder}/{search_folder}/{unused_docs}/iOS-{file_name}'
