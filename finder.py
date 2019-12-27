@@ -43,7 +43,10 @@ for file in orphaned_files:
 	if not file.endswith('scheme.md'):
 		file_name = file.split('/')[-1]
 		file_path = f'{current_folder}/en/{file}'
-		target_path = f'{current_folder}/unused_docs/{file_name}'
+		if 'iOS' in file:
+			target_path = f'{current_folder}/unused_docs/iOS-{file_name}'
+		else:
+			target_path = f'{current_folder}/unused_docs/android-{file_name}'
 		shutil.move(file_path, target_path)
 		print(file, 'moved')
 
