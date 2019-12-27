@@ -49,7 +49,7 @@ for file in orphaned_files:
 			else:
 				target_path = f'{current_folder}/unused_docs/android-{file_name}'
 		else:
-			target_path = f'{current_folder}/unused_docs/{file_name}'
+			target_path = f'{current_folder}/en/unused_docs/{file_name}'
 		shutil.move(file_path, target_path)
 		print(file, 'moved')
 
