@@ -38,7 +38,7 @@ current_folder = '/Users/mmaslin/Dropbox/Dropbox/Waves/waves-documentation'
 unused_docs = '_unused_docs'
 
 for file in orphaned_files:
-	if not file.endswith('scheme.md'):
+	if not file.endswith('protobuf-scheme.md'):
 		file_name = file.split('/')[-1]
 		file_path = f'{current_folder}/en/{file}'
 		if 'iOS' in file or 'android' in file:
