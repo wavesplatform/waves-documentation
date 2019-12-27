@@ -2,14 +2,6 @@
 
 ## December articles
 
-### Node API
-
-* [Request headers](waves-node/node-api/headers.md)
-
-### RIDE
-
-* [FOLD<N> Macro](ride/fold-macro.md)
-
 ### Blockchain network
 
 * [Stage network](blockchain/blockchain-network/stage-network.md)
@@ -29,6 +21,7 @@
 
 ### Ride
 
+* [FOLD<N> Macro](ride/fold-macro.md)
 * Structures
   * Common structures
     * [BinaryEntry](ride/structures/common-structures/binary-entry.md)
@@ -42,6 +35,14 @@
 
   * Transaction structures
     * [UpdateAssetInfoTransaction](ride/structures/transaction-structures/update-asset-info-transaction.md)
+
+### Node API
+
+* [Request headers](waves-node/node-api/headers.md)
+
+### API & SDK
+
+* [Signer](/waves-api-and-sdk/client-libraries/signer.md)
 
 ## November articles
 
