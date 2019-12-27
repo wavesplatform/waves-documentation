@@ -2,7 +2,7 @@ import os
 import shutil
 
 
-search_folder = 'ru' 
+search_folder = 'en' 
 existing_files = []
 
 for currentpath, folders, files in os.walk(search_folder):
@@ -35,10 +35,6 @@ for filename in existing_files:
 # shutil.move("path/to/current/file.foo", "path/to/new/destination/for/file.foo")
 
 orphaned_files.remove('SUMMARY.md')
-orphaned_files.remove('waves-client/security.md')
-orphaned_files.remove('blockchain/block-generation.md')
-orphaned_files.remove('platform-features/leased-proof-of-stake-lpos.md')
-orphaned_files.remove('platform-features/smart-contracts.md')
 
 current_folder = '/Users/mmaslin/Dropbox/Dropbox/Waves/waves-documentation'
 
