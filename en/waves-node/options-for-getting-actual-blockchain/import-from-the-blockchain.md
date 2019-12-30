@@ -1,4 +1,4 @@
-# Import From The Blockchain
+# Import Blockchain
 ![master](https://img.shields.io/badge/node->%3D0.8.0-4bc51d.svg)
 
 If you already have a Waves full node synced to the correct chain, you can import the blockchain data. Importing can be used as an option for more quickly obtaining the Waves blockchain.
