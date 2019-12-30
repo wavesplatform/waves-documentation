@@ -17,7 +17,20 @@
 
 * Binary format
   * Transaction protobuf scheme
-    * [Asset info update transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/update-asset-info-transaction-protobuf-scheme.md)
+    * [Аlias transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/alias-transaction-protobuf-scheme.md)
+    * [Burn transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/burn-transaction-protobuf-scheme.md)
+    * [Data transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/data-transaction-protobuf-scheme.md)
+    * [Exchange transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/exchange-transaction-protobuf-scheme.md)
+    * [Genesis transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/genesis-transaction-protobuf-scheme.md)
+    * [Invoke script transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/invoke-script-transaction-protobuf-scheme.md)
+    * [Issue transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/issue-transaction-protobuf-scheme.md)
+    * [Lease cancel transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/lease-cancel-transaction-protobuf-scheme.md)
+    * [Mass transfer transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/mass-transfer-transaction-protobuf-scheme.md)
+    * [Set asset script transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/set-asset-script-transaction-protobuf-scheme.md)
+    * [Sponsor fee transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/sponsor-fee-transaction-protobuf-scheme.md)
+    * [Transfer transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/transfer-transaction-protobuf-scheme.md)
+    * [Update asset info transaction protobuf scheme](blockchain/binary-format/transaction-protobuf-scheme/update-asset-info-transaction-protobuf-scheme.md)
+
 
 ### Ride
 

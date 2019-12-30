@@ -14,9 +14,20 @@
 
 * Тип транзакции
   * [Транзакция обновления информации ассета](blockchain/transaction-type/update-asset-info-transaction.md)
-
 * Бинарный формат
   * Protobuf-схема транзакции
+    * [Protobuf-схема транзакции создания псевдонима](blockchain/binary-format/transaction-protobuf-scheme/alias-transaction-protobuf-scheme.md)
+    * [Protobuf-схема транзакции сжигания токена](blockchain/binary-format/transaction-protobuf-scheme/burn-transaction-protobuf-scheme.md)
+    * [Protobuf-схема транзакции данных](blockchain/binary-format/transaction-protobuf-scheme/data-transaction-protobuf-scheme.md)
+    * [Protobuf-схема транзакции обмена](blockchain/binary-format/transaction-protobuf-scheme/exchange-transaction-protobuf-scheme.md)
+    * [Protobuf-схема транзакции генезиса](blockchain/binary-format/transaction-protobuf-scheme/genesis-transaction-protobuf-scheme.md)
+    * [Protobuf-схема транзакции вызова скрипта](blockchain/binary-format/transaction-protobuf-scheme/invoke-script-transaction-protobuf-scheme.md)
+    * [Protobuf-схема транзакции выпуска](blockchain/binary-format/transaction-protobuf-scheme/issue-transaction-protobuf-scheme.md)
+    * [Protobuf-схема транзакции отмены лизинга](blockchain/binary-format/transaction-protobuf-scheme/lease-cancel-transaction-protobuf-scheme.md)
+    * [Protobuf-схема транзакции массового перевода](blockchain/binary-format/transaction-protobuf-scheme/mass-transfer-transaction-protobuf-scheme.md)
+    * [Protobuf-схема транзакции установки скрипта ассета](blockchain/binary-format/transaction-protobuf-scheme/set-asset-script-transaction-protobuf-scheme.md)
+    * [Protobuf-схема транзакции спонсирования](blockchain/binary-format/transaction-protobuf-scheme/sponsor-fee-transaction-protobuf-scheme.md)
+    * [Protobuf-схема транзакции перевода](blockchain/binary-format/transaction-protobuf-scheme/transfer-transaction-protobuf-scheme.md)
     * [Protobuf-схема транзакции обновления информации ассета](blockchain/binary-format/transaction-protobuf-scheme/update-asset-info-transaction-protobuf-scheme.md)
 
 ### Нода
