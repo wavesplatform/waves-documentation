@@ -198,8 +198,9 @@
       * [Переводы Bitcoin SV (Android)](waves-client/mobile-apps/android/transfers-and-gateways/bitcoin-sv-transfers.md)
       * [Переводы Ergo (Android)](waves-client/mobile-apps/android/transfers-and-gateways/ergo-transfers.md)
       * [Покупка Waves с банковской карты (Android)](waves-client/mobile-apps/android/transfers-and-gateways/buying-waves-using-card.md)
-    * [Waves DEX (Android)](waves-client/mobile-apps/android/about-waves-dex.md)
+    * [Waves DEX (Android)](waves-client/mobile-apps/android/waves-dex/about-waves-dex.md)
       * [Использование биржи DEX (Android)](waves-client/mobile-apps/android/waves-dex/start-trading-on-the-waves-dex.md)
+
 * [Часто задаваемые вопросы](waves-client/faq.md)
   * [Подозрительные транзакции](waves-client/security/spam-transactions.md)
   * [Один Seed - Один Waves адрес](waves-client/frequently-asked-questions-faq/account-management/one-seed.md)
