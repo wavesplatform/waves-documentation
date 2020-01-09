@@ -104,7 +104,7 @@ HBqhfdFASRQ5eBBpu2y6c6KKi1az6bMx8v1JxX4iW1Q8
 
 # Creating address from public key
 
-Our network address obtained from the public key depends on the byte chainId \('T' for testnet and 'W' for mainnet\), so different networks obtained a different address for a single seed \(and hence public keys\). Creating a byte addresses described in more detail [here](/blockchain/binary-format.md).
+Our network address obtained from the public key depends on the byte chainId ('T' for testnet, 'W' for mainnet, 'S' for stagenet), so different networks obtained a different address for a single seed \(and hence public keys\). Creating a byte addresses described in more detail [here](/blockchain/binary-format.md).
 
 Example
 

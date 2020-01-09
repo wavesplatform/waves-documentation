@@ -9,7 +9,7 @@
 | 1 | Флаг версии |  | [Byte](/blockchain/blockchain/blockchain-data-types.md) | 1 | Указывает, что [версия транзакции](/blockchain/transaction/transaction-version.md) является второй или выше.<br>Значение должно быть равно 0 |
 | 2 | [ID типа транзакции](/blockchain/transaction-type.md) | type | [Byte](/blockchain/blockchain/blockchain-data-types.md) | 1 | Значение должно быть равно 3 |
 | 3 | [Версия транзакции](/blockchain/transaction/transaction-version.md) | version | [Byte](/blockchain/blockchain/blockchain-data-types.md) | 1 | Значение должно быть равно 2 |
-| 4 | [Байт сети](/blockchain/blockchain-network/chain-id.md) | chainId | [Byte](/blockchain/blockchain/blockchain-data-types.md) | 1 | 84 для [тестовой сети](/blockchain/blockchain-network/test-network.md), 87 для [основной сети](/blockchain/blockchain-network/main-network.md) |
+| 4 | [Байт сети](/blockchain/blockchain-network/chain-id.md) | chainId | [Byte](/blockchain/blockchain/blockchain-data-types.md) | 1 | 84 — для [тестовой сети](/blockchain/blockchain-network/test-network.md)<br>87 — для [основной сети](/blockchain/blockchain-network/main-network.md)<br>83 — для [экспериментальной сети](/blockchain/blockchain-network/stage-network.md) |
 | 5 | Открытый ключ аккаунта отправителя транзакции | senderPublicKey | Array[[Byte](/blockchain/blockchain/blockchain-data-types.md)] | 32 |  |
 | 6.1 | Длина названия токена |  | [Short](/blockchain/blockchain/blockchain-data-types.md) | 2 |  |
 | 6.2 | Название токена | name | Array[[Byte](/blockchain/blockchain/blockchain-data-types.md)] | От 4 до 16 включительно |  |
