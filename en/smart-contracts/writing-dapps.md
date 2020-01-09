@@ -126,7 +126,7 @@ func verify() = {
 |  sender  |  Address |  the address of the account that makes a call to the function |
 |  senderPublicKey  | ByteVector  |  the public key of the account that makes a call to the function |
 | proofs   | LIST[ByteVector]  |  the list of signatures that prove the authenticity of the transaction |
-|  chainId |  Byte | blockchain network identifier <br /> "T" — testing <br /> "W" — working (production)  |
+|  chainId |  Byte | blockchain network identifier<br>"T" — [test network](/blockchain/blockchain-network/test-network.md) <br>"W" — [main network](/blockchain/blockchain-network/main-network.md)<br>"S" — [stage network](/blockchain/blockchain-network/main-network.md) |
 
 ## JSON of the InvokeScript-transaction
 ```
