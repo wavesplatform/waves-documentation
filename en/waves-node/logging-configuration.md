@@ -35,14 +35,12 @@ If writing the traces is activated, it will be written to `/var/log/utx-trace.lo
 * If you set up node from the package, edit `/etc/waves/application.ini`.
 * If you run the node from the jar, use Java's options, for example, `java -Dsomeoption=somevalue -jar /path/to/waves-all.jar /path/to/config`
 
-The default directory is `{waves.directory}/log`. To change the logs directory, use `-Dlogback.file.directory=/path/to/directory/for/logs`. Note that node must have rights to write files to choosen directory.
+The default directory is `/var/log`. To change the logs directory, use `-Dlogback.file.directory=/path/to/directory/for/logs`. Note that node must have rights to write files to choosen directory.
 
 ## Setting the network
 
 * mainnet: `/etc/waves/`
 * testnet: `/etc/waves-testnet/`
-
-`{waves.directory}`
 
 ## Setting logging level for STDOUT
 
