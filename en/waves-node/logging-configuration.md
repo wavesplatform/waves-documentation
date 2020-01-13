@@ -1,49 +1,80 @@
 # Logging Configuration
 
-## About the used framework
+## About the framework
 
-For log writing, we use one of the logging frameworks [logback](https://logback.qos.ch/documentation.html). For the logback correct work, it needs the right configuration, [here](https://logback.qos.ch/manual/configuration.html) you can see how to configure the [logback.xml](https://github.com/wavesplatform/Waves/blob/master/node/src/main/resources/logback.xml) file.
+For log writing, the [logback](https://logback.qos.ch/documentation.html) framework is used. The node is shipped with embedded logback configuration, [here](https://logback.qos.ch/manual/configuration.html) you can find the default [logback.xml](https://github.com/wavesplatform/Waves/blob/master/node/src/main/resources/logback.xml) file example.
 
-Prior to node version 1.1.6, the logs were written to STDOUT and to `waves.log` file in a human-readable format by [default](https://github.com/wavesplatform/Waves/blob/master/node/src/main/resources/logback.xml). After the node 1.1.6 version release, the execution traces are no longer written to waves.log by default to reduce the amount of logs the node produces under heavy load. If you need the traces, define logback.uts-trace.enabled system property either in application.ini, on the command line or in logback.xml to save traces to utx-trace.log. Also waves.log is now rotated when size limit is reached (100 mb by default), in addition to daily rotation.
+To override the node's `logback.xml` settings, create own `logback.xml` in `/etc/waves/`. Refer to [this](#own-logback) section on how to configure it.
 
-## STDOUT
+Prior to node version 1.1.6, the logs were written to STDOUT and to `/var/log/waves.log` file in a human-readable format by [default](https://github.com/wavesplatform/Waves/blob/master/node/src/main/resources/logback.xml). After the node 1.1.6 version release, the execution traces are no longer written to waves.log by default to reduce the amount of logs the node produces under heavy load. However, writing the traces to separate file [can be enabled](#enable-traces).
 
-* `Dlogback.stdout.level={LEVEL_OF_LOGGING}`. The default level for STDOUT is `INFO`. To change the level of logging, add this line to your `application.ini`.
-For the available levels, see below.
+Also waves.log is now rotated when size limit is reached (100 mb by default), in addition to daily rotation.
 
+Enabling or disabling of the logging features is done by adding properties to application.ini, on the command line or in `logback.xml`.
 
+The log levels are listed [below](#loglevels).
 
-## Files
+## Configuring own logback.xml <a id="own-logback"></a>
 
-* `-Dlogback.file.level={LEVEL_OF_LOGGING}`. The default level is `DEBUG`. To Change the level of logging, see below.
-* `-Dlogback.file.directory=/path/to/directory/for/logs`. The default directory is `{waves.directory}/log`. Changes the directory for logs. Note, the node must have rights to write files to this directory.
+To redefine existing node's `logback.xml` properties, use the `included` tag in `/etc/waves/logback.xml`. Example:
 
-If you want to write logs, for example, to `JSON` files, you should define your own logging configuration and specify a path to it with option:
-
+```xml
+<included>
+    <property name="logback.file.level" value="TRACE"/>
+</included>
 ```
--Dlogback.configurationFile=/path/to/your/logback.xml
-```
 
-You can change the place where the log will be written:
+## Activate writing the traces <a id="enable-traces"></a>
 
-* If you set up node from the package: in `/etc/waves/application.ini`.
-`/etc/waves/` for mainnet and `/etc/waves-testnet/` for testnet. `{waves.directory}`.
-* If you run the node from the jar: using Java's options, for example, `java -Dsomeoption=somevalue -jar /path/to/waves-all.jar /path/to/config`
+Add <property name="logback.utx-trace.enabled" value="true" /> to `logback.xml`.
 
-According to a [default](https://github.com/wavesplatform/Waves/blob/master/node/src/main/resources/logback.xml) logging configuration, we have such limits for file logs:  
-1. Logs older than 30 days are deleted;  
-2. If total size of logs are larger than 1Gb, oldest logs are deleted to fit this limit.
+If writing the traces is activated, it will be written to `/var/log/utx-trace.log`.
 
-If you want to change this limits, create own `logback.xml`, edit lines:
+## Change log file location
+
+* If you set up node from the package, edit `/etc/waves/application.ini`.
+* If you run the node from the jar, use Java's options, for example, `java -Dsomeoption=somevalue -jar /path/to/waves-all.jar /path/to/config`
+
+The default directory is `{waves.directory}/log`. To change the logs directory, use `-Dlogback.file.directory=/path/to/directory/for/logs`. Note that node must have rights to write files to choosen directory.
+
+## Setting the network
+
+* mainnet: `/etc/waves/`
+* testnet: `/etc/waves-testnet/`
+
+`{waves.directory}`
+
+## Setting logging level for STDOUT
+
+* `Dlogback.stdout.level={LEVEL_OF_LOGGING}`. The default level for STDOUT is `INFO`.
+
+## Setting logging lever for files
+
+* `-Dlogback.file.level={LEVEL_OF_LOGGING}`. The default level is `DEBUG`.
+
+## Default limits for file logs
+
+[Initially](https://github.com/wavesplatform/Waves/blob/master/node/src/main/resources/logback.xml), the following limits are set in `logback.xml`:
+
+* Logs older than 30 days are deleted.
+* If total size of logs are larger than 1Gb, oldest logs are deleted to fit this limit.
+
+To change this limits, edit the following lines in `logback.xml`:
 
 ```xml
 <maxHistory>30</maxHistory>
 <totalSizeCap>1GB</totalSizeCap>
 ```
 
-And specify your logback's config \(see above\).
+## Enable logging to `JSON` files
 
-## Levels of logging
+Define your own logging configuration and specify a path to it with option:
+
+```
+-Dlogback.configurationFile=/path/to/your/logback.xml
+```
+
+## Levels of logging <a id="loglevels"></a>
 
 1. `OFF` - logging is disabled. It's useful when you want to disable file or STDOUT logs;
 2. `ERROR` - severe errors. Please read this messages; 
@@ -53,4 +84,3 @@ And specify your logback's config \(see above\).
 6. `TRACE` - an information for debugging, when DEBUG doesn't help \(rare cases\).
 
 Lower levels of logging are included the higher. For example, `DEBUG` includes itself and all higher levels: `INFO`, `WARN` and `ERROR`.
-
