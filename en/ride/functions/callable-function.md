@@ -6,6 +6,16 @@ A dApp script may have several callable functions.
 
 A callable function of a [dApp](/blockchain/account/dapp.md) can be invoked by the [invoke script transaction](/blockchain/transaction-type/invoke-script-transaction.md).
 
+Calling @Callable function may require payment, so up to two payments can be attached to invoke script transaction.
+
+Actions that can be performed by callable function, include (but not limited to):
+
+* adding or modifying records in [account data storage](/blockchain/account/account-data-storage.md).
+* tokens issue.
+* tokens reissue.
+* burning tokens.
+* token transfers. Within invoke script transaction, dApp can execute up to 10 token transfers. The tokens can be transferred both from dApp balance and from payments attached to invoke script transaction.
+
 ## Example for Standard Library version 3
 
 ```ride
