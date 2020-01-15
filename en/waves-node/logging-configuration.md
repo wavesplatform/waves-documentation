@@ -21,7 +21,7 @@ The following logging parameters can be altered:
 * [STDOUT logging level can be changed](#stdout-log-level).
 * [Logging in JSON format can be set up](#json).
 
-Excluding setting up logging in JSON format, altering of this parameters can be done either by
+Except setting up logging in JSON format, altering of this parameters can be done either by
 
 * adding properties to `application.ini` file.
 * adding properties in `logback.xml` file. To override the node's `logback.xml` settings, create own `logback.xml` in `/etc/waves/`. Refer to [this](#own-logback) section on how to configure it.
