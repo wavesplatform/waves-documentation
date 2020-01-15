@@ -29,7 +29,7 @@ Except setting up logging in JSON format, altering of this parameters can be don
 
 Logging in JSON format can be set up using `logback.xml` only.
 
-It is not necessary to restart node after logging-related settings changes.
+It is not necessary to restart node after logging-related settings changes because they are being re-applied each 30 seconds.
 
 The log levels are listed [below](#loglevels).
 
