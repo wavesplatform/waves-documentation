@@ -13,7 +13,7 @@
 | 5 | Открытый ключ аккаунта отправителя транзакции | senderPublicKey | Array[[Byte](/blockchain/blockchain/blockchain-data-types.md)] | 32 |  |
 | 6 | Флаг наличия скрипта |  | [Byte](/blockchain/blockchain/blockchain-data-types.md) | 1 | 0 — скрипт не установлен<br>1 — скрипт установлен |
 | 7 | Длина скрипта |  | [Short](/blockchain/blockchain/blockchain-data-types.md) | `S` | `S` = 0 если значение поля 6 равно 0.<br>S = 2 если значение поля 6 равно 1 |
-| 8 | Скрипт | script | Array[[Byte](/blockchain/blockchain/blockchain-data-types.md)] | `S` | `S` = 0 если значение поля 6 равно 0.<br>1 <= `S` <= 32768 если значение поля 6 равно 1 |
+| 8 | Скрипт | script | Array[[Byte](/blockchain/blockchain/blockchain-data-types.md)] | `S` | `S` = 0 если значение поля 6 равно 0.<br>1 <= `S` <= 8192 если значение поля 6 равно 1 |
 | 9 | [Комиссия за транзакцию](/blockchain/transaction/transaction-fee.md) | fee | [Long](/blockchain/blockchain/blockchain-data-types.md) | 8 |  |
 | 10 | [Временная метка транзакции](/blockchain/transaction/transaction-timestamp.md) | timestamp | [Long](/blockchain/blockchain/blockchain-data-types.md) | 8 |  |
 | 11 | [Подтверждения транзакции](/blockchain/transaction/transaction-proof.md) | proofs | [Подтверждения](/blockchain/transaction/transaction-proof.md) | `S` | Если массив пустой, то `S` = 3.<br>Если массив не пустой, то `S` = 3 + 2 × `N` + (`P`<sub>1</sub> + `P`<sub>2</sub> + ... + `P`<sub>n</sub>),<br>где<br>`N` — количество подтверждений в массиве,<br>`P`<sub>n</sub> — размер `N`-го подтверждения в байтах. Максимальное количество подтверждений в массиве — 8. Максимальный размер каждого подтверждения — 64 байта |
