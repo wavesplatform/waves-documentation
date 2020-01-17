@@ -334,6 +334,7 @@
   * [Матчер](waves-node/extensions/matcher.md)
     * [Установка матчера на Ubuntu из deb-пакета](/waves-node/extensions/matcher/matcher-install-ubuntu-deb.md)
 * [Конфигурация ноды](waves-node/node-configuration.md)
+* [Как работать с wallet ноды](waves-node/how-to-work-with-node-wallet.md)
 * [Обновление Ноды Waves](waves-node/upgrading.md)
 
 ## API and SDK
