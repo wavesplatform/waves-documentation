@@ -368,6 +368,7 @@
   * [On Mac](waves-node/how-to-install-a-node/on-mac.md)
   * [On Windows](waves-node/how-to-install-a-node/on-windows.md)
   * [On Ubuntu](waves-node/how-to-install-a-node/on-ubuntu.md)
+* [How to work with node wallet](waves-node/how-to-work-with-node-wallet.md)
 * [How to build and test a node](waves-node/how-to-build-and-test-a-node.md)
 * [Options for getting actual blockchain](waves-node/options-for-getting-actual-blockchain.md)
   * [State downloading and applying](waves-node/options-for-getting-actual-blockchain/state-downloading-and-applying.md)
