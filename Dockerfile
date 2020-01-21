@@ -14,7 +14,8 @@ RUN gitbook install
 
 EXPOSE 4000
 
-CMD ["gitbook", "serve", "--timing"]
+ENTRYPOINT gitbook serve --timing && cp index.html _book/index.html
+# CMD ["gitbook", "serve", "--timing"]
 
 
 # serve
