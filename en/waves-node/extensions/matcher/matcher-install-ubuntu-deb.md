@@ -207,4 +207,6 @@ Considering other node parameters is out of current article scope. To get more i
     </li>
 </ol>
 
-As a result, the matcher account address will be displayed. Congratulations, you've successfully installed the matcher.
+As a result, the *public key* will be shown. This key should not be confused with your wallet's address. You can view your *public key* by issuing `waves-dex-cli create-account-seed --address-scheme W --seed-format raw-string --account-nonce 0`.
+
+Congratulations, you've successfully installed the matcher!
